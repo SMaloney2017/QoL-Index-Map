@@ -9,7 +9,7 @@ function App() {
         <Router>
           <Toolbar onClick/>
             <header>
-              <h1>React Map</h1>
+              <h1>React Map.</h1>
             </header>
 
             <Switch>

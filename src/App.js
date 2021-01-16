@@ -14,8 +14,6 @@ function App() {
 
             <Switch>
               <Route path='#' />
-              <Route path='#' />
-              <Route path='#' />
           </Switch>
         </Router>
     </>

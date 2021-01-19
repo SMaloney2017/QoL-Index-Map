@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import Toolbar from './components/toolbar/Toolbar';
+import Toolbar from './components/toolbar/Toolbar.jsx';
 
 
 function App() {

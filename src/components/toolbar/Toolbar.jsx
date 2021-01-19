@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import RangeSlider from'../sliders/RangeSlider';
+import RangeSlider from'../sliders/RangeSlider.jsx';
 import Button from '@material-ui/core/Button';
 import './Toolbar.css';
 

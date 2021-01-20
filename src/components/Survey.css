@@ -1,0 +1,60 @@
+
+.survey {
+  display: flex;
+  justify-content: flex-start;
+}
+  
+.survey-icon {
+  color: #ffffff;
+  font-size: 30px;
+  padding-right: 10px;
+  padding-left: 3px;
+  background: none;
+}
+.survey-close {
+  color: #000000;
+  opacity: 0.5;
+  font-size: 20px;
+
+}
+
+.survey-form {
+  background-color: #000000a8;
+  border-top-right-radius: 33px;
+  border-bottom-right-radius: 33px;
+  border-top-left-radius: 33px;
+  border-bottom-left-radius: 33px;
+  overflow:hidden;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  position: fixed;
+  left: 41%;
+  top: 7%;
+  opacity: 0;
+  transition: 350ms;
+}
+
+.survey-form.active {
+  opacity: 1;
+  transition: 350ms;
+}
+
+.survey-text {
+  color: #ffffff;
+  display: flex;
+  font-size: 20px;
+  padding-top: 15px;
+}
+
+.survey-subtext {
+  color: #ffffff;
+  display: flex;
+  padding-left: 30px;
+  padding-top: 15px;
+}
+
+.survey-form-items {
+  width: 100%;
+}
+  

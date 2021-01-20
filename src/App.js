@@ -10,7 +10,7 @@ function App() {
         <Toolbar /><Survey />
         <header>React Map.</header>
         <div className='sub-header'>
-          Built by Kafele Wimbley and Sean Maloney using React.js, Node.js, MySQL, and Google Maps</div>
+          Built by Kafele Wimbley and Sean Maloney using React.js, Node.js, PostgreSQL, and Google Maps</div>
       </div>
     </>
   );

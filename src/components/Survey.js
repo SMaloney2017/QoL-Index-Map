@@ -14,10 +14,12 @@ class Survey extends React.Component {
       lat:0,
       lng:0,
       overall:0,
-      politics:0,
+      government:0,
+      industry:0,
       scenery:0,
       safety:0,
-      lifestyle:0
+      social:0,
+      cost:0
       };
 
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -71,60 +73,107 @@ class Survey extends React.Component {
                   <AiOutlineClose onClick={this.toggleOff}/>
                 </div>
                 <div className='survey-subtext'>
-                  With permission to use your location,
+                  You can contribute to our database
                   <br/>
-                  you can contribute to our custom database!
+                  by letting us know how you feel about
+                  <br/>
+                  these topics in your area!
                   <br/>
                 </div>
               </div>
-              <form className='survey-items' onSubmit={this.handleSubmit}>
+              <form className='survey-form-items' onSubmit={this.handleSubmit}>
                 <div className='survey-subtext'>(Lat, Lng): {this.state.lat}, {this.state.lng}</div>
+                <div className="survey-category">
+                  <div className='survey-text'>Overall: {this.state.overall}</div>
+                    <div className='survey-buttons'>
+                      <input type="button" id="overall" name="overall" value="0" onClick={this.handleChange} />
+                      <input type="button" id="overall" name="overall" value="1" onClick={this.handleChange} />
+                      <input type="button" id="overall" name="overall" value="2" onClick={this.handleChange} />
+                      <input type="button" id="overall" name="overall" value="3" onClick={this.handleChange} />
+                      <input type="button" id="overall" name="overall" value="4" onClick={this.handleChange} />
+                      <input type="button" id="overall" name="overall" value="5" onClick={this.handleChange} />
+                      <input type="button" id="overall" name="overall" value="6" onClick={this.handleChange} />
+                    </div>
+                  </div>
                 <br/>
-                <div className="survey-text">Rate Overall: {this.state.overall}</div>
-                <input type="button" id="overall" name="overall" value="0" onClick={this.handleChange} />
-                <input type="button" id="overall" name="overall" value="1" onClick={this.handleChange} />
-                <input type="button" id="overall" name="overall" value="2" onClick={this.handleChange} />
-                <input type="button" id="overall" name="overall" value="3" onClick={this.handleChange} />
-                <input type="button" id="overall" name="overall" value="4" onClick={this.handleChange} />
-                <input type="button" id="overall" name="overall" value="5" onClick={this.handleChange} />
-                <input type="button" id="overall" name="overall" value="6" onClick={this.handleChange} />
+                <div className="survey-category">
+                  <div className='survey-text'>government: {this.state.government}</div>
+                  <div className='survey-buttons'>
+                    <input type="button" id="government" name="government" value="0" onClick={this.handleChange} />
+                    <input type="button" id="government" name="government" value="1" onClick={this.handleChange} />
+                    <input type="button" id="government" name="government" value="2" onClick={this.handleChange} />
+                    <input type="button" id="government" name="government" value="3" onClick={this.handleChange} />
+                    <input type="button" id="government" name="government" value="4" onClick={this.handleChange} />
+                    <input type="button" id="government" name="government" value="5" onClick={this.handleChange} />
+                    <input type="button" id="government" name="government" value="6" onClick={this.handleChange} />
+                  </div>
+                </div>
                 <br/>
-                <div className="survey-text">Rate Politics: {this.state.politics}</div>
-                <input type="button" id="politics" name="politics" value="0" onClick={this.handleChange} />
-                <input type="button" id="politics" name="politics" value="1" onClick={this.handleChange} />
-                <input type="button" id="politics" name="politics" value="2" onClick={this.handleChange} />
-                <input type="button" id="politics" name="politics" value="3" onClick={this.handleChange} />
-                <input type="button" id="politics" name="politics" value="4" onClick={this.handleChange} />
-                <input type="button" id="politics" name="politics" value="5" onClick={this.handleChange} />
-                <input type="button" id="politics" name="politics" value="6" onClick={this.handleChange} />
+                <div className="survey-category">
+                  <div className='survey-text'>industry: {this.state.industry}</div>
+                  <div className='survey-buttons'>
+                    <input type="button" id="industry" name="industry" value="0" onClick={this.handleChange} />
+                    <input type="button" id="industry" name="industry" value="1" onClick={this.handleChange} />
+                    <input type="button" id="industry" name="industry" value="2" onClick={this.handleChange} />
+                    <input type="button" id="industry" name="industry" value="3" onClick={this.handleChange} />
+                    <input type="button" id="industry" name="industry" value="4" onClick={this.handleChange} />
+                    <input type="button" id="industry" name="industry" value="5" onClick={this.handleChange} />
+                    <input type="button" id="industry" name="industry" value="6" onClick={this.handleChange} />
+                  </div>
+                </div>
                 <br/>
-                <div className="survey-text">Rate Scenery: {this.state.scenery}</div>
-                <input type="button" id="scenery" name="scenery" value="0" onClick={this.handleChange} />
-                <input type="button" id="scenery" name="scenery" value="1" onClick={this.handleChange} />
-                <input type="button" id="scenery" name="scenery" value="2" onClick={this.handleChange} />
-                <input type="button" id="scenery" name="scenery" value="3" onClick={this.handleChange} />
-                <input type="button" id="scenery" name="scenery" value="4" onClick={this.handleChange} />
-                <input type="button" id="scenery" name="scenery" value="5" onClick={this.handleChange} />
-                <input type="button" id="scenery" name="scenery" value="6" onClick={this.handleChange} />
+                <div className="survey-category">
+                  <div className='survey-text'>scenery: {this.state.scenery}</div>
+                  <div className='survey-buttons'>
+                    <input type="button" id="scenery" name="scenery" value="0" onClick={this.handleChange} />
+                    <input type="button" id="scenery" name="scenery" value="1" onClick={this.handleChange} />
+                    <input type="button" id="scenery" name="scenery" value="2" onClick={this.handleChange} />
+                    <input type="button" id="scenery" name="scenery" value="3" onClick={this.handleChange} />
+                    <input type="button" id="scenery" name="scenery" value="4" onClick={this.handleChange} />
+                    <input type="button" id="scenery" name="scenery" value="5" onClick={this.handleChange} />
+                    <input type="button" id="scenery" name="scenery" value="6" onClick={this.handleChange} />
+                  </div>
+                </div>
                 <br/>
-                <div className="survey-text">Rate Safety: {this.state.safety}</div>
-                <input type="button" id="safety" name="safety" value="0" onClick={this.handleChange} />
-                <input type="button" id="safety" name="safety" value="1" onClick={this.handleChange} />
-                <input type="button" id="safety" name="safety" value="2" onClick={this.handleChange} />
-                <input type="button" id="safety" name="safety" value="3" onClick={this.handleChange} />
-                <input type="button" id="safety" name="safety" value="4" onClick={this.handleChange} />
-                <input type="button" id="safety" name="safety" value="5" onClick={this.handleChange} />
-                <input type="button" id="safety" name="safety" value="6" onClick={this.handleChange} />
+                <div className="survey-category">
+                  <div className='survey-text'>safety: {this.state.safety}</div>
+                  <div className='survey-buttons'>
+                    <input type="button" id="safety" name="safety" value="0" onClick={this.handleChange} />
+                    <input type="button" id="safety" name="safety" value="1" onClick={this.handleChange} />
+                    <input type="button" id="safety" name="safety" value="2" onClick={this.handleChange} />
+                    <input type="button" id="safety" name="safety" value="3" onClick={this.handleChange} />
+                    <input type="button" id="safety" name="safety" value="4" onClick={this.handleChange} />
+                    <input type="button" id="safety" name="safety" value="5" onClick={this.handleChange} />
+                    <input type="button" id="safety" name="safety" value="6" onClick={this.handleChange} />
+                  </div>
+                </div>
                 <br/>
-                <div className="survey-text">Rate Lifestyle: {this.state.lifestyle}</div>
-                <input type="button" id="lifestyle" name="lifestyle" value="0" onClick={this.handleChange} />
-                <input type="button" id="lifestyle" name="lifestyle" value="1" onClick={this.handleChange} />
-                <input type="button" id="lifestyle" name="lifestyle" value="2" onClick={this.handleChange} />
-                <input type="button" id="lifestyle" name="lifestyle" value="3" onClick={this.handleChange} />
-                <input type="button" id="lifestyle" name="lifestyle" value="4" onClick={this.handleChange} />
-                <input type="button" id="lifestyle" name="lifestyle" value="5" onClick={this.handleChange} />
-                <input type="button" id="lifestyle" name="lifestyle" value="6" onClick={this.handleChange} />
-                <br/><br/>
+                <div className="survey-category">
+                  <div className='survey-text'>social: {this.state.social}</div>
+                  <div className='survey-buttons'>
+                    <input type="button" id="social" name="social" value="0" onClick={this.handleChange} />
+                    <input type="button" id="social" name="social" value="1" onClick={this.handleChange} />
+                    <input type="button" id="social" name="social" value="2" onClick={this.handleChange} />
+                    <input type="button" id="social" name="social" value="3" onClick={this.handleChange} />
+                    <input type="button" id="social" name="social" value="4" onClick={this.handleChange} />
+                    <input type="button" id="social" name="social" value="5" onClick={this.handleChange} />
+                    <input type="button" id="social" name="social" value="6" onClick={this.handleChange} />
+                  </div>
+                </div>
+                <br/>
+                <div className="survey-category">
+                  <div className='survey-text'>cost: {this.state.cost}</div>
+                  <div className='survey-buttons'>
+                    <input type="button" id="cost" name="cost" value="0" onClick={this.handleChange} />
+                    <input type="button" id="cost" name="cost" value="1" onClick={this.handleChange} />
+                    <input type="button" id="cost" name="cost" value="2" onClick={this.handleChange} />
+                    <input type="button" id="cost" name="cost" value="3" onClick={this.handleChange} />
+                    <input type="button" id="cost" name="cost" value="4" onClick={this.handleChange} />
+                    <input type="button" id="cost" name="cost" value="5" onClick={this.handleChange} />
+                    <input type="button" id="cost" name="cost" value="6" onClick={this.handleChange} />
+                  </div>
+                </div>
+                <br/>
                 <input type='submit'/>
               </form>
             </ul>

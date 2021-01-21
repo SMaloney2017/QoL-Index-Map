@@ -10,11 +10,15 @@ class Toolbar extends React.Component {
 
     this.state = {
       active: false,
+      test:0,
       userlat:0, userlng:0,
-      overallmin:0, overallmax:0,
-      politicsmin:0, politicsmax:0,
-      scenerymin:0, scenerymax:0,
-      lifestylemin:0, lifestylemax:0,
+      overall: [0, 6],
+      government: [0, 6],
+      industry: [0, 6],
+      scenery: [0, 6],
+      safety: [0, 6],
+      social: [0, 6],
+      cost: [0, 6],
       timestamp: 0
       };
 
@@ -30,13 +34,7 @@ class Toolbar extends React.Component {
       this.setState({active: false})
       console.log(this.state.active);
     }
-
-    handleChange = (e) => {
-     this.setState({
-       [e.target.name]: e.target.value
-     })
-    }
-
+  
     handleSubmit(event) {
       alert("Submitted");
       /*
@@ -67,6 +65,11 @@ class Toolbar extends React.Component {
                 <div className='toolbar-close'>
                   <AiOutlineClose onClick={this.toggleOff}/>
                 </div>
+                <form onSubmit={this.handleSubmit}>
+                  <br/>
+ 
+                  <input type='submit'/>
+                </form>
               </div>
             </ul>
           </div>

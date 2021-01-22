@@ -160,7 +160,7 @@ class Survey extends React.Component {
                 </div>
                 <br/>
                 <div className="survey-category">
-                  <div className='survey-text'>cost: {this.state.cost}</div>
+                  <div className='survey-text'>cost of living: {this.state.cost}</div>
                   <div className='button-holder'>
                     <input className='survey-buttons' type="button" id="cost" name="cost" value="0" onClick={this.handleChange} />
                     <input className='survey-buttons' type="button" id="cost" name="cost" value="1" onClick={this.handleChange} />

@@ -67,6 +67,9 @@ class Toolbar extends React.Component {
                 </div>
                 <form onSubmit={this.handleSubmit}>
                   <br/>
+                  {/*
+                    Add some interface to specify query.
+                  */}
                   <br/>
                   <input type='submit' onClick={this.toggleOff}/>
                 </form>

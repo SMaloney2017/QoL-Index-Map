@@ -1,7 +1,7 @@
 import React from 'react';
 import './Toolbar.css';
 import { BsTools } from "react-icons/bs";
-import { AiOutlineClose} from 'react-icons/ai';
+import { AiOutlineClose } from 'react-icons/ai';
 
 class Toolbar extends React.Component {
 
@@ -36,12 +36,12 @@ class Toolbar extends React.Component {
     }
   
     handleSubmit(event) {
-      alert("Submitted");
       /*
       Here we'll have to find a way
       to take the values stored in the current
       state and insert them into the database
       */
+      event.preventDefault();
     }
 
     componentDidMount() {
@@ -67,8 +67,8 @@ class Toolbar extends React.Component {
                 </div>
                 <form onSubmit={this.handleSubmit}>
                   <br/>
- 
-                  <input type='submit'/>
+                  <br/>
+                  <input type='submit' onClick={this.toggleOff}/>
                 </form>
               </div>
             </ul>

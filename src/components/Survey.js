@@ -1,7 +1,6 @@
 import React from 'react';
 import { AiOutlineClose, AiOutlineForm } from 'react-icons/ai';
 import './Survey.css'
-
 class Survey extends React.Component {
 
     constructor() {
@@ -48,6 +47,7 @@ class Survey extends React.Component {
       to take the values stored in the current
       state and insert them into the database
       */
+      event.preventDefault();
     }
 
     componentDidMount() {
@@ -82,7 +82,7 @@ class Survey extends React.Component {
                 </div>
               </div>
               <form className='survey-form-items' onSubmit={this.handleSubmit}>
-                <div className='survey-subtext'>(Lat, Lng): {this.state.lat}, {this.state.lng}</div>
+                <div className='survey-subtext'>(Lat, Lng): {this.state.lat.toFixed(7)}, {this.state.lng.toFixed(7)}</div>
                 <div className="survey-category">
                   <div className='survey-text'>Overall: {this.state.overall}</div>
                     <div className='survey-buttons'>
@@ -174,7 +174,7 @@ class Survey extends React.Component {
                   </div>
                 </div>
                 <br/>
-                <input type='submit'/>
+                <input type='submit' onClick={this.toggleOff}/>
               </form>
             </ul>
           </div>

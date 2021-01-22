@@ -49,3 +49,11 @@
 .toolbar-menu-items {
     width: 100%;
 }
+
+.submit-button {
+    background-color: #00000075;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 25px 5px 25px;
+  }

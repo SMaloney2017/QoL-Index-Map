@@ -13,6 +13,12 @@
     background: none;
 }
 
+.toolbar-icon:hover{
+    color: #00ff95c5;
+    transition: 250ms;
+    transform: scale(1.2,1.2);
+}
+
 .toolbar-close {
     color: #000000;
     opacity: 0.5;
@@ -50,10 +56,18 @@
     width: 100%;
 }
 
-.submit-button {
+.toolbar-submit {
     background-color: #00000075;
     border: none;
     color: #ffffff;
     font-size: 15px;
-    padding: 5px 25px 5px 25px;
-  }
+    padding: 10px 25px 10px 25px;
+    border-radius: 3px;
+}
+
+.toolbar-submit:hover{
+    background-color: #00ff95c5;
+    transition: 500ms;
+    transform: scale(1.1,1.1);
+    box-shadow: 5px 10px #00000077;
+}

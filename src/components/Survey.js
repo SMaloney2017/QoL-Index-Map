@@ -74,9 +74,7 @@ class Survey extends React.Component {
                 </div>
                 <div className='survey-subtext'>
                   You can contribute to our database
-                  <br/>
                   by letting us know how you feel about
-                  <br/>
                   these topics in your area!
                   <br/>
                 </div>

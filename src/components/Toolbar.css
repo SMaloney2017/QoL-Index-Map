@@ -47,9 +47,17 @@
   
 .toolbar-text {
     color: #ffffff;
-    display: flex;
+    display: block;
     font-size: 20px;
     padding-top: 15px;
+    
+}
+
+.toolbar-subtext {
+    color:#00ff95c5;
+    font-size: 20px;
+    padding-left: 10px;
+    font-weight: bold;
 }
 
 .toolbar-menu-items {
@@ -71,3 +79,4 @@
     transform: scale(1.1,1.1);
     box-shadow: 5px 10px #00000077;
 }
+

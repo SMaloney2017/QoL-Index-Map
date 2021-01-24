@@ -2,9 +2,9 @@ import React from 'react';
 import './Toolbar.css';
 import { BsTools } from "react-icons/bs";
 import { AiOutlineClose } from 'react-icons/ai';
+import { RangeSlider, NumericInput } from "@blueprintjs/core";
 
 class Toolbar extends React.Component {
-
     constructor() {
     super();
 
@@ -19,9 +19,10 @@ class Toolbar extends React.Component {
       safety: [0, 6],
       social: [0, 6],
       cost: [0, 6],
-      timestamp: 0
+      timestamp: 0,
+      dataVisable: "overall"
       };
-
+      this.onChangeValue = this.onChangeValue.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -34,7 +35,14 @@ class Toolbar extends React.Component {
       this.setState({active: false})
       console.log(this.state.active);
     }
-  
+
+    onChangeValue(event) {
+      this.setState({
+        selectedOption: event.target.value
+      });
+      console.log(event.target.value);
+    }
+
     handleSubmit(event) {
       /*
       Here we'll have to find a way
@@ -65,8 +73,31 @@ class Toolbar extends React.Component {
                 <div className='toolbar-close'>
                   <AiOutlineClose onClick={this.toggleOff}/>
                 </div>
-                <form onSubmit={this.handleSubmit}>
-                  <br/>
+                <form onSubmit={this.handleSubmit} >
+                  <div className='toolbar-text'>data visable:</div>
+                  <div onChange={this.onChangeValue}>
+                    <div className='toolbar-subtext'><input type="radio" value="overall" name="overall" checked={this.state.selectedOption === "overall"}/>overall</div>
+                    <div className='toolbar-subtext'><input type="radio" value="government" name="government" checked={this.state.selectedOption === "government"}/>government</div>
+                    <div className='toolbar-subtext'><input type="radio" value="industry" name="industry" checked={this.state.selectedOption === "industry"}/>industry</div>
+                    <div className='toolbar-subtext'><input type="radio" value="scenery" name="scenery" checked={this.state.selectedOption === "scenery"}/>scenery</div>
+                    <div className='toolbar-subtext'><input type="radio" value="safety" name="safety" checked={this.state.selectedOption === "safety"}/>safety</div>
+                    <div className='toolbar-subtext'><input type="radio" value="social" name="social" checked={this.state.selectedOption === "social"}/>social</div>
+                    <div className='toolbar-subtext'><input type="radio" value="cost" name="cost" checked={this.state.selectedOption === "cost"}/>cost</div>
+                  </div>
+                  <div className='toolbar-text'>overall range:</div>
+
+                  <div className='toolbar-text'>government range:</div>
+
+                  <div className='toolbar-text'>industry range:</div>
+
+                  <div className='toolbar-text'>scenery range:</div>
+
+                  <div className='toolbar-text'>safety range:</div>
+
+                  <div className='toolbar-text'>social range:</div>
+
+                  <div className='toolbar-text'>cost range:</div>
+
                   {/*
                     Add some interface to specify query.
                   */}

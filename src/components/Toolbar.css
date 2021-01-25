@@ -32,8 +32,6 @@
     overflow:hidden;
     width: 40%;
     height: 100%;
-    display: flex;
-    justify-content: center;
     position: fixed;
     top: 70px;
     left: -100%;

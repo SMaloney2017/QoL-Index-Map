@@ -2,7 +2,6 @@ import React from 'react';
 import './Toolbar.css';
 import { BsTools } from "react-icons/bs";
 import { AiOutlineClose } from 'react-icons/ai';
-import { RangeSlider, NumericInput } from "@blueprintjs/core";
 
 class Toolbar extends React.Component {
     constructor() {
@@ -85,7 +84,6 @@ class Toolbar extends React.Component {
                     <div className='toolbar-subtext'><input type="radio" value="cost" name="cost" checked={this.state.selectedOption === "cost"}/>cost</div>
                   </div>
                   <div className='toolbar-text'>overall range:</div>
-
                   <div className='toolbar-text'>government range:</div>
 
                   <div className='toolbar-text'>industry range:</div>

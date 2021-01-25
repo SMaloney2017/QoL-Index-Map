@@ -33,7 +33,7 @@
   height: 500px;
   display: flex;
   position: fixed;
-  left: 46%;
+  left: 510px;
   top: 70px;
   opacity: 0;
   transition: 350ms;

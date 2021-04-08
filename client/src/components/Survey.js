@@ -36,17 +36,26 @@ class Survey extends React.Component {
 
     handleChange = (e) => {
      this.setState({
-       [e.target.name]: e.target.value
+       [e.target.name]: parseInt(e.target.value)
      })
     }
 
-    handleSubmit(event) {
-      /*
-      Here we'll have to find a way
-      to take the values stored in the current
-      state and insert them into the database
-      */
+    handleSubmit = async (event) => {
       event.preventDefault();
+      try {
+        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost };
+        const response = await fetch('http://localhost:3000/newdata', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+        console.log(response)
+      } catch (error) {
+        console.log(error.message);
+      }
     }
 
     componentDidMount() {

@@ -1,0 +1,75 @@
+
+.toolbar {
+    display: flex;
+    justify-content: flex-start;
+}
+  
+.toolbar-icon {
+    color: #ffffff;
+    font-size: 25px;
+    padding-left: 3px;
+    padding-right: 10px;
+    padding-top: 3px;
+    background: none;
+}
+
+.toolbar-icon:hover{
+    color: #00ff95c5;
+    transition: 250ms;
+    transform: scale(1.2,1.2);
+}
+
+.toolbar-close {
+    color: #000000;
+    opacity: 0.5;
+    font-size: 20px;
+  
+}
+  
+.toolbar-menu {
+    background-color: #000000a8;
+    border-top-right-radius: 33px;
+    overflow: hidden;
+    width: 500px;
+    height: 100%;
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    transition: 850ms;
+}
+  
+.toolbar-menu.active {
+    left: 0;
+    transition: 350ms;
+}
+  
+.toolbar-text {
+    color: #ffffff;
+    font-size: 20px;
+    padding-top: 10px;
+    
+}
+
+.toolbar-subtext {
+    color:#00ff95c5;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.toolbar-submit {
+    background-color: #00000075;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 10px 25px 10px 25px;
+    border-radius: 3px;
+}
+
+.toolbar-submit:hover{
+    background-color: #00ff95c5;
+    transition: 500ms;
+    transform: scale(1.1,1.1);
+    box-shadow: 5px 10px #00000077;
+}
+

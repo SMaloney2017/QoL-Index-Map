@@ -4,21 +4,21 @@ import './Survey.css'
 class Survey extends React.Component {
 
     constructor() {
-    super();
+      super();
 
-    this.state = {
-      active: false,
-      id: 0,
-      timestamp: 0,
-      lat:0,
-      lng:0,
-      overall:0,
-      government:0,
-      industry:0,
-      scenery:0,
-      safety:0,
-      social:0,
-      cost:0
+      this.state = {
+        active: false,
+        id:0,
+        timestamp:0,
+        lat:0,
+        lng:0,
+        overall:0,
+        government:0,
+        industry:0,
+        scenery:0,
+        safety:0,
+        social:0,
+        cost:0
       };
 
       this.handleSubmit = this.handleSubmit.bind(this);

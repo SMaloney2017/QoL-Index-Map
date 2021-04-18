@@ -21,7 +21,7 @@
 .survey-close {
   color: #000000;
   opacity: 0.5;
-  font-size: 20px;
+  font-size: 30px;
 
 }
 
@@ -78,7 +78,7 @@
   margin-left: 145px; /*og 10px */
   margin-top: 15px;  /*og 6px */
   font-size: 35px;  /*og 15px */
-  border-radius: 3px;
+  border-radius: 33px;
 }
 
 .survey-buttons:hover {

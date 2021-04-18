@@ -6,7 +6,7 @@
   
 .survey-icon {
   color: #ffffff;
-  font-size: 30px;
+  font-size: 30px; 
   padding-right: 10px;
   padding-left: 3px;
   background: none;
@@ -27,14 +27,14 @@
 
 .survey-form {
   background-color: #000000a8;
-  border-radius: 33px;
+  border-radius: 33px; /* curves the borders */
   overflow:hidden;
-  width: 500px;
-  height: 500px;
+  width: 1695px; /* og 500px */
+  height: 765px;
   display: flex;
   position: fixed;
-  left: 510px;
-  top: 70px;
+  left: 5px; /*og 400px */
+  top: 65px;
   opacity: 0;
   transition: 350ms;
 }
@@ -51,7 +51,7 @@
 .survey-text {
   color: #ffffff;
   display: flex;
-  font-size: 20px;
+  font-size: 50px; /*og 20px */
   padding-top: 5px;
   margin-right: auto;
 }
@@ -67,7 +67,7 @@
 }
 
 .survey-button-holder {
-  margin-right: 70px;
+  margin-right: 100px; /*og 70px */
 }
 
 .survey-buttons {
@@ -75,9 +75,9 @@
   border: none;
   color: #ffffff;
   display: inline-flex;
-  margin-left: 10px;
-  margin-top: 6px;
-  font-size: 15px;
+  margin-left: 145px; /*og 10px */
+  margin-top: 15px;  /*og 6px */
+  font-size: 35px;  /*og 15px */
   border-radius: 3px;
 }
 
@@ -91,9 +91,9 @@
   background-color: #00000075;
   border: none;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 35px; /*og 15px */
   padding: 10px 25px 10px 25px;
-  border-radius: 3px;
+  border-radius: 33px; /*og 3px */
 }
 
 .survey-submit:hover{
@@ -106,6 +106,6 @@
 
 .survey-form-items {
   width: 100%;
-  padding-left: 30px;
+  padding-left: 20px; /*og 30px */
 }
   

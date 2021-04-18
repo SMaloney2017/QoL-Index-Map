@@ -10,8 +10,7 @@ class Toolbar extends React.Component {
 
     this.state = {
       active: false,
-      test:0,
-      userlat:0, userlng:0,
+      lat:0, lng:0,
       overall: [0, 6],
       government: [0, 6],
       industry: [0, 6],
@@ -19,8 +18,7 @@ class Toolbar extends React.Component {
       safety: [0, 6],
       social: [0, 6],
       cost: [0, 6],
-      timestamp: 0,
-      dataVisable: "overall"
+      selectedOption: "overall_score"
       };
       this.onChangeValue = this.onChangeValue.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,7 +36,7 @@ class Toolbar extends React.Component {
 
     onChangeValue(e) {
       this.setState({
-        selectedOption: e.target.value
+        selectedOption: String(e.target.value)
       });
       console.log(e.target.value);
     }
@@ -53,15 +51,25 @@ class Toolbar extends React.Component {
       });
     }
 
-    handleSubmit(event) {
-      /*
-      Here we'll have to find a way
-      to take the values stored in the current
-      state and insert them into the database
-      */
+    handleSubmit = async (event) => {
       event.preventDefault();
-    }
+      try {
+        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, selectedOption:this.state.selectedOption}
+        const response = await fetch('http://localhost:5000/query', {     
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
+        body: JSON.stringify(data)
+        });
 
+        const receivedData = await response.json()
+        console.log(receivedData)
+      } catch (error) {
+        console.log(error.message)
+      }
+    }
 
     componentDidMount() {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -96,15 +104,15 @@ class Toolbar extends React.Component {
                   <AiOutlineClose onClick={this.toggleOff}/>
                 </div>
                 <form onSubmit={this.handleSubmit} >
-                  <div className='toolbar-text'>data visable:</div>
+                  <div className='toolbar-text'>data visable: <span style={{color: "#C70030"}}>{this.state.selectedOption}</span></div>
                   <div className='toolbar-subtext'>
-                    <div><input type="radio" onChange={this.onChangeValue} value="overall" name="overall" checked={this.state.selectedOption === "overall" }/>overall</div>
-                    <div><input type="radio" onChange={this.onChangeValue} value="government" name="government" checked={this.state.selectedOption === "government"}/>government</div>
-                    <div><input type="radio" onChange={this.onChangeValue} value="industry" name="industry" checked={this.state.selectedOption === "industry"}/>industry</div>
-                    <div><input type="radio" onChange={this.onChangeValue} value="scenery" name="scenery" checked={this.state.selectedOption === "scenery"}/>scenery</div>
-                    <div><input type="radio" onChange={this.onChangeValue} value="safety" name="safety" checked={this.state.selectedOption === "safety"}/>safety</div>
-                    <div><input type="radio" onChange={this.onChangeValue} value="social" name="social" checked={this.state.selectedOption === "social"}/>social</div>
-                    <div><input type="radio" onChange={this.onChangeValue} value="cost" name="cost" checked={this.state.selectedOption === "cost"}/>cost</div>
+                    <div><input type="radio" onChange={this.onChangeValue} value="overall_score" name="selectedOption" checked={this.state.selectedOption === "overall_score" }/>overall</div>
+                    <div><input type="radio" onChange={this.onChangeValue} value="government_score" name="selectedOption" checked={this.state.selectedOption === "government_score"}/>government</div>
+                    <div><input type="radio" onChange={this.onChangeValue} value="industry_score" name="selectedOption" checked={this.state.selectedOption === "industry_score"}/>industry</div>
+                    <div><input type="radio" onChange={this.onChangeValue} value="scenery_score" name="selectedOption" checked={this.state.selectedOption === "scenery_score"}/>scenery</div>
+                    <div><input type="radio" onChange={this.onChangeValue} value="safeness_score" name="selectedOption" checked={this.state.selectedOption === "safeness_score"}/>safety</div>
+                    <div><input type="radio" onChange={this.onChangeValue} value="social_score" name="selectedOption" checked={this.state.selectedOption === "social_score"}/>social</div>
+                    <div><input type="radio" onChange={this.onChangeValue} value="cost_score" name="selectedOption" checked={this.state.selectedOption === "cost_score"}/>cost</div>
                   </div>
                   <div className='toolbar-text'>overall range: <span style={{color: '#00ff95c5'}}>{this.state.overall[0]} - {this.state.overall[1]}</span></div>
                   <Slider

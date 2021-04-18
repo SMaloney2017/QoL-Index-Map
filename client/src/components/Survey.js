@@ -43,8 +43,8 @@ class Survey extends React.Component {
     handleSubmit = async (event) => {
       event.preventDefault();
       try {
-        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost };
-        const response = await fetch('http://localhost:3000/newdata', {
+        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, lat:this.state.lat.toFixed(5) , lon:this.state.lng.toFixed(5)};
+        const response = await fetch('http://localhost:5000/newdata', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
@@ -88,7 +88,7 @@ class Survey extends React.Component {
                 </div>
               </div>
               <form className='survey-form-items' onSubmit={this.handleSubmit}>
-                <div className='survey-subtext'>(Lat, Lng): {this.state.lat.toFixed(7)}, {this.state.lng.toFixed(7)}</div>
+                <div className='survey-subtext'>(Lat, Lng): {this.state.lat.toFixed(5)}, {this.state.lng.toFixed(5)}</div>
                 <div className="survey-category">
                   <div className='survey-text'>overall: {this.state.overall}</div>
                     <div className='survey-button-holder'>

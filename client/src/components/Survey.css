@@ -27,8 +27,8 @@
   height: 100%;
   position: fixed;
   top: 60px;
-  transition: 750ms;
-  left: -200%;
+  transition: 350ms;
+  left: 100%;
 }
 
 .survey-form.active {

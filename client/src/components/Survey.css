@@ -1,7 +1,6 @@
 
 .survey {
-  display: flex;
-  justify-content: flex-start;
+  display: fixed;
 }
   
 .survey-icon {
@@ -9,7 +8,6 @@
   font-size: 30px; 
   padding-right: 10px;
   padding-left: 3px;
-  background: none;
 }
 
 .survey-icon:hover{
@@ -20,28 +18,22 @@
 
 .survey-close {
   color: #000000;
-  opacity: 0.5;
   font-size: 30px;
-
 }
 
 .survey-form {
-  background-color: #000000a8;
-  border-radius: 33px; /* curves the borders */
-  overflow:hidden;
-  width: 1695px; /* og 500px */
-  height: 765px;
-  display: flex;
+  background-color: #3800d1;
+  width: 100%;
+  height: 100%;
   position: fixed;
-  left: 5px; /*og 400px */
-  top: 65px;
-  opacity: 0;
-  transition: 350ms;
+  top: 60px;
+  transition: 750ms;
+  left: -200%;
 }
 
 .survey-form.active {
-  opacity: 1;
   transition: 350ms;
+  left: 0%;
 }
 
 .survey-category {
@@ -50,35 +42,32 @@
 
 .survey-text {
   color: #ffffff;
-  display: flex;
-  font-size: 50px; /*og 20px */
-  padding-top: 5px;
-  margin-right: auto;
+  font-size: 40px;
 }
 
 .survey-subtext {
-  margin-left: auto;
+  margin-left: 50px;
   color: #ffffff;
-  display: flex;
   font-size: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  white-space: nowrap;
 }
 
 .survey-button-holder {
-  margin-right: 100px; /*og 70px */
+  position: fixed;
+  margin-left: 400px;
 }
 
 .survey-buttons {
   background-color: #00000075;
   border: none;
   color: #ffffff;
-  display: inline-flex;
-  margin-left: 145px; /*og 10px */
-  margin-top: 15px;  /*og 6px */
-  font-size: 35px;  /*og 15px */
-  border-radius: 33px;
+  display: fixed;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 30px;
+  border-radius: 3px;
+  padding: 0px 25px 0px 25px;
 }
 
 .survey-buttons:hover {
@@ -91,9 +80,9 @@
   background-color: #00000075;
   border: none;
   color: #ffffff;
-  font-size: 35px; /*og 15px */
+  font-size: 35px;
+  border-radius: 3px;
   padding: 10px 25px 10px 25px;
-  border-radius: 33px; /*og 3px */
 }
 
 .survey-submit:hover{
@@ -106,6 +95,7 @@
 
 .survey-form-items {
   width: 100%;
-  padding-left: 20px; /*og 30px */
+  padding-left: 20px;
+  white-space: nowrap;
 }
   

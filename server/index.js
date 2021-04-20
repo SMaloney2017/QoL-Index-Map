@@ -6,7 +6,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-//Insert from Survey
 app.post("/newdata", async (request, response) => {
     try {
         const { overall_score, government_score, industry_score, scenery_score, safeness_score, social_score, cost_score, lat, lon} = request.body;
@@ -17,7 +16,6 @@ app.post("/newdata", async (request, response) => {
         console.log(error.message);
     }
 });
-
 
 app.post("/query", async (request, response) => {
     try {

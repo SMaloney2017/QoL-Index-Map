@@ -31,7 +31,7 @@ class Survey extends React.Component {
 
     toggleOff = () => {
       this.setState({active: false})
-      console.log(this.state.active);
+      console.log(this.state.active)
     }
 
     handleChange = (e) => {
@@ -43,7 +43,7 @@ class Survey extends React.Component {
     handleSubmit = async (event) => {
       event.preventDefault();
       try {
-        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, lat:this.state.lat.toFixed(5) , lon:this.state.lng.toFixed(5)};
+        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, lat:this.state.lat.toFixed(2) , lon:this.state.lng.toFixed(2)};
         const response = await fetch('http://localhost:5000/newdata', {
           method: 'POST',
           headers: {
@@ -54,7 +54,7 @@ class Survey extends React.Component {
         });
         console.log(response)
       } catch (error) {
-        console.log(error.message);
+        console.log(error.message)
       }
     }
 
@@ -88,9 +88,9 @@ class Survey extends React.Component {
                 </div>
               </div>
               <form className='survey-form-items' onSubmit={this.handleSubmit}>
-                <div className='survey-subtext'>(Lat, Lng): {this.state.lat.toFixed(5)}, {this.state.lng.toFixed(5)}</div>
+              <div className='survey-subtext'>(Lat, Lng): {this.state.lat.toFixed(2)}, {this.state.lng.toFixed(2)}</div>
                 <div className="survey-category">
-                  <div className='survey-text'>overall: {this.state.overall}</div>
+                    <div className='survey-text'>overall: {this.state.overall}</div>
                     <div className='survey-button-holder'>
                       <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="overall" name="overall" value="0" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="overall" name="overall" value="1" onClick={this.handleChange} />
@@ -100,7 +100,7 @@ class Survey extends React.Component {
                       <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="overall" name="overall" value="5" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="overall" name="overall" value="6" onClick={this.handleChange} />
                     </div>
-                  </div>
+                </div>
                 <br/>
                 <div className="survey-category">
                   <div className='survey-text'>government: {this.state.government}</div>

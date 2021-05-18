@@ -91,7 +91,7 @@ class Survey extends React.Component {
               <div className='survey-subtext'>(Lat, Lng): {this.state.lat.toFixed(2)}, {this.state.lng.toFixed(2)}</div>
                 <div className="survey-category">
                     <div className='survey-text'>overall: {this.state.overall}</div>
-                    <div className='survey-button-holder'>
+                    <div className='survey-button-container'>
                       <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="overall" name="overall" value="0" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="overall" name="overall" value="1" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="overall" name="overall" value="2" onClick={this.handleChange} />
@@ -104,7 +104,7 @@ class Survey extends React.Component {
                 <br/>
                 <div className="survey-category">
                   <div className='survey-text'>government: {this.state.government}</div>
-                  <div className='survey-button-holder'>
+                  <div className='survey-button-container'>
                       <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="government" name="government" value="0" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="government" name="government" value="1" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="government" name="government" value="2" onClick={this.handleChange} />
@@ -117,7 +117,7 @@ class Survey extends React.Component {
                 <br/>
                 <div className="survey-category">
                   <div className='survey-text'>industry: {this.state.industry}</div>
-                  <div className='survey-button-holder'>
+                  <div className='survey-button-container'>
                       <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="industry" name="industry" value="0" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="industry" name="industry" value="1" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="industry" name="industry" value="2" onClick={this.handleChange} />
@@ -130,7 +130,7 @@ class Survey extends React.Component {
                 <br/>
                 <div className="survey-category">
                   <div className='survey-text'>scenery: {this.state.scenery}</div>
-                  <div className='survey-button-holder'>
+                  <div className='survey-button-container'>
                       <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="scenery" name="scenery" value="0" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="scenery" name="scenery" value="1" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="scenery" name="scenery" value="2" onClick={this.handleChange} />
@@ -143,7 +143,7 @@ class Survey extends React.Component {
                 <br/>
                 <div className="survey-category">
                   <div className='survey-text'>safety: {this.state.safety}</div>
-                  <div className='survey-button-holder'>
+                  <div className='survey-button-container'>
                       <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="safety" name="safety" value="0" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="safety" name="safety" value="1" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="safety" name="safety" value="2" onClick={this.handleChange} />
@@ -156,7 +156,7 @@ class Survey extends React.Component {
                 <br/>
                 <div className="survey-category">
                   <div className='survey-text'>social: {this.state.social}</div>
-                  <div className='survey-button-holder'>
+                  <div className='survey-button-container'>
                       <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="social" name="social" value="0" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="social" name="social" value="1" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="social" name="social" value="2" onClick={this.handleChange} />
@@ -169,7 +169,7 @@ class Survey extends React.Component {
                 <br/>
                 <div className="survey-category">
                   <div className='survey-text'>cost of living: {this.state.cost}</div>
-                  <div className='survey-button-holder'>
+                  <div className='survey-button-container'>
                       <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="cost" name="cost" value="0" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="cost" name="cost" value="1" onClick={this.handleChange} />
                       <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="cost" name="cost" value="2" onClick={this.handleChange} />

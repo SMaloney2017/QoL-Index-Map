@@ -11,13 +11,13 @@
 }
 
 .survey-icon:hover{
-  color: #00ff95c5;
+  color: #00ff95;
   transition: 250ms;
   transform: scale(1.2,1.2);
 }
 
 .survey-close {
-  color: #000000;
+  color: #ff2f3a;
   font-size: 30px;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .survey-submit:hover{
-  background-color:#00ff95c5;
+  background-color:#00ff95;
   transition: 500ms;
   transform: scale(1.1,1.1);
   box-shadow: 5px 10px #00000077;

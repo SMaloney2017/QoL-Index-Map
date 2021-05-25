@@ -9,13 +9,13 @@
 }
 
 .toolbar-icon:hover{
-    color: #00ff95c5;
+    color: #00ff95;
     transition: 250ms;
     transform: scale(1.2,1.2);
 }
 
 .toolbar-close {
-    color: #000000;
+    color: #ff2f3a;
     font-size: 20px;
 }
   
@@ -29,17 +29,22 @@
     left: -1000px;
     transition: 850ms;
 }
-  
+
+.toolbar-menu-items {
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
 .toolbar-menu.active {
     left: 0;
     transition: 350ms;
 }
 
 .toolbar-item {
-    background-color: #00000075;
-    border-radius: 7px;
+    background-color: #00000090;
+    border-radius: 5px;
     width: 400px;
-    padding: 15px;
+    padding: 20px;
 }
   
 .toolbar-text {
@@ -47,10 +52,20 @@
     font-size: 20px;
 }
 
+.toolbar-select-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.toolbar-range-container {
+    display: grid;
+    width: inherit;
+    padding-left: 30px;
+}
+
 .toolbar-subtext {
-    color:#00ff95c5;
+    color:#00ff95;
     font-size: 20px;
-    font-weight: bold;
 }
 
 .toolbar-submit {
@@ -59,13 +74,33 @@
     color: #ffffff;
     font-size: 15px;
     padding: 10px 25px 10px 25px;
-    border-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
 }
 
 .toolbar-submit:hover{
-    background-color: #00ff95c5;
+    background-color: #00ff95;
     transition: 500ms;
     transform: scale(1.1,1.1);
     box-shadow: 5px 10px #00000077;
 }
+
+.toolbar-clear {
+    background-color: #ff2f3a75;
+    border: none;
+    color: #000000;
+    font-size: 15px;
+    padding: 10px 7px 10px 7px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.toolbar-clear:hover{
+    background-color: #ff2f3a;
+    transition: 500ms;
+    transform: scale(1.1,1.1);
+    box-shadow: 5px 10px #00000077;
+}
+
+
 

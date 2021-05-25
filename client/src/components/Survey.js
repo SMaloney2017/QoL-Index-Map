@@ -34,7 +34,7 @@ class Survey extends React.Component {
       console.log(this.state.active)
     }
 
-    handleChange = (e) => {
+    setValue = (e) => {
      this.setState({
        [e.target.name]: parseInt(e.target.value)
      })
@@ -89,94 +89,94 @@ class Survey extends React.Component {
               </div>
               <form className='survey-form-items' onSubmit={this.handleSubmit}>
               <div className='survey-subtext'>(Lat, Lng): {this.state.lat.toFixed(2)}, {this.state.lng.toFixed(2)}</div>
-                <div className="survey-category">
+                <div className='survey-category'>
                     <div className='survey-text'>overall: {this.state.overall}</div>
                     <div className='survey-button-container'>
-                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="overall" name="overall" value="0" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="overall" name="overall" value="1" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="overall" name="overall" value="2" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="overall" name="overall" value="3" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="overall" name="overall" value="4" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="overall" name="overall" value="5" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="overall" name="overall" value="6" onClick={this.handleChange} />
+                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="overall" name="overall" value="0" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="overall" name="overall" value="1" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="overall" name="overall" value="2" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="overall" name="overall" value="3" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="overall" name="overall" value="4" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="overall" name="overall" value="5" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="overall" name="overall" value="6" onClick={this.setValue} />
                     </div>
                 </div>
                 <br/>
-                <div className="survey-category">
+                <div className='survey-category'>
                   <div className='survey-text'>government: {this.state.government}</div>
                   <div className='survey-button-container'>
-                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="government" name="government" value="0" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="government" name="government" value="1" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="government" name="government" value="2" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="government" name="government" value="3" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="government" name="government" value="4" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="government" name="government" value="5" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="government" name="government" value="6" onClick={this.handleChange} />
+                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="government" name="government" value="0" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="government" name="government" value="1" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="government" name="government" value="2" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="government" name="government" value="3" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="government" name="government" value="4" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="government" name="government" value="5" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="government" name="government" value="6" onClick={this.setValue} />
                   </div>
                 </div>
                 <br/>
-                <div className="survey-category">
+                <div className='survey-category'>
                   <div className='survey-text'>industry: {this.state.industry}</div>
                   <div className='survey-button-container'>
-                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="industry" name="industry" value="0" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="industry" name="industry" value="1" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="industry" name="industry" value="2" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="industry" name="industry" value="3" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="industry" name="industry" value="4" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="industry" name="industry" value="5" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="industry" name="industry" value="6" onClick={this.handleChange} />
+                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="industry" name="industry" value="0" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="industry" name="industry" value="1" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="industry" name="industry" value="2" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="industry" name="industry" value="3" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="industry" name="industry" value="4" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="industry" name="industry" value="5" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="industry" name="industry" value="6" onClick={this.setValue} />
                   </div>
                 </div>
                 <br/>
-                <div className="survey-category">
+                <div className='survey-category'>
                   <div className='survey-text'>scenery: {this.state.scenery}</div>
                   <div className='survey-button-container'>
-                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="scenery" name="scenery" value="0" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="scenery" name="scenery" value="1" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="scenery" name="scenery" value="2" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="scenery" name="scenery" value="3" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="scenery" name="scenery" value="4" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="scenery" name="scenery" value="5" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="scenery" name="scenery" value="6" onClick={this.handleChange} />
+                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="scenery" name="scenery" value="0" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="scenery" name="scenery" value="1" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="scenery" name="scenery" value="2" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="scenery" name="scenery" value="3" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="scenery" name="scenery" value="4" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="scenery" name="scenery" value="5" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="scenery" name="scenery" value="6" onClick={this.setValue} />
                   </div>
                 </div>
                 <br/>
-                <div className="survey-category">
+                <div className='survey-category'>
                   <div className='survey-text'>safety: {this.state.safety}</div>
                   <div className='survey-button-container'>
-                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="safety" name="safety" value="0" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="safety" name="safety" value="1" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="safety" name="safety" value="2" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="safety" name="safety" value="3" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="safety" name="safety" value="4" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="safety" name="safety" value="5" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="safety" name="safety" value="6" onClick={this.handleChange} />
+                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="safety" name="safety" value="0" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="safety" name="safety" value="1" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="safety" name="safety" value="2" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="safety" name="safety" value="3" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="safety" name="safety" value="4" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="safety" name="safety" value="5" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="safety" name="safety" value="6" onClick={this.setValue} />
                   </div>
                 </div>
                 <br/>
-                <div className="survey-category">
+                <div className='survey-category'>
                   <div className='survey-text'>social: {this.state.social}</div>
                   <div className='survey-button-container'>
-                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="social" name="social" value="0" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="social" name="social" value="1" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="social" name="social" value="2" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="social" name="social" value="3" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="social" name="social" value="4" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="social" name="social" value="5" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="social" name="social" value="6" onClick={this.handleChange} />
+                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="social" name="social" value="0" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="social" name="social" value="1" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="social" name="social" value="2" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="social" name="social" value="3" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="social" name="social" value="4" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="social" name="social" value="5" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="social" name="social" value="6" onClick={this.setValue} />
                   </div>
                 </div>
                 <br/>
-                <div className="survey-category">
+                <div className='survey-category'>
                   <div className='survey-text'>cost of living: {this.state.cost}</div>
                   <div className='survey-button-container'>
-                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="cost" name="cost" value="0" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="cost" name="cost" value="1" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="cost" name="cost" value="2" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="cost" name="cost" value="3" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="cost" name="cost" value="4" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="cost" name="cost" value="5" onClick={this.handleChange} />
-                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="cost" name="cost" value="6" onClick={this.handleChange} />
+                      <input className='survey-buttons' style={{background: '#FF4800E0'}} type="button" id="cost" name="cost" value="0" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF6D00E0'}} type="button" id="cost" name="cost" value="1" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FF9E00E0'}} type="button" id="cost" name="cost" value="2" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#FFFF3FE0'}} type="button" id="cost" name="cost" value="3" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#BFD200E0'}} type="button" id="cost" name="cost" value="4" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#55A630E0'}} type="button" id="cost" name="cost" value="5" onClick={this.setValue} />
+                      <input className='survey-buttons' style={{background: '#007F5FE0'}} type="button" id="cost" name="cost" value="6" onClick={this.setValue} />
                   </div>
                 </div>
                 <br/>

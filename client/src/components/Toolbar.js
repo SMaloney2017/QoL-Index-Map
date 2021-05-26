@@ -99,7 +99,7 @@ class Toolbar extends React.Component {
             </div>
             <form onSubmit={this.handleSubmit} >
               <div className ='toolbar-item'>
-                <div className='toolbar-text'>data visable: <span style={{color: '#FF4800E0'}}>{this.state.selectedOption}</span></div>
+                <div className='toolbar-text'>data visable: <span style={{color: '#ff2929'}}>{this.state.selectedOption}</span></div>
                 <div className='toolbar-select-container'>
                   <div className='toolbar-subtext'>
                     <div><input type='radio' onChange={this.selectData} value='overall_score' name='selectedOption' checked={this.state.selectedOption === 'overall_score' }/>overall</div>

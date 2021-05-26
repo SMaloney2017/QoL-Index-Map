@@ -8,14 +8,14 @@
     background: none;
 }
 
-.toolbar-icon:hover{
+.toolbar-icon:hover {
     color: #00ff95;
     transition: 250ms;
     transform: scale(1.2,1.2);
 }
 
 .toolbar-close {
-    color: #ff2f3a;
+    color: #ff2929;
     font-size: 20px;
 }
   
@@ -69,34 +69,34 @@
 }
 
 .toolbar-submit {
-    background-color: #00000075;
+    background-color: #00ff95;
     border: none;
-    color: #ffffff;
+    color: #000000;
     font-size: 15px;
+    font-weight: bold;
     padding: 10px 25px 10px 25px;
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
 }
 
 .toolbar-submit:hover{
-    background-color: #00ff95;
     transition: 500ms;
     transform: scale(1.1,1.1);
     box-shadow: 5px 10px #00000077;
 }
 
 .toolbar-clear {
-    background-color: #ff2f3a75;
+    background-color: #ff2929;
     border: none;
     color: #000000;
     font-size: 15px;
-    padding: 10px 7px 10px 7px;
+    font-weight: bold;
+    padding: 10px 10px 10px 10px;
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
 }
 
-.toolbar-clear:hover{
-    background-color: #ff2f3a;
+.toolbar-clear:hover {
     transition: 500ms;
     transform: scale(1.1,1.1);
     box-shadow: 5px 10px #00000077;

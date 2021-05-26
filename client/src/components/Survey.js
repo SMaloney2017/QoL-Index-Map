@@ -43,7 +43,7 @@ class Survey extends React.Component {
     handleSubmit = async (event) => {
       event.preventDefault()
       try {
-        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, lat:this.state.lat.toFixed(2) , lon:this.state.lng.toFixed(2)}
+        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, lat:this.state.lat.toFixed(1) , lon:this.state.lng.toFixed(1)}
         const response = await fetch('http://localhost:5000/newdata', {
           method: 'POST',
           headers: {
@@ -82,13 +82,13 @@ class Survey extends React.Component {
                 </div>
                 <div className='survey-subtext'>
                   You can contribute to our database
-                  by letting us know how you currently feel about
-                  these topics in your area!
-                  <br/>
+                  by letting us know how you currently feel about 
+                  these topics in your area!<br/>
+                  Coordinate percision is accurate to 10km, or about the size of a city.<br/>
                 </div>
               </div>
               <form className='survey-form-items' onSubmit={this.handleSubmit}>
-              <div className='survey-subtext'>(Lat, Lng): {this.state.lat.toFixed(2)}, {this.state.lng.toFixed(2)}</div>
+              <div className='survey-subtext'>(Lat, Lng): {this.state.lat.toFixed(1)}, {this.state.lng.toFixed(1)}</div>
                 <div className='survey-category'>
                     <div className='survey-text'>overall: {this.state.overall}</div>
                     <div className='survey-button-container'>

@@ -94,9 +94,11 @@ class Toolbar extends React.Component {
         </div>
         <div className={this.state.active ? 'toolbar-menu active' : 'toolbar-menu'}>
           <div className='toolbar-menu-items'>          
-            <div className='toolbar-close'>
-              <AiOutlineCloseCircle onClick={this.toggleOff}/>
-            </div>
+            <button className='toolbar-close'>
+              <span className='toolbar-close-front'>
+                <AiOutlineCloseCircle onClick={this.toggleOff}/>
+              </span>
+            </button>
             <form onSubmit={this.handleSubmit} >
               <div className ='toolbar-item'>
                 <div className='toolbar-text'>data visable: <span style={{color: '#ff2929'}}>{this.state.selectedOption}</span></div>

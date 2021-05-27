@@ -17,14 +17,33 @@
 }
 
 .survey-close {
-  color: #ff2929;
-  font-size: 30px;
+  border: none;
+  background: #b62929;
+  padding: 0;
   width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.survey-close:hover{
-  transition: 100ms;
-  color: #000000;
+.survey-close-front {
+  border: none;
+  border-radius: 50%;
+  display: block;
+  background: #ff2929;
+  color: #ffff80;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-5px);
+}
+
+.survey-close:hover .survey-close-front {
+  transform: translateY(-2px);
+}
+
+.survey-close:active .survey-close-front {
+  background: #ff3e3e;
 }
 
 .survey-form {
@@ -102,7 +121,7 @@
   transform: translateY(-6px);
 }
 
-.survey-submit:active .survey-submit-front {
+.survey-submit:hover .survey-submit-front {
   transform: translateY(-2px);
 }
 

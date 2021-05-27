@@ -15,25 +15,44 @@
 }
 
 .toolbar-close {
-    color: #ff2929;
-    font-size: 20px;
-    padding-left: 5px;
-    width: 20px;
+    border: none;
+    background: #b62929;
+    margin: 5px;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.toolbar-close:hover{
-    color: #000000;
-    transition: 100ms;
+.toolbar-close-front {
+    border: none;
+    border-radius: 50%;
+    display: block;
+    background: #ff2929;
+    color: #ffff80;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-5px);
 }
-  
+
+.toolbar-close:hover .toolbar-close-front {
+    transform: translateY(-2px);
+}
+
+.toolbar-close:active .toolbar-close-front {
+    background: #ff3e3e;
+}
+
 .toolbar-menu {
     position: fixed;
     background-color: #272727;
     width: 500px;
     height: 100%;
     top: 60px;
-    left: -1000px;
-    transition: 850ms;
+    left: -100%;
+    transition: 350ms;
 }
 
 .toolbar-menu-items {
@@ -79,7 +98,6 @@
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
     cursor: pointer;
-    outline-offset: 4px;
 }
 
 .toolbar-submit-front {
@@ -91,12 +109,16 @@
     font-size: 15px;
     background: #00ff95;
     color: #1b1b1b;
-    transform: translateY(-6px);
+    transform: translateY(-5px);
 }
 
-.toolbar-submit:active .toolbar-submit-front {
+.toolbar-submit:hover .toolbar-submit-front {
     transform: translateY(-2px);
   }
+
+.toolbar-submit:active .toolbar-submit-front {
+    background: #16ff9e;
+}
 
 .toolbar-clear {
     background: #b62929;
@@ -105,7 +127,6 @@
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer;
-    outline-offset: 4px;
 }
 
 .toolbar-clear-front {
@@ -117,9 +138,13 @@
     font-size: 15px;
     background: #ff2929;
     color: #1b1b1b;
-    transform: translateY(-6px)
+    transform: translateY(-5px);
+}
+
+.toolbar-clear:hover .toolbar-clear-front {
+    transform: translateY(-2px);
 }
 
 .toolbar-clear:active .toolbar-clear-front {
-    transform: translateY(-2px);
+    background: #ff3e3e;
 }

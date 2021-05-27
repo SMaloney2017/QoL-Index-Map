@@ -77,9 +77,11 @@ class Survey extends React.Component {
           <div className={this.state.active ? 'survey-form active' : 'survey-form'}>
             <ul className='survey-form-items'>
               <div>
-                <div className='survey-close'>
-                  <AiOutlineCloseCircle onClick={this.toggleOff}/>
-                </div>
+                <button className='survey-close'>
+                  <span className='survey-close-front'>
+                    <AiOutlineCloseCircle onClick={this.toggleOff}/>
+                  </span>
+                </button>
                 <div className='survey-subtext'>
                   You can contribute to our database
                   by letting us know how you currently feel about 

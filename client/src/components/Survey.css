@@ -86,6 +86,7 @@
 .survey-buttons {
   border: none;
   color: #ffffff;
+  text-shadow: 0 1px 0 #000000, 1px 0 0 #000000, 0 -1px 0 #000000, -1px 0 0 #000000;
   display: fixed;
   margin-left: 5px;
   margin-top: 5px;
@@ -114,10 +115,11 @@
   border: none;
   color: #ffffff;
   font-size: 30px;
+  font-weight: bold;
   border-radius: 5px;
   padding: 10px 25px;
   display: block;
-  color: white;
+  color: #1b1b1b;
   transform: translateY(-6px);
 }
 

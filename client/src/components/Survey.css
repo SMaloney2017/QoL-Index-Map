@@ -65,7 +65,6 @@
 }
 
 .survey-buttons {
-  background-color: #00000075;
   border: none;
   color: #ffffff;
   display: fixed;
@@ -79,7 +78,7 @@
 
 .survey-buttons:hover {
   transform: scale(1.1,1.1);
-  box-shadow: 3px 3px #00000075;
+  box-shadow: 5px 5px #00000075;
 }
 
 .survey-submit {
@@ -112,4 +111,3 @@
   padding-left: 20px;
   white-space: nowrap;
 }
-  

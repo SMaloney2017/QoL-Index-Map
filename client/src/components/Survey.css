@@ -120,7 +120,7 @@
   padding: 10px 25px;
   display: block;
   color: #1b1b1b;
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
 .survey-submit:hover .survey-submit-front {

@@ -180,7 +180,11 @@ class Survey extends React.Component {
                   </div>
                 </div>
                 <br/>
-                <input className='survey-submit' type='submit' onClick={this.toggleOff}/>
+                <button className='survey-submit' type='submit' onClick={this.toggleOff}>
+                  <span class="survey-submit-front">
+                    Submit
+                  </span>
+                </button>
               </form>
             </ul>
           </div>

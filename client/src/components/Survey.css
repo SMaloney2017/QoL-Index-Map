@@ -73,29 +73,39 @@
   margin-top: 5px;
   font-size: 30px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 0px 25px 0px 25px;
 }
 
 .survey-buttons:hover {
-  transition: 300ms;
   transform: scale(1.1,1.1);
-  box-shadow: 3px 6px #00000077;
+  box-shadow: 3px 3px #00000075;
 }
 
 .survey-submit {
-  background-color: #00ff95;
+  background-color: #009b5a;
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+
+.survey-submit-front {
+  background: #00ff95;
   border: none;
   color: #ffffff;
   font-size: 30px;
   border-radius: 5px;
-  padding: 10px 25px 10px 25px;
+  padding: 10px 25px;
+  display: block;
+  color: white;
+  transform: translateY(-6px);
 }
 
-.survey-submit:hover {
-  transition: 500ms;
-  transform: scale(1.1,1.1);
-  box-shadow: 5px 10px #00000077;
+.survey-submit:active .survey-submit-front {
+  transform: translateY(-2px);
 }
 
 .survey-form-items {

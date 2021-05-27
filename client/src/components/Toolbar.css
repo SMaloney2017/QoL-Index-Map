@@ -1,11 +1,11 @@
 
 .toolbar-icon {
+    background: none;
     color: #ffffff;
     font-size: 29px;
     padding-left: 5px;
     padding-right: 10px;
     margin-top: 3px;
-    background: none;
 }
 
 .toolbar-icon:hover {
@@ -22,15 +22,15 @@
 }
 
 .toolbar-close:hover{
-    transition: 100ms;
     color: #000000;
+    transition: 100ms;
 }
   
 .toolbar-menu {
+    position: fixed;
     background-color: #272727;
     width: 500px;
     height: 100%;
-    position: fixed;
     top: 60px;
     left: -1000px;
     transition: 850ms;
@@ -46,7 +46,7 @@
 }
 
 .toolbar-item {
-    background-color: #00000049;
+    background-color: #1b1b1b;
     width: 460px;
     padding: 20px;
 }
@@ -73,38 +73,53 @@
 }
 
 .toolbar-submit {
-    background-color: #00ff95;
+    background: #009b5a;
     border: none;
-    color: #000000;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 25px 10px 25px;
+    padding: 0;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
+    cursor: pointer;
+    outline-offset: 4px;
 }
 
-.toolbar-submit:hover{
-    transition: 500ms;
-    transform: scale(1.1,1.1);
-    box-shadow: 5px 10px #00000077;
+.toolbar-submit-front {
+    border: none;
+    display: block;
+    padding: 10px 25px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: 15px;
+    background: #00ff95;
+    color: #1b1b1b;
+    transform: translateY(-6px);
 }
+
+.toolbar-submit:active .toolbar-submit-front {
+    transform: translateY(-2px);
+  }
 
 .toolbar-clear {
-    background-color: #ff2929;
+    background-color: #b62929;
     border: none;
-    color: #000000;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 10px 10px 10px;
+    padding: 0;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
+    cursor: pointer;
+    outline-offset: 4px;
 }
 
-.toolbar-clear:hover {
-    transition: 500ms;
-    transform: scale(1.1,1.1);
-    box-shadow: 5px 10px #00000077;
+.toolbar-clear-front {
+    border: none;
+    display: block;
+    padding: 10px 15px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 15px;
+    background: #ff2929;
+    color: #1b1b1b;
+    transform: translateY(-6px)
 }
 
-
-
+.toolbar-clear:active .toolbar-clear-front {
+    transform: translateY(-2px);
+}

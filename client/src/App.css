@@ -23,15 +23,36 @@ body {
     padding-top: 10px;
     padding-left: 10px;
 }
+
 .header-buttons {
-    padding: 7px;
+    padding: 0;
+    margin-top: 10px;
     border: none;
     margin-right: 5px;
+    cursor: pointer;
 }
 
-.header-buttons:hover{
-    transition: 200ms;
-    transform: scale(1.5,1.5);
+.header-buttons-front {
+    border: none;
+    display: block;
+    padding: 7px;
+    transform: translateY(-5px);
+}
+
+.header-buttons-front-bw {
+    border: none;
+    display: block;
+    padding: 7px;
+    background: linear-gradient(to right, #ffffff 50%, #575757 50%);
+    transform: translateY(-5px);
+}
+
+.header-buttons:hover .header-buttons-front {
+    transform: translateY(-2px);
+}
+
+.header-buttons:hover .header-buttons-front-bw {
+    transform: translateY(-2px);
 }
 
 .button-container {

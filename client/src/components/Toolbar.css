@@ -125,6 +125,7 @@
     background: #b62929;
     border: none;
     padding: 0;
+    margin-left: 1px;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer;

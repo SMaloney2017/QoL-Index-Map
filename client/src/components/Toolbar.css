@@ -1,10 +1,10 @@
 
 .toolbar-icon {
     color: #ffffff;
-    font-size: 27px;
+    font-size: 29px;
     padding-left: 5px;
     padding-right: 10px;
-    padding-top: 5px;
+    margin-top: 3px;
     background: none;
 }
 
@@ -17,22 +17,27 @@
 .toolbar-close {
     color: #ff2929;
     font-size: 20px;
+    padding-left: 5px;
+    width: 20px;
+}
+
+.toolbar-close:hover{
+    transition: 100ms;
+    color: #000000;
 }
   
 .toolbar-menu {
-    background-color: #000000a8;
-    border-top-right-radius: 5px;
+    background-color: #272727;
     width: 500px;
     height: 100%;
     position: fixed;
-    top: 70px;
+    top: 60px;
     left: -1000px;
     transition: 850ms;
 }
 
 .toolbar-menu-items {
-    padding-left: 30px;
-    padding-top: 15px;
+    padding-top: 5px;
 }
 
 .toolbar-menu.active {
@@ -42,8 +47,7 @@
 
 .toolbar-item {
     background-color: #00000049;
-    border-radius: 5px;
-    width: 400px;
+    width: 460px;
     padding: 20px;
 }
   

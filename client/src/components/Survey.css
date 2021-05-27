@@ -19,6 +19,12 @@
 .survey-close {
   color: #ff2929;
   font-size: 30px;
+  width: 30px;
+}
+
+.survey-close:hover{
+  transition: 100ms;
+  color: #000000;
 }
 
 .survey-form {

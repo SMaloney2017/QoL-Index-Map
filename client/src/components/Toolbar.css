@@ -15,7 +15,7 @@
 
 .toolbar-close {
     border: none;
-    background: #b62929;
+    background: #ff292980;
     margin: 5px;
     padding: 0;
     width: 30px;
@@ -38,10 +38,6 @@
 
 .toolbar-close:hover .toolbar-close-front {
     transform: translateY(-2px);
-}
-
-.toolbar-close:active .toolbar-close-front {
-    background: #ff3e3e;
 }
 
 .toolbar-menu {
@@ -116,12 +112,8 @@
     transform: translateY(-2px);
   }
 
-.toolbar-submit:active .toolbar-submit-front {
-    background: #16ff9e;
-}
-
 .toolbar-clear {
-    background: #b62929;
+    background: #ff292980;
     border: none;
     padding: 0;
     margin-left: 1px;
@@ -145,8 +137,4 @@
 
 .toolbar-clear:hover .toolbar-clear-front {
     transform: translateY(-2px);
-}
-
-.toolbar-clear:active .toolbar-clear-front {
-    background: #ff3e3e;
 }

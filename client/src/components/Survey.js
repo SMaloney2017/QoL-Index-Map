@@ -75,22 +75,25 @@ class Survey extends React.Component {
           </div>
   
           <div className={this.state.active ? 'survey-form active' : 'survey-form'}>
-            <ul>
               <div>
                 <button className='survey-close'>
                   <span className='survey-close-front'>
                     <AiOutlineCloseCircle onClick={this.toggleOff}/>
                   </span>
                 </button>
+                <div className='survey-header'>Contribute</div>
+                <hr size="1" width="100%" color="#552fff"/>
+                {/*
                 <div className='survey-subtext'>
                   You can contribute to our database
                   by letting us know how you currently feel about 
                   these topics in your area!<br/>
                   Coordinate percision is accurate to 10km, or about the size of a city.<br/>
                 </div>
+                */}
               </div>
+            <ul>
               <form className='survey-form-items' onSubmit={this.handleSubmit}>
-                <div className='survey-subtext'>(Lat, Lng): {this.state.lat.toFixed(1)}, {this.state.lng.toFixed(1)}</div>
                 <div className='survey-category'>
                   <div className='survey-text'>overall: {this.state.overall}</div>
                   <div className='survey-button-container'>

@@ -100,6 +100,8 @@ class Toolbar extends React.Component {
             </button>
             <form onSubmit={this.handleSubmit} >
               <div className ='toolbar-item'>
+                <div className='toolbar-header'>Query</div>
+                <hr size="1" width="90%" color="#272727"/>
                 <div className='toolbar-text'>data visable: <span style={{color: '#ff2929'}}>{this.state.selectedOption}</span></div>
                 <div className='toolbar-select-container'>
                   <div className='toolbar-subtext'>

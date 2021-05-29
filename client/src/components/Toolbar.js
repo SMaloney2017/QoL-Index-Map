@@ -87,7 +87,6 @@ class Toolbar extends React.Component {
     } = this.state
       
     return (
-      
       <>
         <div className='toolbar-icon'>
           <BsTools onClick={this.toggleView} />

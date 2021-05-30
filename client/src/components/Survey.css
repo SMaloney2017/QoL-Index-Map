@@ -18,12 +18,14 @@
 
 .survey-close {
   border: none;
+  float: left;
   background: #ff292980;
   padding: 0;
   width: 30px;
   height: 30px;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 20px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -100,8 +102,8 @@ a:link, a:visited {
   color: #552fff;
   text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000a1;
   font-weight: bold;
-  font-size: 50px;
-  margin-left: 30px;
+  padding-top: 7px;
+  font-size: 45px;
 }
 
 .survey-subtext {

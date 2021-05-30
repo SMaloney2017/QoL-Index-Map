@@ -92,14 +92,14 @@ class Toolbar extends React.Component {
           <BsTools onClick={this.toggleView} />
         </div>
         <div className={this.state.active ? 'toolbar-menu active' : 'toolbar-menu'}>
-          <div className='toolbar-menu-items'>          
+          <div>          
             <button className='toolbar-close'>
               <span className='toolbar-close-front'>
                 <AiOutlineCloseCircle onClick={this.toggleOff}/>
               </span>
             </button>
             <form onSubmit={this.handleSubmit} >
-              <div className ='toolbar-item'>
+              <div className ='toolbar-query'>
                 <div className='toolbar-header'>Query</div>
                 <hr size="1" width="90%" color="#272727"/>
                 <div className='toolbar-text'>data visable: <span style={{color: '#ff2929'}}>{this.state.selectedOption}</span></div>

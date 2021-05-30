@@ -17,7 +17,8 @@
 .toolbar-close {
     border: none;
     background: #ff292980;
-    margin: 5px;
+    margin-top: 10px;
+    margin-left: 5px;
     padding: 0;
     width: 30px;
     height: 30px;
@@ -51,19 +52,15 @@
     transition: 350ms;
 }
 
-.toolbar-menu-items {
-    padding-top: 5px;
-}
-
 .toolbar-menu.active {
     left: 0;
     transition: 350ms;
 }
 
-.toolbar-item {
+.toolbar-query {
     background-color: #1b1b1b;
     width: 460px;
-    padding: 20px;
+    padding: 5px 20px 20px 20px;
 }
   
 .toolbar-text {

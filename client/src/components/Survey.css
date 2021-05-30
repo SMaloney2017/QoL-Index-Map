@@ -79,7 +79,7 @@ a:link, a:visited {
 
 .image-link {
   position: absolute;
-  bottom: 50px;
+  top: 90%;
   left: 10px;
 }
 

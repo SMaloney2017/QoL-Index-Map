@@ -88,7 +88,7 @@ class Survey extends React.Component {
                   You can contribute to our database
                   by letting us know how you currently feel about 
                   these topics in your area!<br/>
-                  Coordinate percision is accurate to 10km, or about the size of a city.<br/>
+                  Coordinates are percise to 10km, or about the size of a city.<br/>
                 </div>
                 */}
               </div>
@@ -381,6 +381,7 @@ class Survey extends React.Component {
                   </div>
                 </div>
                 <br/>
+                <div className='survey-subtext' style={{color: '#000000'}}>(Lat, Lng): {this.state.lat.toFixed(1)}, {this.state.lng.toFixed(1)} ( Coordinates are percise to 10km, or about the size of a city )</div>
                 <button className='survey-submit' type='submit' onClick={this.toggleOff}>
                   <span class="survey-submit-front">
                     Submit

@@ -8,6 +8,7 @@
   font-size: 35px; 
   padding-right: 10px;
   padding-left: 5px;
+  cursor: pointer;
 }
 
 .survey-icon:hover {
@@ -49,12 +50,11 @@
     to bottom,
     #3800d1,
     #3800d1,
-    #3800d1cb,
-    #3800d186,
-    #3800d13a,
+    #3800d1ec,
+    #3800d100,
     #3800d100
  ), url("images/cityscape.jpg");
-  background-position: center center;
+  background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 100%;
   min-width: 20in;
@@ -68,10 +68,11 @@
 
 a {
   text-decoration: none;
+  font-size: 10px;
 }
 
 a:link, a:visited {
-  color: #111111da;
+  color: #111111;
 }
 
 .image-link {
@@ -121,7 +122,6 @@ a:link, a:visited {
   margin-left: 5px;
   margin-top: 10px;
   border-radius: 3px;
-  cursor: pointer;
 }
 
 .survey-buttons-front {
@@ -135,6 +135,7 @@ a:link, a:visited {
   display: block;
   padding: 0px 25px;
   transform: translateY(-5px);
+  cursor: pointer;
 }
 
 .survey-buttons:hover .survey-buttons-front {
@@ -146,7 +147,6 @@ a:link, a:visited {
   border: none;
   border-radius: 5px;
   padding: 0;
-  cursor: pointer;
 }
 
 .survey-submit-front {
@@ -160,6 +160,7 @@ a:link, a:visited {
   display: block;
   color: #111111;
   transform: translateY(-5px);
+  cursor: pointer;
 }
 
 .survey-submit:hover .survey-submit-front {

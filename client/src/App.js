@@ -14,7 +14,7 @@ class App extends React.Component {
       <>
         <div className='header-bar' >
           <Toolbar /><Survey />
-          <header className = 'header-text'>React Map.</header>
+          <header className = 'header-text'>Quality of Life Map.</header>
           <div className='sub-header'>
             A tool for creating and analyzing a database of user perspectives around the world.
             <br/>Built with React.js, Node.js, PostgreSQL, and Google Maps.

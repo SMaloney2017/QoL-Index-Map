@@ -55,7 +55,7 @@
     #3800d1ec,
     #3800d100,
     #3800d100
- ), url("images/cityscape.jpg");
+ ), url('images/cityscape.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -167,6 +167,49 @@ a:link, a:visited {
 
 .survey-submit:hover .survey-submit-front {
   transform: translateY(-2px);
+}
+
+.survey-help {
+  position: absolute;
+  left: 1200px;
+  top: 20px;
+  width: 600px;
+  height: 600px;
+  background-image: url('images/computer.png');
+  background-size: cover;
+  background-position: center center;
+}
+
+.info-box {
+	margin: 50px;
+  position: absolute;
+  top: 50px;
+  left: 950px;
+	width: 350px;
+	height: auto;
+  border-radius: 5px;
+	background-color: lightyellow;
+  display: inline-block;
+}
+
+.info-box-text {
+  padding: 1em;
+	text-align: left;
+  line-height: 1.5em;
+  white-space: normal;
+  font-family: monospace;
+}
+
+.tri-right.btm-right:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: 0px;
+	bottom: -20px;
+	border: 12px solid;
+	border-color: lightyellow lightyellow transparent transparent;
 }
 
 .survey-form-items {

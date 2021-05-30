@@ -381,15 +381,26 @@ class Survey extends React.Component {
                   </div>
                 </div>
                 <br/>
-                <div className='survey-subtext' style={{color: '#000000'}}>(Lat, Lng): {this.state.lat.toFixed(1)}, {this.state.lng.toFixed(1)} ( Coordinates are percise to 10km, or about the size of a city )</div>
+                <div className='survey-subtext' style={{color: '#000000', fontFamily: 'monospace'}}>(Lat, Lng): {this.state.lat.toFixed(1)}, {this.state.lng.toFixed(1)} ( Coordinates are percise to 10km, or about the size of a city )</div>
                 <button className='survey-submit' type='submit' onClick={this.toggleOff}>
                   <span class="survey-submit-front">
                     Submit
                   </span>
                 </button>
-                <br/>
+                <>
+                  <div className='survey-help'>&nbsp;</div>
+                  <div class='info-box tri-right btm-right'>
+                    <div className='info-box-text'>
+                      <p>
+                        Here you can contribute to our database.
+                        <br/>
+                        Let us know how you feel about these categories in your area!
+                      </p>
+                    </div>
+                  </div>
+                </>
               </form>            
-              <p className='image-link'><a href='http://www.freepik.com' target='_blank' rel='noopener noreferrer'>Background image designed by macrovector / Freepik</a></p>
+              <p className='image-link'><a href='http://www.freepik.com' target='_blank' rel='noopener noreferrer'>Background images designed by macrovector / Freepik</a></p>
             </ul>
           </div>
         </>

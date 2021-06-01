@@ -73,25 +73,24 @@ class Survey extends React.Component {
               <AiOutlineForm onClick={this.toggleView} />
             </div>
           </div>
-  
           <div className={this.state.active ? 'survey-form active' : 'survey-form'}>
-              <div>
-                <button className='survey-close'>
-                  <span className='survey-close-front'>
-                    <AiOutlineCloseCircle onClick={this.toggleOff}/>
-                  </span>
-                </button>
-                <div className='survey-header'>Contribute</div>
-                <hr size="1" width="100%" color="#552fff"/>
-                {/*
-                <div className='survey-subtext'>
-                  You can contribute to our database
-                  by letting us know how you currently feel about 
-                  these topics in your area!<br/>
-                  Coordinates are percise to 10km, or about the size of a city.<br/>
-                </div>
-                */}
+            <div>
+              <button className='survey-close'>
+                <span className='survey-close-front'>
+                  <AiOutlineCloseCircle onClick={this.toggleOff}/>
+                </span>
+              </button>
+              <div className='survey-header'>Contribute</div>
+              <hr size="1" width="100%" color="#552fff"/>
+              {/*
+              <div className='survey-subtext'>
+                You can contribute to our database
+                by letting us know how you currently feel about 
+                these topics in your area!<br/>
+                Coordinates are percise to 10km, or about the size of a city.<br/>
               </div>
+              */}
+            </div>
             <ul>
               <form className='survey-form-items' onSubmit={this.handleSubmit}>
                 <div className='survey-category'>
@@ -391,11 +390,10 @@ class Survey extends React.Component {
                   <div className='survey-help'>&nbsp;</div>
                   <div class='info-box tri-right btm-right'>
                     <div className='info-box-text'>
-                      <p>
+                      <span>
                         Here you can contribute to our database.
-                        <br/>
-                        Let us know how you feel about these categories in your area!
-                      </p>
+                        <br/> Let us know how you feel about these categories in your area!
+                      </span>
                     </div>
                   </div>
                 </>

@@ -43,12 +43,12 @@
 }
 
 .toolbar-menu {
-    position: fixed;
+    position: absolute;
     background-color: #272727;
     width: 500px;
     height: 100%;
     top: 60px;
-    left: -100%;
+    left: -500px;
     transition: 350ms;
 }
 

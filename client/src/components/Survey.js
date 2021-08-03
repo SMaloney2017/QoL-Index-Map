@@ -35,9 +35,10 @@ class Survey extends React.Component {
     }
 
     setValue = (e) => {
-     this.setState({
-       [e.target.name]: parseInt(e.target.value)
-     })
+      e.preventDefault()
+      this.setState({
+        [e.target.name]: parseInt(e.target.value)
+      })
     }
 
     handleSubmit = async (event) => {

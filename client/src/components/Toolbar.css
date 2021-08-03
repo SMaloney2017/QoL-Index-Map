@@ -50,6 +50,7 @@
     top: 60px;
     left: -500px;
     transition: 350ms;
+    z-index: 1;
 }
 
 .toolbar-menu.active {

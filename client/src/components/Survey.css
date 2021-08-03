@@ -66,6 +66,7 @@
   margin-top: 50px;
   left: 100%;
   transition: 350ms;
+  z-index: 2;
 }
 
 .survey-form.active {

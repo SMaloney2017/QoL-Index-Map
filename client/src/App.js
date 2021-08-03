@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Survey from './components/Survey'
 import Toolbar from './components/Toolbar'
+import Display from './components/Display'
 
 class App extends React.Component {
 
@@ -34,6 +35,7 @@ class App extends React.Component {
             </button>
           </div>
         </div>
+        <Display />
       </>
     );
   }

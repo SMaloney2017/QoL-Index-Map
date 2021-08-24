@@ -7,9 +7,9 @@ const containerStyle = {
   height: '93.5vh'
 };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
+const defaultCenter = {
+  lat: 33.7,
+  lng: -84.5
 };
 
 export class Display extends React.Component {
@@ -18,34 +18,37 @@ export class Display extends React.Component {
     super()
 
     this.state = {
-      lat:0,
-      lng:0,
+      center: {
+        lat:0,
+        lng:0
+      }
     }
   }
 
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position.coords.latitude + ' ' + position.coords.longitude)
-      this.setState({lat: position.coords.latitude, lng: position.coords.longitude})
-    })
-  }
-
   render() {
+
     return (
-      <div>
-        <LoadScript
-          googleMapsApiKey="AIzaSyDXTz91zMUSd21UhHcVTrb1GPJbGMI4hko"
-        >
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={5}
+      <>
+        <div className='reticle'/>
+        <div>
+          <LoadScript
+            googleMapsApiKey="AIzaSyDXTz91zMUSd21UhHcVTrb1GPJbGMI4hko"
           >
-            { /* Child components, such as markers, info windows, etc. */ }
-            <></>
-          </GoogleMap>
-        </LoadScript>
-      </div>
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={defaultCenter}
+              zoom={5}
+              onClick={e => {
+                console.log("latitide = ", e.latLng.lat());
+                console.log("longitude = ", e.latLng.lng());
+              }}
+            >
+              { /* Child components, such as markers, info windows, etc. */ }
+              <></>
+            </GoogleMap>
+          </LoadScript>
+        </div>
+      </>
     )
   }
 }

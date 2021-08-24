@@ -205,12 +205,12 @@ class Toolbar extends React.Component {
                 </div>
                 <br/>
                 <button className='toolbar-submit' type='submit' onClick={this.toggleOff}>
-                  <span class="toolbar-submit-front">
+                  <span className="toolbar-submit-front">
                     Submit
                   </span>
                 </button>
                 <button className='toolbar-clear' type='reset' onClick={this.clearData}>
-                  <span class="toolbar-clear-front">
+                  <span className="toolbar-clear-front">
                     Clear
                   </span>
                 </button>

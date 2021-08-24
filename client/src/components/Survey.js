@@ -59,13 +59,6 @@ class Survey extends React.Component {
       }
     }
 
-    componentDidMount() {
-      navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position.coords.latitude + ' ' + position.coords.longitude)
-        this.setState({lat: position.coords.latitude, lng: position.coords.longitude})
-      })
-    }
-
     render() {
       return (
         <>
@@ -381,15 +374,15 @@ class Survey extends React.Component {
                   </div>
                 </div>
                 <br/>
-                <div className='survey-subtext' style={{color: '#000000', fontFamily: 'monospace'}}>(Lat, Lng): {this.state.lat.toFixed(1)}, {this.state.lng.toFixed(1)} ( Coordinates are percise to 10km, or about the size of a city )</div>
+                <div className='survey-subtext' style={{color: '#000000', fontFamily: 'monospace'}}>(Lat, Lng): {this.state.lat.toFixed(1)}, {this.state.lng.toFixed(1)} ( Select coordinates by positioning the map's reticle in the area you'd like to rate! )</div>
                 <button className='survey-submit' type='submit' onClick={this.toggleOff}>
-                  <span class="survey-submit-front">
+                  <span className="survey-submit-front">
                     Submit
                   </span>
                 </button>
                 <>
                   <div className='survey-help'>&nbsp;</div>
-                  <div class='info-box tri-right btm-right'>
+                  <div className='info-box tri-right btm-right'>
                     <div className='info-box-text'>
                       <span>
                         Here you can contribute to our database.
@@ -398,7 +391,7 @@ class Survey extends React.Component {
                     </div>
                   </div>
                 </>
-              </form>            
+              </form>
               <p className='image-link'><a href='http://www.freepik.com' target='_blank' rel='noopener noreferrer'>Background images designed by macrovector / Freepik</a></p>
             </ul>
           </div>

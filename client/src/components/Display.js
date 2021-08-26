@@ -12,21 +12,28 @@ const defaultCenter = {
   lng: -84.5
 };
 
-export class Display extends React.Component {
-  
-  constructor() {
-    super()
+function Display(){
 
-    this.state = {
-      center: {
-        lat:0,
-        lng:0
-      }
+  const state = {
+    center: {
+      lat: 0,
+      lng: 0
     }
-  }
+  };
+    const [mapref, setMapRef] = React.useState(null);
 
-  render() {
+    const handleOnLoad = map => {
+      setMapRef(map);
+    };
 
+    const handleCenterChanged = () => {
+      if (mapref) {
+        const newCenter = mapref.getCenter();
+        state.center.lat = newCenter.lat();
+        state.center.lng = newCenter.lng();
+        console.log(state.center.lat, state.center.lng);
+      }
+    };
     return (
       <>
         <div className='reticle'/>
@@ -38,10 +45,8 @@ export class Display extends React.Component {
               mapContainerStyle={containerStyle}
               center={defaultCenter}
               zoom={5}
-              onClick={e => {
-                console.log("latitide = ", e.latLng.lat());
-                console.log("longitude = ", e.latLng.lng());
-              }}
+              onLoad={handleOnLoad}
+              onDragEnd={handleCenterChanged}
             >
               { /* Child components, such as markers, info windows, etc. */ }
               <></>
@@ -51,6 +56,6 @@ export class Display extends React.Component {
       </>
     )
   }
-}
+
 
 export default Display

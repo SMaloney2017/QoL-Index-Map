@@ -5,21 +5,21 @@ import { AiOutlineCloseCircle } from 'react-icons/ai'
 import Slider from '@material-ui/core/Slider'
 
 class Toolbar extends React.Component {
-  constructor() {
-  super()
+  constructor(props) {
+    super(props)
 
-  this.state = {
-    active: false,
-    lat:0, lng:0,
-    overall: [0, 6],
-    government: [0, 6],
-    industry: [0, 6],
-    scenery: [0, 6],
-    safety: [0, 6],
-    social: [0, 6],
-    cost: [0, 6],
-    selectedOption: 'overall_score'
-    }
+    this.state = {
+      active: false,
+      lat:0, lng:0,
+      overall:[0, 6],
+      government:[0, 6],
+      industry:[0, 6],
+      scenery:[0, 6],
+      safety:[0, 6],
+      social:[0, 6],
+      cost:[0, 6],
+      selectedOption: 'overall_score'
+      }
   
     this.selectData = this.selectData.bind(this)
     this.clearData = this.clearData.bind(this)
@@ -29,34 +29,31 @@ class Toolbar extends React.Component {
 
   toggleView = () => {
     this.setState({active: !this.state.active})
-    console.log(this.state.active)
-  }
-
-  toggleOff = () => {
-    this.setState({active: false})
-    console.log(this.state.active)
+    console.log("Toolbar.js (toggleView) - ", this.state.active)
   }
 
   selectData(e) {
     this.setState({
       selectedOption: String(e.target.value)
     })
-    console.log(e.target.value)
+    console.log("Toolbar.js (selectData) - ", e.target.value)
   }
 
   clearData(e) {
     this.setState(this.default)
     this.setState({active: true})
+    console.log("Toolbar.js (clearData)")
   }
 
   setValue = name => (e, value) => {
     this.setState({
       [name]: value
     });
+    console.log("Toolbar.js (setValue)")
   }
 
-  handleSubmit = async (event) => {
-    event.preventDefault()
+  handleSubmit = async (e) => {
+    e.preventDefault()
     try {
       const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, selectedOption:this.state.selectedOption}
       const response = await fetch('http://localhost:5000/query', {     
@@ -67,7 +64,6 @@ class Toolbar extends React.Component {
         },
       body: JSON.stringify(data)
       })
-
       const receivedData = await response.json()
       console.log(receivedData)
     } catch (error) {
@@ -95,7 +91,7 @@ class Toolbar extends React.Component {
           <div>          
             <button className='toolbar-close'>
               <span className='toolbar-close-front'>
-                <AiOutlineCloseCircle onClick={this.toggleOff}/>
+                <AiOutlineCloseCircle onClick={this.toggleView}/>
               </span>
             </button>
             <form onSubmit={this.handleSubmit} >
@@ -204,7 +200,7 @@ class Toolbar extends React.Component {
                   />
                 </div>
                 <br/>
-                <button className='toolbar-submit' type='submit' onClick={this.toggleOff}>
+                <button className='toolbar-submit' type='submit' onClick={this.toggleView}>
                   <span className="toolbar-submit-front">
                     Submit
                   </span>

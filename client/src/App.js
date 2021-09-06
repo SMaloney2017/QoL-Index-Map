@@ -6,15 +6,33 @@ import Display from './components/Display'
 
 class App extends React.Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      r_COORDS:[0, 0],
+      r_ov:[0, 6],
+      r_gov:[0, 6],
+      r_ind:[0, 6],
+      r_sce:[0, 6],
+      r_saf:[0, 6],
+      r_soc:[0, 6],
+      r_c:[0, 6],
+      s_COORDS:[26.8, -80.4]
+    }
+  }
+
   changeColor(color) {
     document.body.style.backgroundColor = color;
   }
 
   render() {
+    const COORDS = this.state.s_COORDS
+    console.log(COORDS)
     return (
       <>
         <div className='header-bar' >
-          <Toolbar /><Survey />
+          <Toolbar /><Survey dataFromParent = {COORDS}/>
           <header className = 'header-text'>Quality of Life Map.</header>
           <div className='sub-header'>
             A tool for creating and analyzing a database of user perspectives around the world.

@@ -21,8 +21,8 @@ class Toolbar extends React.Component {
       safety:[0, 6],
       social:[0, 6],
       cost:[0, 6],
-      date:["", ""],
-      today: "",
+      startDate: "",
+      endDate: "",
       selectedOption: 'overall_score'
       }
   
@@ -55,13 +55,18 @@ class Toolbar extends React.Component {
     this.setState({ [name]: value }, () => {
       console.log("Toolbar.js (setValue) - ", name, value)
     });
-    
+  }
+
+  setDate = name => (e) => {
+    this.setState({ [name]: e.target.value }, () => {
+      console.log("Toolbar.js (setDate) - ", name, e.target.value)
+    });
   }
 
   sendDataToDb = async (e) => {
     e.preventDefault()
     try {
-      const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, selectedOption:this.state.selectedOption, date:this.state.date}
+      const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, selectedOption:this.state.selectedOption, startDate:this.state.startDate, endDate:this.state.endDate}
       const response = await fetch('http://localhost:5000/query', {     
         method: 'POST',
         headers: {
@@ -96,7 +101,7 @@ class Toolbar extends React.Component {
     var month = String(currentDate.getMonth() + 1).padStart(2, '0');
     var day = String(currentDate.getDate()).padStart(2, '0');
     var presentDate = year + "-" + month + "-" + day
-    this.setState({today:presentDate}, () => {
+    this.setState({endDate:presentDate}, () => {
       console.log("Toolbar.js (componentDidMount) - ", this.state)
     })
   }
@@ -110,8 +115,8 @@ class Toolbar extends React.Component {
       safety,
       social,
       cost,
-      date, 
-      today
+      startDate,
+      endDate
     } = this.state
       
     return (
@@ -235,10 +240,11 @@ class Toolbar extends React.Component {
                 <div className='toolbar-datepicker-container'>
                   <div className='datepicker'>
                     <TextField
-                      id="date"
+                      id="startDate"
                       label="Start Date"
                       type="date"
-                      onChange={this.setValue(date[0])}
+                      value={startDate}
+                      onChange={this.setDate('startDate')}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -246,12 +252,11 @@ class Toolbar extends React.Component {
                   </div>
                   <div className='datepicker'>
                     <TextField
-                      id="date"
+                      id="endDate"
                       label="End Date"
                       type="date"
-                      value={today}
-                      defaultValue={today}
-                      onChange={this.setValue(date[1])}
+                      value={endDate}
+                      onChange={this.setDate('endDate')}
                       InputLabelProps={{
                         shrink: true,
                       }}

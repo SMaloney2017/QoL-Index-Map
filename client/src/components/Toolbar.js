@@ -10,7 +10,7 @@ class Toolbar extends React.Component {
 
     this.state = {
       active: false,
-      lat:0, lng:0,
+      COORDS:[0, 0],
       overall:[0, 6],
       government:[0, 6],
       industry:[0, 6],
@@ -28,15 +28,15 @@ class Toolbar extends React.Component {
   }
 
   toggleView = () => {
-    this.setState({active: !this.state.active})
-    console.log("Toolbar.js (toggleView) - ", this.state.active)
+    this.setState({active: !this.state.active}, () => {
+      console.log("Toolbar.js (toggleView) - ", this.state.active)
+    })
   }
 
   selectData(e) {
-    this.setState({
-      selectedOption: String(e.target.value)
+    this.setState({ selectedOption: String(e.target.value) }, () => {
+      console.log("Toolbar.js (selectData) - ", e.target.value)
     })
-    console.log("Toolbar.js (selectData) - ", e.target.value)
   }
 
   clearData(e) {
@@ -46,13 +46,13 @@ class Toolbar extends React.Component {
   }
 
   setValue = name => (e, value) => {
-    this.setState({
-      [name]: value
+    this.setState({ [name]: value }, () => {
+      console.log("Toolbar.js (setValue) - ", name, value)
     });
-    console.log("Toolbar.js (setValue)")
+    
   }
 
-  handleSubmit = async (e) => {
+  sendDataToDb = async (e) => {
     e.preventDefault()
     try {
       const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, selectedOption:this.state.selectedOption}
@@ -69,6 +69,19 @@ class Toolbar extends React.Component {
     } catch (error) {
       console.log(error.message)
     }
+  }
+
+  sendDataToParent = (e) => {
+    this.props.parentCallback(this.state.overall, this.state.government, this.state.industry, this.state.scenery, this.state.safety, this.state.social, this.state.cost);
+    e.preventDefault();
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    var validation = true;
+    validation &= this.sendDataToParent(e);
+    validation &= this.sendDataToDb(e);
+    return validation
   }
 
   render() {

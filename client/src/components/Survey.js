@@ -8,7 +8,7 @@ class Survey extends React.Component {
 
       this.state = {
         active:false,
-        r_COORDS: [0, 0],
+        COORDS: [0, 0],
         overall:0,
         government:0,
         industry:0,
@@ -18,28 +18,27 @@ class Survey extends React.Component {
         cost:0
       }
       this.sendDataToDb = this.sendDataToDb.bind(this)
-      this.handleSubmit = this.handleSubmit.bind(this)
       this.setValue = this.setValue.bind(this)
       this.toggleView = this.toggleView.bind(this)
     }
 
     toggleView = () => {
-      this.setState({active: !this.state.active})
-      console.log("Survey.js (toggleView) - ", this.state.active)
+      this.setState({active: !this.state.active}, () => {
+        console.log("Survey.js (toggleView) - ", this.state.active)
+      })
     }
 
     setValue = (e) => {
       e.preventDefault()
-      this.setState({
-        [e.target.name]: parseInt(e.target.value)
+      this.setState({ [e.target.name]: parseInt(e.target.value) }, () => {
+        console.log("Survey.js (setValue) - ", e.target.name, e.target.value)
       })
-      console.log("Survey.js (setValue) - ", e.target.name, e.target.value)
     }
     
     sendDataToDb = async (e) => { 
       e.preventDefault(e)
       try {
-        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, lat:this.state.r_COORDS[0].toFixed(1) , lon:this.state.r_COORDS[1].toFixed(1)}
+        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, lat:this.state.COORDS[0].toFixed(1) , lon:this.state.COORDS[1].toFixed(1)}
         const response = await fetch('http://localhost:5000/newdata', {
           method: 'POST',
           headers: {
@@ -54,16 +53,9 @@ class Survey extends React.Component {
       }
     }
 
-    handleSubmit = (e) => {
-      var validation = true;
-      /* validation &= function1(e); */
-      validation &= this.sendDataToDb(e);
-      return validation
-    }
-
     componentDidMount() {
       var COORDS = this.props.dataFromParent
-      this.setState({ r_COORDS:COORDS });
+      this.setState({ COORDS:COORDS });
     }
 
     render() {
@@ -93,7 +85,7 @@ class Survey extends React.Component {
               */}
             </div>
             <ul>
-              <form className='survey-form-items' onSubmit={this.handleSubmit}>
+              <form className='survey-form-items' onSubmit={this.sendDataToDb}>
                 <div className='survey-category'>
                   <div className='survey-text'>overall: {this.state.overall}</div>
                   <div className='survey-button-container'>
@@ -381,7 +373,7 @@ class Survey extends React.Component {
                   </div>
                 </div>
                 <br/>
-                <div className='survey-subtext' style={{color: '#000000', fontFamily: 'monospace'}}>(Lat, Lng): {this.state.r_COORDS[0].toFixed(1)}, {this.state.r_COORDS[1].toFixed(1)} ( Select coordinates by positioning the map's reticle in the area you'd like to rate! )</div>
+                <div className='survey-subtext' style={{color: '#000000', fontFamily: 'monospace'}}>(Lat, Lng): {this.state.COORDS[0].toFixed(1)}, {this.state.COORDS[1].toFixed(1)} ( Select coordinates by positioning the map's reticle in the area you'd like to rate! )</div>
                 <button className='survey-submit' type='submit' onClick={this.toggleView}>
                   <span className="survey-submit-front">
                     Submit

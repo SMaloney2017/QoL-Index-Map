@@ -10,7 +10,6 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      r_COORDS:[0, 0],
       r_ov:[0, 6],
       r_gov:[0, 6],
       r_ind:[0, 6],
@@ -18,21 +17,33 @@ class App extends React.Component {
       r_saf:[0, 6],
       r_soc:[0, 6],
       r_c:[0, 6],
-      s_COORDS:[26.8, -80.4]
+      COORDS:[26.8, -80.4]
     }
+    this.updateCenter = this.updateCenter.bind(this)
   }
 
   changeColor(color) {
     document.body.style.backgroundColor = color;
   }
 
+  handleCallback = (ov, gov, ind, sce, saf, soc, c) => {
+    this.setState({r_ov:ov, r_gov:gov, r_ind:ind, r_sce:sce, r_saf:saf, r_soc:soc, r_c:c}, () => {
+      console.log("App.js (handleCallback) - ", this.state)
+    })
+  }
+
+  updateCenter = (newCenter) => {
+    this.setState({COORDS:newCenter}, () => {
+      console.log("App.js (updateCenter) - ", this.state.COORDS)
+    })
+  }
+
   render() {
-    const COORDS = this.state.s_COORDS
-    console.log(COORDS)
+    const COORDS = this.state.COORDS
     return (
       <>
         <div className='header-bar' >
-          <Toolbar /><Survey dataFromParent = {COORDS}/>
+          <Toolbar parentCallback = {this.handleCallback}/> <Survey dataFromParent = {COORDS}/>
           <header className = 'header-text'>Quality of Life Map.</header>
           <div className='sub-header'>
             A tool for creating and analyzing a database of user perspectives around the world.
@@ -53,7 +64,7 @@ class App extends React.Component {
             </button>
           </div>
         </div>
-        <Display />
+        <Display indexval = {this.state.COORDS.index} updateCenter = {this.updateCenter} />
       </>
     );
   }

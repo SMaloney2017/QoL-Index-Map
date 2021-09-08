@@ -12,12 +12,9 @@ const defaultCenter = {
   lng: -80.64
 };
 
-function Display(){
+function Display(props){
   const state = {
-    center: {
-      lat: 0,
-      lng: 0
-    }
+    center: [0, 0]
   };
 
   const [mapref, setMapRef] = React.useState(null);
@@ -29,9 +26,10 @@ function Display(){
   const handleCenterChanged = () => {
     if (mapref) {
       const newCenter = mapref.getCenter();
-      state.center.lat = newCenter.lat();
-      state.center.lng = newCenter.lng();
-      console.log(state.center.lat, state.center.lng);
+      state.center[0] = newCenter.lat();
+      state.center[1] = newCenter.lng();
+      props.updateCenter(state.center)
+      console.log(state.center);
     }
   };
 

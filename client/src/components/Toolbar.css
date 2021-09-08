@@ -56,6 +56,7 @@
 .toolbar-menu.active {
     left: 0;
     transition: 350ms;
+    overflow-y:auto
 }
 
 .toolbar-query {
@@ -143,4 +144,17 @@
 
 .toolbar-clear:hover .toolbar-clear-front {
     transform: translateY(-2px);
+}
+
+.toolbar-datepicker-container {
+    display: grid;
+    width: auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.datepicker {
+    display: inline-block;
 }

@@ -3,6 +3,9 @@ import './Toolbar.css'
 import { BsTools } from 'react-icons/bs'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import Slider from '@material-ui/core/Slider'
+import TextField from '@material-ui/core/TextField';
+
+
 
 class Toolbar extends React.Component {
   constructor(props) {
@@ -18,6 +21,8 @@ class Toolbar extends React.Component {
       safety:[0, 6],
       social:[0, 6],
       cost:[0, 6],
+      date:["", ""],
+      today: "",
       selectedOption: 'overall_score'
       }
   
@@ -26,6 +31,7 @@ class Toolbar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.default = this.state
   }
+
 
   toggleView = () => {
     this.setState({active: !this.state.active}, () => {
@@ -55,7 +61,7 @@ class Toolbar extends React.Component {
   sendDataToDb = async (e) => {
     e.preventDefault()
     try {
-      const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, selectedOption:this.state.selectedOption}
+      const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, selectedOption:this.state.selectedOption, date:this.state.date}
       const response = await fetch('http://localhost:5000/query', {     
         method: 'POST',
         headers: {
@@ -84,6 +90,17 @@ class Toolbar extends React.Component {
     return validation
   }
 
+  componentDidMount() {
+    var currentDate = new Date();
+    var year = currentDate.getFullYear();
+    var month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    var day = String(currentDate.getDate()).padStart(2, '0');
+    var presentDate = year + "-" + month + "-" + day
+    this.setState({today:presentDate}, () => {
+      console.log("Toolbar.js (componentDidMount) - ", this.state)
+    })
+  }
+
   render() {
     const { 
       overall,
@@ -92,7 +109,9 @@ class Toolbar extends React.Component {
       scenery,
       safety,
       social,
-      cost 
+      cost,
+      date, 
+      today
     } = this.state
       
     return (
@@ -212,6 +231,34 @@ class Toolbar extends React.Component {
                     aria-labelledby='range-slider'
                   />
                 </div>
+                <br/>
+                <div className='toolbar-datepicker-container'>
+                  <div className='datepicker'>
+                    <TextField
+                      id="date"
+                      label="Start Date"
+                      type="date"
+                      onChange={this.setValue(date[0])}
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                    />
+                  </div>
+                  <div className='datepicker'>
+                    <TextField
+                      id="date"
+                      label="End Date"
+                      type="date"
+                      value={today}
+                      defaultValue={today}
+                      onChange={this.setValue(date[1])}
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                    />
+                  </div>
+                </div>
+                <br/>
                 <br/>
                 <button className='toolbar-submit' type='submit' onClick={this.toggleView}>
                   <span className="toolbar-submit-front">

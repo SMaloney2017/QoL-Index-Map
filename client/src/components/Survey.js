@@ -38,7 +38,7 @@ class Survey extends React.Component {
     sendDataToDb = async (e) => { 
       e.preventDefault(e)
       try {
-        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, lat:this.state.COORDS[0].toFixed(1) , lon:this.state.COORDS[1].toFixed(1)}
+        const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, lat:this.state.COORDS[0].toFixed(1), lon:this.state.COORDS[1].toFixed(1)}
         const response = await fetch('http://localhost:5000/newdata', {
           method: 'POST',
           headers: {
@@ -53,9 +53,13 @@ class Survey extends React.Component {
       }
     }
 
-    componentDidMount() {
-      var COORDS = this.props.dataFromParent
-      this.setState({ COORDS:COORDS });
+    componentDidUpdate(prevProps, prevState) {
+      var newCenter = this.props.dataFromParent
+      if(newCenter !== prevState.COORDS) {
+        this.setState({ COORDS:newCenter }, () => {
+          console.log("Survey.js (componentDidUpdate) - ", this.state.COORDS)
+        });
+      }
     }
 
     render() {

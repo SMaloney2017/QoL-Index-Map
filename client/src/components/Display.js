@@ -29,7 +29,6 @@ function Display(props){
       state.center[0] = newCenter.lat();
       state.center[1] = newCenter.lng();
       props.updateCenter(state.center)
-      console.log(state.center);
     }
   };
 

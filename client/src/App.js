@@ -16,10 +16,8 @@ class App extends React.Component {
       r_sce:[0, 6],
       r_saf:[0, 6],
       r_soc:[0, 6],
-      r_c:[0, 6],
-      COORDS:[26.8, -80.4]
+      r_c:[0, 6]
     }
-    this.updateCenter = this.updateCenter.bind(this)
   }
 
   changeColor(color) {
@@ -32,18 +30,11 @@ class App extends React.Component {
     })
   }
 
-  updateCenter = (newCenter) => {
-    this.setState({COORDS:newCenter}, () => {
-      console.log("App.js (updateCenter) - ", this.state.COORDS)
-    })
-  }
-
   render() {
-    const COORDS = this.state.COORDS
     return (
       <>
         <div className='header-bar' >
-          <Toolbar parentCallback = {this.handleCallback}/> <Survey dataFromParent = {COORDS}/>
+          <Toolbar parentCallback = {this.handleCallback}/> <Survey />
           <header className = 'header-text'>Quality of Life Map.</header>
           <div className='sub-header'>
             A tool for creating and analyzing a database of user perspectives around the world.
@@ -64,7 +55,7 @@ class App extends React.Component {
             </button>
           </div>
         </div>
-        <Display indexval = {this.state.COORDS.index} updateCenter = {this.updateCenter} />
+        <Display/>
       </>
     );
   }

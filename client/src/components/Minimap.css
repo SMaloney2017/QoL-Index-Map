@@ -1,0 +1,18 @@
+.minimap-container {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-left: 475px;
+    margin-top: 0px;
+}
+
+.reticle {
+    height: 9px;
+    width: 9px;
+    background-color: #000000bd;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 720px;
+    margin-top: 245px;
+    z-index: 1;
+}

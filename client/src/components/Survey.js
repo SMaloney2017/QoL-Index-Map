@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiOutlineCloseCircle, AiOutlineForm } from 'react-icons/ai'
 import './Survey.css'
+import Minimap from './Minimap'
 class Survey extends React.Component {
 
     constructor(props) {
@@ -8,18 +9,19 @@ class Survey extends React.Component {
 
       this.state = {
         active:false,
-        COORDS: [0, 0],
         overall:0,
         government:0,
         industry:0,
         scenery:0,
         safety:0,
         social:0,
-        cost:0
+        cost:0,
+        COORDS:[26.8, -80.4]
       }
       this.sendDataToDb = this.sendDataToDb.bind(this)
       this.setValue = this.setValue.bind(this)
       this.toggleView = this.toggleView.bind(this)
+      this.updateCenter = this.updateCenter.bind(this)
     }
 
     toggleView = () => {
@@ -53,13 +55,10 @@ class Survey extends React.Component {
       }
     }
 
-    componentDidUpdate(prevProps, prevState) {
-      var newCenter = this.props.dataFromParent
-      if(newCenter !== prevState.COORDS) {
-        this.setState({ COORDS:newCenter }, () => {
-          console.log("Survey.js (componentDidUpdate) - ", this.state.COORDS)
-        });
-      }
+    updateCenter = (newCenter) => {
+      this.setState({COORDS:newCenter}, () => {
+        console.log("Survey.js (updateCenter) - ", this.state.COORDS)
+      })
     }
 
     render() {
@@ -79,16 +78,12 @@ class Survey extends React.Component {
               </button>
               <div className='survey-header'>Contribute</div>
               <hr size="1" width="100%" color="#552fff"/>
-              {/*
-              <div className='survey-subtext'>
-                You can contribute to our database
-                by letting us know how you currently feel about 
-                these topics in your area!<br/>
-                Coordinates are percise to 10km, or about the size of a city.<br/>
-              </div>
-              */}
             </div>
             <ul>
+              <div className='minimap-container'>
+                <div className='reticle'/>
+                <Minimap indexval={this.state.COORDS.index} updateCenter={this.updateCenter} />
+              </div>
               <form className='survey-form-items' onSubmit={this.sendDataToDb}>
                 <div className='survey-category'>
                   <div className='survey-text'>overall: {this.state.overall}</div>
@@ -377,23 +372,12 @@ class Survey extends React.Component {
                   </div>
                 </div>
                 <br/>
-                <div className='survey-subtext' style={{color: '#000000', fontFamily: 'monospace'}}>(Lat, Lng): {this.state.COORDS[0].toFixed(1)}, {this.state.COORDS[1].toFixed(1)} ( Select coordinates by positioning the map's reticle in the area you'd like to rate! )</div>
+                <div className='survey-subtext' style={{color: '#FFFFFF', fontFamily: 'monospace', "font-size":"15px"}}>(Lat, Lng): {this.state.COORDS[0].toFixed(1)}, {this.state.COORDS[1].toFixed(1)} ( Select coordinates by positioning the map's reticle in the area you'd like to rate! )</div>
                 <button className='survey-submit' type='submit' onClick={this.toggleView}>
                   <span className="survey-submit-front">
                     Submit
                   </span>
                 </button>
-                <>
-                  <div className='survey-help'>&nbsp;</div>
-                  <div className='info-box tri-right btm-right'>
-                    <div className='info-box-text'>
-                      <span>
-                        Here you can contribute to our database.
-                        <br/> Let us know how you feel about these categories in your area!
-                      </span>
-                    </div>
-                  </div>
-                </>
               </form>
               <p className='image-link'><a href='http://www.freepik.com' target='_blank' rel='noopener noreferrer'>Background images designed by macrovector / Freepik</a></p>
             </ul>

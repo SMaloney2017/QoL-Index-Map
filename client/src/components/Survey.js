@@ -79,7 +79,7 @@ class Survey extends React.Component {
               <div className='survey-header'>Contribute</div>
               <hr size="1" width="100%" color="#552fff"/>
             </div>
-            <ul>
+            <div className='item-container'>
               <div className='minimap-container'>
                 <div className='reticle'/>
                 <Minimap indexval={this.state.COORDS.index} updateCenter={this.updateCenter} />
@@ -379,8 +379,9 @@ class Survey extends React.Component {
                   </span>
                 </button>
               </form>
-              <p className='image-link'><a href='http://www.freepik.com' target='_blank' rel='noopener noreferrer'>Background images designed by macrovector / Freepik</a></p>
-            </ul>
+              <br/>
+            </div>
+            <p className='image-link'><a href='http://www.freepik.com' target='_blank' rel='noopener noreferrer'>Background images designed by macrovector / Freepik</a></p>
           </div>
         </>
       )

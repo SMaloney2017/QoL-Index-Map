@@ -4,6 +4,8 @@
     height: 500px;
     margin-left: 475px;
     margin-top: 0px;
+    padding-right: 50px;
+    z-index: 2;
 }
 
 .reticle {
@@ -14,5 +16,5 @@
     position: absolute;
     margin-left: 720px;
     margin-top: 245px;
-    z-index: 1;
+    z-index: 3;
 }

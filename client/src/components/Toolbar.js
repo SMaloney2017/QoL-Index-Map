@@ -275,6 +275,8 @@ class Toolbar extends React.Component {
                     Clear
                   </span>
                 </button>
+                <br/>
+                <br/>
               </div>
               <br/>
             </form>

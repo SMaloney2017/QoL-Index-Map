@@ -80,7 +80,7 @@ class Survey extends React.Component {
               <hr size="1" width="100%" color="#552fff"/>
             </div>
             <div className='item-container'>
-              <div className='minimap-container'>
+              <div  className='survey-map'>
                 <div className='reticle'/>
                 <Minimap indexval={this.state.COORDS.index} updateCenter={this.updateCenter} />
               </div>

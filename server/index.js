@@ -20,7 +20,8 @@ app.post("/newdata", async (request, response) => {
 app.post("/query", async (request, response) => {
     try {
         const { overall_score, government_score, industry_score, scenery_score, safeness_score, social_score, cost_score, selectedOption, startDate, endDate} = request.body;
-        const getData = await pool.query("SELECT *, lat, lon FROM datapoint WHERE overall_score >= $1 AND overall_score <= $2 AND government_score >= $3 AND government_score <= $4 AND industry_score >= $5 AND industry_score <= $6 AND scenery_score >= $7 AND scenery_score <= $8 AND safeness_score >= $9 AND safeness_score <= $10 AND social_score >= $11 AND social_score <= $12 AND cost_score >= $13 AND cost_score <= $14 AND ts >= $15 AND ts <= $16", [ overall_score[0], overall_score[1], government_score[0], government_score[1], industry_score[0], industry_score[1], scenery_score[0], scenery_score[1], safeness_score[0], safeness_score[1], social_score[0], social_score[1], cost_score[0], cost_score[1], startDate, endDate]);
+        data = "SELECT " + selectedOption + ", lat, lon "
+        const getData = await pool.query(data + "FROM datapoint WHERE overall_score >= $1 AND overall_score <= $2 AND government_score >= $3 AND government_score <= $4 AND industry_score >= $5 AND industry_score <= $6 AND scenery_score >= $7 AND scenery_score <= $8 AND safeness_score >= $9 AND safeness_score <= $10 AND social_score >= $11 AND social_score <= $12 AND cost_score >= $13 AND cost_score <= $14 AND ts >= $15 AND ts <= $16", [ overall_score[0], overall_score[1], government_score[0], government_score[1], industry_score[0], industry_score[1], scenery_score[0], scenery_score[1], safeness_score[0], safeness_score[1], social_score[0], social_score[1], cost_score[0], cost_score[1], startDate, endDate]);
         response.json(getData.rows);
         console.log(request.body);
     } catch (error) {

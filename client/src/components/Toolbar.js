@@ -23,7 +23,7 @@ class Toolbar extends React.Component {
       cost:[0, 6],
       startDate: "",
       endDate: "",
-      selectedOption: 'overall_score'
+      selectedOption: "overall_score"
       }
   
     this.selectData = this.selectData.bind(this)
@@ -48,6 +48,7 @@ class Toolbar extends React.Component {
   clearData(e) {
     this.setState(this.default)
     this.setState({active: true})
+    this.getDateRange()
     console.log("Toolbar.js (clearData)")
   }
 
@@ -82,28 +83,27 @@ class Toolbar extends React.Component {
     }
   }
 
-  sendDataToParent = (e) => {
-    this.props.parentCallback(this.state.overall, this.state.government, this.state.industry, this.state.scenery, this.state.safety, this.state.social, this.state.cost);
-    e.preventDefault();
-  }
-
   handleSubmit = (e) => {
     e.preventDefault()
     var validation = true;
-    validation &= this.sendDataToParent(e);
     validation &= this.sendDataToDb(e);
     return validation
   }
 
-  componentDidMount() {
+  getDateRange() {
     var currentDate = new Date();
     var year = currentDate.getFullYear();
     var month = String(currentDate.getMonth() + 1).padStart(2, '0');
     var day = String(currentDate.getDate()).padStart(2, '0');
     var presentDate = year + "-" + month + "-" + day
+    this.setState({startDate:"1776-12-25"})
     this.setState({endDate:presentDate}, () => {
       console.log("Toolbar.js (componentDidMount) - ", this.state)
     })
+  }
+
+  componentDidMount() {
+    this.getDateRange()
   }
 
   render() {

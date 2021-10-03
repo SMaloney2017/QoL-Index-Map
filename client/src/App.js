@@ -6,35 +6,15 @@ import Display from './components/Display'
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      r_ov:[0, 6],
-      r_gov:[0, 6],
-      r_ind:[0, 6],
-      r_sce:[0, 6],
-      r_saf:[0, 6],
-      r_soc:[0, 6],
-      r_c:[0, 6]
-    }
-  }
-
   changeColor(color) {
     document.body.style.backgroundColor = color;
-  }
-
-  handleCallback = (ov, gov, ind, sce, saf, soc, c) => {
-    this.setState({r_ov:ov, r_gov:gov, r_ind:ind, r_sce:sce, r_saf:saf, r_soc:soc, r_c:c}, () => {
-      console.log("App.js (handleCallback) - ", this.state)
-    })
   }
 
   render() {
     return (
       <>
         <div className='header-bar' >
-          <Toolbar parentCallback = {this.handleCallback}/> <Survey />
+          <Toolbar /> <Survey />
           <header className = 'header-text'>Quality of Life Map.</header>
           <div className='sub-header'>
             A tool for creating and analyzing a database of user perspectives around the world.

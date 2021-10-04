@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, HeatmapLayer } from '@react-google-maps/api';
 import './Display.css'
 
 const containerStyle = {
@@ -12,10 +12,11 @@ const defaultCenter = {
   lng: -80.64
 };
 
-function Display(){
 
+function Display(props){
   return (
     <>
+      {console.log(props.getData)}
       <div>
         <LoadScript
           googleMapsApiKey="AIzaSyDXTz91zMUSd21UhHcVTrb1GPJbGMI4hko"

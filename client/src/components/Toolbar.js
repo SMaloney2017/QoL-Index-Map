@@ -10,7 +10,6 @@ import TextField from '@material-ui/core/TextField';
 class Toolbar extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {
       active: false,
       COORDS:[0, 0],
@@ -64,7 +63,7 @@ class Toolbar extends React.Component {
     });
   }
 
-  sendDataToDb = async (e) => {
+  getDataFromDb = async (e) => {
     e.preventDefault()
     try {
       const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, selectedOption:this.state.selectedOption, startDate:this.state.startDate, endDate:this.state.endDate}
@@ -78,15 +77,22 @@ class Toolbar extends React.Component {
       })
       const receivedData = await response.json()
       console.log(receivedData)
+      this.sendDataToParent(e, receivedData)
     } catch (error) {
       console.log(error.message)
     }
   }
 
+  sendDataToParent = (e, receivedData) => {
+    this.props.shareData(receivedData);
+    e.preventDefault();
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
     var validation = true;
-    validation &= this.sendDataToDb(e);
+    validation &= this.sendDataToParent(e);
+    validation &= this.getDataFromDb(e);
     return validation
   }
 

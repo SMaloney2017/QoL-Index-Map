@@ -34,7 +34,7 @@ function Display(props){
     <>
       <div>
         <LoadScript
-          googleMapsApiKey="AIzaSyDXTz91zMUSd21UhHcVTrb1GPJbGMI4hko"
+          googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s"
         >
           <GoogleMap
             mapContainerStyle={containerStyle}

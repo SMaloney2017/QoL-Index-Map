@@ -35,7 +35,7 @@ function Minimap(props){
   return (
     <>
       <div className='minimap-container'>
-        <LoadScript googleMapsApiKey="AIzaSyDXTz91zMUSd21UhHcVTrb1GPJbGMI4hko">
+        <LoadScript googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s">
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={defaultCenter}

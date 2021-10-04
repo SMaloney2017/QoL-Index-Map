@@ -1,22 +1,37 @@
 import React from 'react';
-import { GoogleMap, LoadScript, HeatmapLayer } from '@react-google-maps/api';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import './Display.css'
 
-const containerStyle = {
-  width: '100vw',
-  height: '93.5vh'
-};
-
-const defaultCenter = {
-  lat: 28.56,
-  lng: -80.64
-};
+function formatData(queriedData) {
+  const displayData = []
+  const COORDS = []
+  for(var i in queriedData){
+    if (queriedData.hasOwnProperty(i)){
+      var obj = queriedData[i]
+      COORDS[0] = queriedData[i].lat
+      COORDS[1] = queriedData[i].lon
+      var selectedOption = Object.keys(obj)[0];
+      var weight = obj[selectedOption];
+    }
+      displayData[i] = [COORDS, weight]
+    }
+    console.log(displayData)
+    return displayData
+ }
 
 
 function Display(props){
+  const containerStyle = {
+    width: '100vw',
+    height: '93.5vh'
+  };
+  
+  const defaultCenter = {
+    lat: 28.56,
+    lng: -80.64
+  };
   return (
     <>
-      {console.log(props.getData)}
       <div>
         <LoadScript
           googleMapsApiKey="AIzaSyDXTz91zMUSd21UhHcVTrb1GPJbGMI4hko"
@@ -26,9 +41,7 @@ function Display(props){
             center={defaultCenter}
             zoom={5}
           >
-            { /* Child components, such as markers, info windows, etc. */ }
-            <>
-            </>
+            {/* <HeatmapLayer data={formatData(props.getData)} /> */}
           </GoogleMap>
         </LoadScript>
       </div>

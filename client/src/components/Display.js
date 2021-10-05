@@ -59,7 +59,7 @@ function Display(props){
                   draggable: false,
                   editable: false,
                   visible: true,
-                  radius: 30000,
+                  radius: 20000,
                   zIndex: 1
                 }}
               >

@@ -8,13 +8,13 @@ class Survey extends React.Component {
       super(props)
       this.state = {
         active:false,
-        overall:0,
-        government:0,
-        industry:0,
-        scenery:0,
-        safety:0,
-        social:0,
-        cost:0,
+        overall:3,
+        government:3,
+        industry:3,
+        scenery:3,
+        safety:3,
+        social:3,
+        cost:3,
         COORDS:[26.8, -80.4]
       }
       this.sendDataToDb = this.sendDataToDb.bind(this)

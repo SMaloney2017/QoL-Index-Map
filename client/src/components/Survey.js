@@ -87,38 +87,38 @@ class Survey extends React.Component {
                 <div className='survey-category'>
                   <div className='survey-text'>overall: {this.state.overall}</div>
                   <div className='survey-button-container'>
-                    <button className='survey-buttons' style={{background: '#ff292998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff2929'}} name='overall' value='0' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#fe232398'}}>
+                      <button className='survey-buttons-front' style={{background: '#fe2323'}} name='overall' value='0' onClick={this.setValue}>
                         0
                       </button>
                     </button>
-                    <button className='survey-buttons' style={{background: '#ff942998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff9429'}} name='overall' value='1' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff552898'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff5528'}} name='overall' value='1' onClick={this.setValue}>
                         1
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#ffff2998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ffff29'}} name='overall' value='2' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff872c98'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff872c'}} name='overall' value='2' onClick={this.setValue}>
                         2
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#80ff5f98'}}>
-                      <button className='survey-buttons-front' style={{background: '#80ff5f'}} name='overall' value='3' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ffeb3598'}}>
+                      <button className='survey-buttons-front' style={{background: '#ffeb35'}} name='overall' value='3' onClick={this.setValue}>
                         3
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#00ff9598'}}>
-                      <button className='survey-buttons-front' style={{background: '#00ff95'}} name='overall' value='4' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#c7ef3998'}}>
+                      <button className='survey-buttons-front' style={{background: '#c7ef39'}} name='overall' value='4' onClick={this.setValue}>
                         4
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#1cccc898'}}>
-                      <button className='survey-buttons-front' style={{background: '#1cccc8'}} name='overall' value='5' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#72f43f98'}}>
+                      <button className='survey-buttons-front' style={{background: '#72f43f'}} name='overall' value='5' onClick={this.setValue}>
                         5
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#3799fb98'}}>
-                      <button className='survey-buttons-front' style={{background: '#3799fb'}} name='overall' value='6' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#1cf94598'}}>
+                      <button className='survey-buttons-front' style={{background: '#1cf945'}} name='overall' value='6' onClick={this.setValue}>
                         6
                       </button>
                     </button>
@@ -128,38 +128,38 @@ class Survey extends React.Component {
                 <div className='survey-category'>
                   <div className='survey-text'>government: {this.state.government}</div>
                   <div className='survey-button-container'>
-                    <button className='survey-buttons' style={{background: '#ff292998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff2929'}} name='government' value='0' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#fe232398'}}>
+                      <button className='survey-buttons-front' style={{background: '#fe2323'}} name='government' value='0' onClick={this.setValue}>
                         0
                       </button>
                     </button>
-                    <button className='survey-buttons' style={{background: '#ff942998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff9429'}} name='government' value='1' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff552898'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff5528'}} name='government' value='1' onClick={this.setValue}>
                         1
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#ffff2998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ffff29'}} name='government' value='2' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff872c98'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff872c'}} name='government' value='2' onClick={this.setValue}>
                         2
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#80ff5f98'}}>
-                      <button className='survey-buttons-front' style={{background: '#80ff5f'}} name='government' value='3' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ffeb3598'}}>
+                      <button className='survey-buttons-front' style={{background: '#ffeb35'}} name='government' value='3' onClick={this.setValue}>
                         3
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#00ff9598'}}>
-                      <button className='survey-buttons-front' style={{background: '#00ff95'}} name='government' value='4' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#c7ef3998'}}>
+                      <button className='survey-buttons-front' style={{background: '#c7ef39'}} name='government' value='4' onClick={this.setValue}>
                         4
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#1cccc898'}}>
-                      <button className='survey-buttons-front' style={{background: '#1cccc8'}} name='government' value='5' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#72f43f98'}}>
+                      <button className='survey-buttons-front' style={{background: '#72f43f'}} name='government' value='5' onClick={this.setValue}>
                         5
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#3799fb98'}}>
-                      <button className='survey-buttons-front' style={{background: '#3799fb'}} name='government' value='6' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#1cf94598'}}>
+                      <button className='survey-buttons-front' style={{background: '#1cf945'}} name='government' value='6' onClick={this.setValue}>
                         6
                       </button>
                     </button>
@@ -169,38 +169,38 @@ class Survey extends React.Component {
                 <div className='survey-category'>
                   <div className='survey-text'>industry: {this.state.industry}</div>
                   <div className='survey-button-container'>
-                    <button className='survey-buttons' style={{background: '#ff292998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff2929'}} name='industry' value='0' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#fe232398'}}>
+                      <button className='survey-buttons-front' style={{background: '#fe2323'}} name='industry' value='0' onClick={this.setValue}>
                         0
                       </button>
                     </button>
-                    <button className='survey-buttons' style={{background: '#ff942998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff9429'}} name='industry' value='1' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff552898'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff5528'}} name='industry' value='1' onClick={this.setValue}>
                         1
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#ffff2998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ffff29'}} name='industry' value='2' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff872c98'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff872c'}} name='industry' value='2' onClick={this.setValue}>
                         2
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#80ff5f98'}}>
-                      <button className='survey-buttons-front' style={{background: '#80ff5f'}} name='industry' value='3' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ffeb3598'}}>
+                      <button className='survey-buttons-front' style={{background: '#ffeb35'}} name='industry' value='3' onClick={this.setValue}>
                         3
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#00ff9598'}}>
-                      <button className='survey-buttons-front' style={{background: '#00ff95'}} name='industry' value='4' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#c7ef3998'}}>
+                      <button className='survey-buttons-front' style={{background: '#c7ef39'}} name='industry' value='4' onClick={this.setValue}>
                         4
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#1cccc898'}}>
-                      <button className='survey-buttons-front' style={{background: '#1cccc8'}} name='industry' value='5' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#72f43f98'}}>
+                      <button className='survey-buttons-front' style={{background: '#72f43f'}} name='industry' value='5' onClick={this.setValue}>
                         5
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#3799fb98'}}>
-                      <button className='survey-buttons-front' style={{background: '#3799fb'}} name='industry' value='6' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#1cf94598'}}>
+                      <button className='survey-buttons-front' style={{background: '#1cf945'}} name='industry' value='6' onClick={this.setValue}>
                         6
                       </button>
                     </button>
@@ -210,38 +210,38 @@ class Survey extends React.Component {
                 <div className='survey-category'>
                   <div className='survey-text'>scenery: {this.state.scenery}</div>
                   <div className='survey-button-container'>
-                    <button className='survey-buttons' style={{background: '#ff292998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff2929'}} name='scenery' value='0' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#fe232398'}}>
+                      <button className='survey-buttons-front' style={{background: '#fe2323'}} name='scenery' value='0' onClick={this.setValue}>
                         0
                       </button>
                     </button>
-                    <button className='survey-buttons' style={{background: '#ff942998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff9429'}} name='scenery' value='1' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff552898'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff5528'}} name='scenery' value='1' onClick={this.setValue}>
                         1
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#ffff2998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ffff29'}} name='scenery' value='2' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff872c98'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff872c'}} name='scenery' value='2' onClick={this.setValue}>
                         2
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#80ff5f98'}}>
-                      <button className='survey-buttons-front' style={{background: '#80ff5f'}} name='scenery' value='3' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ffeb3598'}}>
+                      <button className='survey-buttons-front' style={{background: '#ffeb35'}} name='scenery' value='3' onClick={this.setValue}>
                         3
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#00ff9598'}}>
-                      <button className='survey-buttons-front' style={{background: '#00ff95'}} name='scenery' value='4' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#c7ef3998'}}>
+                      <button className='survey-buttons-front' style={{background: '#c7ef39'}} name='scenery' value='4' onClick={this.setValue}>
                         4
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#1cccc898'}}>
-                      <button className='survey-buttons-front' style={{background: '#1cccc8'}} name='scenery' value='5' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#72f43f98'}}>
+                      <button className='survey-buttons-front' style={{background: '#72f43f'}} name='scenery' value='5' onClick={this.setValue}>
                         5
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#3799fb98'}}>
-                      <button className='survey-buttons-front' style={{background: '#3799fb'}} name='scenery' value='6' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#1cf94598'}}>
+                      <button className='survey-buttons-front' style={{background: '#1cf945'}} name='scenery' value='6' onClick={this.setValue}>
                         6
                       </button>
                     </button>
@@ -251,38 +251,38 @@ class Survey extends React.Component {
                 <div className='survey-category'>
                   <div className='survey-text'>safety: {this.state.safety}</div>
                   <div className='survey-button-container'>
-                    <button className='survey-buttons' style={{background: '#ff292998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff2929'}} name='safety' value='0' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#fe232398'}}>
+                      <button className='survey-buttons-front' style={{background: '#fe2323'}} name='safety' value='0' onClick={this.setValue}>
                         0
                       </button>
                     </button>
-                    <button className='survey-buttons' style={{background: '#ff942998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff9429'}} name='safety' value='1' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff552898'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff5528'}} name='safety' value='1' onClick={this.setValue}>
                         1
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#ffff2998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ffff29'}} name='safety' value='2' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff872c98'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff872c'}} name='safety' value='2' onClick={this.setValue}>
                         2
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#80ff5f98'}}>
-                      <button className='survey-buttons-front' style={{background: '#80ff5f'}} name='safety' value='3' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ffeb3598'}}>
+                      <button className='survey-buttons-front' style={{background: '#ffeb35'}} name='safety' value='3' onClick={this.setValue}>
                         3
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#00ff9598'}}>
-                      <button className='survey-buttons-front' style={{background: '#00ff95'}} name='safety' value='4' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#c7ef3998'}}>
+                      <button className='survey-buttons-front' style={{background: '#c7ef39'}} name='safety' value='4' onClick={this.setValue}>
                         4
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#1cccc898'}}>
-                      <button className='survey-buttons-front' style={{background: '#1cccc8'}} name='safety' value='5' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#72f43f98'}}>
+                      <button className='survey-buttons-front' style={{background: '#72f43f'}} name='safety' value='5' onClick={this.setValue}>
                         5
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#3799fb98'}}>
-                      <button className='survey-buttons-front' style={{background: '#3799fb'}} name='safety' value='6' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#1cf94598'}}>
+                      <button className='survey-buttons-front' style={{background: '#1cf945'}} name='safety' value='6' onClick={this.setValue}>
                         6
                       </button>
                     </button>
@@ -292,38 +292,38 @@ class Survey extends React.Component {
                 <div className='survey-category'>
                   <div className='survey-text'>social: {this.state.social}</div>
                   <div className='survey-button-container'>
-                    <button className='survey-buttons' style={{background: '#ff292998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff2929'}} name='social' value='0' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#fe232398'}}>
+                      <button className='survey-buttons-front' style={{background: '#fe2323'}} name='social' value='0' onClick={this.setValue}>
                         0
                       </button>
                     </button>
-                    <button className='survey-buttons' style={{background: '#ff942998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff9429'}} name='social' value='1' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff552898'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff5528'}} name='social' value='1' onClick={this.setValue}>
                         1
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#ffff2998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ffff29'}} name='social' value='2' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff872c98'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff872c'}} name='social' value='2' onClick={this.setValue}>
                         2
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#80ff5f98'}}>
-                      <button className='survey-buttons-front' style={{background: '#80ff5f'}} name='social' value='3' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ffeb3598'}}>
+                      <button className='survey-buttons-front' style={{background: '#ffeb35'}} name='social' value='3' onClick={this.setValue}>
                         3
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#00ff9598'}}>
-                      <button className='survey-buttons-front' style={{background: '#00ff95'}} name='social' value='4' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#c7ef3998'}}>
+                      <button className='survey-buttons-front' style={{background: '#c7ef39'}} name='social' value='4' onClick={this.setValue}>
                         4
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#1cccc898'}}>
-                      <button className='survey-buttons-front' style={{background: '#1cccc8'}} name='social' value='5' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#72f43f98'}}>
+                      <button className='survey-buttons-front' style={{background: '#72f43f'}} name='social' value='5' onClick={this.setValue}>
                         5
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#3799fb98'}}>
-                      <button className='survey-buttons-front' style={{background: '#3799fb'}} name='social' value='6' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#1cf94598'}}>
+                      <button className='survey-buttons-front' style={{background: '#1cf945'}} name='social' value='6' onClick={this.setValue}>
                         6
                       </button>
                     </button>
@@ -333,38 +333,38 @@ class Survey extends React.Component {
                 <div className='survey-category'>
                   <div className='survey-text'>cost of living: {this.state.cost}</div>
                   <div className='survey-button-container'>
-                    <button className='survey-buttons' style={{background: '#ff292998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff2929'}} name='cost' value='0' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#fe232398'}}>
+                      <button className='survey-buttons-front' style={{background: '#fe2323'}} name='cost' value='0' onClick={this.setValue}>
                         0
                       </button>
                     </button>
-                    <button className='survey-buttons' style={{background: '#ff942998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ff9429'}} name='cost' value='1' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff552898'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff5528'}} name='cost' value='1' onClick={this.setValue}>
                         1
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#ffff2998'}}>
-                      <button className='survey-buttons-front' style={{background: '#ffff29'}} name='cost' value='2' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ff872c98'}}>
+                      <button className='survey-buttons-front' style={{background: '#ff872c'}} name='cost' value='2' onClick={this.setValue}>
                         2
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#80ff5f98'}}>
-                      <button className='survey-buttons-front' style={{background: '#80ff5f'}} name='cost' value='3' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#ffeb3598'}}>
+                      <button className='survey-buttons-front' style={{background: '#ffeb35'}} name='cost' value='3' onClick={this.setValue}>
                         3
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#00ff9598'}}>
-                      <button className='survey-buttons-front' style={{background: '#00ff95'}} name='cost' value='4' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#c7ef3998'}}>
+                      <button className='survey-buttons-front' style={{background: '#c7ef39'}} name='cost' value='4' onClick={this.setValue}>
                         4
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#1cccc898'}}>
-                      <button className='survey-buttons-front' style={{background: '#1cccc8'}} name='cost' value='5' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#72f43f98'}}>
+                      <button className='survey-buttons-front' style={{background: '#72f43f'}} name='cost' value='5' onClick={this.setValue}>
                         5
                       </button>
                     </button>                      
-                    <button className='survey-buttons' style={{background: '#3799fb98'}}>
-                      <button className='survey-buttons-front' style={{background: '#3799fb'}} name='cost' value='6' onClick={this.setValue}>
+                    <button className='survey-buttons' style={{background: '#1cf94598'}}>
+                      <button className='survey-buttons-front' style={{background: '#1cf945'}} name='cost' value='6' onClick={this.setValue}>
                         6
                       </button>
                     </button>

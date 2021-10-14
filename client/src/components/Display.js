@@ -33,7 +33,7 @@ function Display(props){
     lng: -80.64
   };
 
-  const colors = ["#ff2929", "#ff9429", "#ffff29", "#80ff5f", "#00ff95", "#1cccc8", "#3799fb"]
+  const colors = ["#fe2323", "#ff5528", "#ff872c", "#ffeb35", "#c7ef39", "#72f43f", "#1cf945"]
 
   return (
     <>
@@ -51,10 +51,10 @@ function Display(props){
                 center={COORDS}
                 options={{
                   strokeColor: colors[w],
-                  strokeOpacity: .75,
-                  strokeWeight: 1,
+                  strokeOpacity: 1,
+                  strokeWeight: 2,
                   fillColor: colors[w],
-                  fillOpacity: 0.5,
+                  fillOpacity: 0.7,
                   clickable: false,
                   draggable: false,
                   editable: false,

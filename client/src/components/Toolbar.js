@@ -3,7 +3,7 @@ import './Toolbar.css'
 import { BsTools } from 'react-icons/bs'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import Slider from '@material-ui/core/Slider'
-import TextField from '@material-ui/core/TextField';
+import TextField from '@material-ui/core/TextField'
 
 class Toolbar extends React.Component {
   constructor(props) {
@@ -291,4 +291,4 @@ class Toolbar extends React.Component {
   }
 }
 
-export default Toolbar;
+export default Toolbar

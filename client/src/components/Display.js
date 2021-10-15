@@ -1,6 +1,6 @@
-import React from 'react';
-import { GoogleMap, LoadScript, Circle } from '@react-google-maps/api';
-import './Display.css';
+import React from 'react'
+import { GoogleMap, LoadScript, Circle } from '@react-google-maps/api'
+import './Display.css'
 
 function formatData(queriedData) {
   var displayData = [{}]

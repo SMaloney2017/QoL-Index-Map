@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
 import Survey from './components/Survey'
 import Toolbar from './components/Toolbar'
 import Display from './components/Display'
+import Analysis from './components/Analysis'
 
 function App() {
   const [getData, shareData] = useState([])
@@ -36,6 +37,7 @@ function App() {
         </div>
       </div>
       <Display getData={getData}/>
+      <Analysis/>
     </>
   );
 }

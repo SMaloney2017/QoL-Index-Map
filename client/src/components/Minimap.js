@@ -1,5 +1,5 @@
-import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import React from 'react'
+import { GoogleMap, LoadScript } from '@react-google-maps/api'
 import './Minimap.css'
 
 const containerStyle = {

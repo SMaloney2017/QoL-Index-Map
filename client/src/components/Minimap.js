@@ -13,11 +13,11 @@ const defaultCenter = {
 };
 
 function Minimap(props){
+  const [mapref, setMapRef] = React.useState(null);
+
   const state = {
     center: [0, 0]
   };
-
-  const [mapref, setMapRef] = React.useState(null);
 
   const handleOnLoad = map => {
     setMapRef(map);

@@ -5,8 +5,6 @@ import { AiOutlineCloseCircle } from 'react-icons/ai'
 import Slider from '@material-ui/core/Slider'
 import TextField from '@material-ui/core/TextField';
 
-
-
 class Toolbar extends React.Component {
   constructor(props) {
     super(props)

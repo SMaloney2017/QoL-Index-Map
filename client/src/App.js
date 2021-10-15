@@ -5,13 +5,12 @@ import Toolbar from './components/Toolbar'
 import Display from './components/Display'
 
 function App() {
+  const [getData, shareData] = useState([])
 
   function changeColor(color) {
     document.body.style.backgroundColor = color;
   }
-
-  const [getData, shareData] = useState([])
-
+  
   return (
     <>
       <div className='header-bar' >

@@ -1,5 +1,6 @@
 
 .toolbar-icon {
+    transition: 250ms;
     background: none;
     color: #ffffff;
     font-size: 29px;
@@ -27,6 +28,7 @@
 }
 
 .toolbar-close-front {
+    transition: 500ms;
     border: none;
     border-radius: 50%;
     display: block;
@@ -39,6 +41,7 @@
 }
 
 .toolbar-close:hover .toolbar-close-front {
+    transition: 50ms;
     transform: translateY(-2px);
 }
 
@@ -102,6 +105,7 @@
 }
 
 .toolbar-submit-front {
+    transition: 500ms;
     border: none;
     display: block;
     padding: 10px 25px;
@@ -116,6 +120,7 @@
 }
 
 .toolbar-submit:hover .toolbar-submit-front {
+    transition:  50ms;
     transform: translateY(-2px);
   }
 
@@ -129,6 +134,7 @@
 }
 
 .toolbar-clear-front {
+    transition: 500ms;
     border: none;
     display: block;
     padding: 10px 15px;
@@ -143,6 +149,7 @@
 }
 
 .toolbar-clear:hover .toolbar-clear-front {
+    transition: 50ms;
     transform: translateY(-2px);
 }
 

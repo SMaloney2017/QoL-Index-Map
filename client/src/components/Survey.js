@@ -371,7 +371,7 @@ class Survey extends React.Component {
                 </div>
               </div>
               <br/>
-              <div className='survey-subtext' style={{color: '#ffffff', fontFamily: 'monospace', "font":"15px"}}>(Lat, Lng): {this.state.COORDS[0].toFixed(1)}, {this.state.COORDS[1].toFixed(1)} ( Select coordinates by positioning the map's reticle in the area you'd like to rate! )</div>
+              <div className='survey-subtext' style={{color: '#fffff', fontFamily:'Segoe UI', fontSize:'20px', fontWeight:'lighter'}}>(Lat, Lng): {this.state.COORDS[0].toFixed(1)}, {this.state.COORDS[1].toFixed(1)} ( Select coordinates by positioning the map's reticle in the area you'd like to rate! )</div>
               <button className='survey-submit' type='submit' onClick={this.toggleView}>
                 <span className="survey-submit-front">
                   Submit

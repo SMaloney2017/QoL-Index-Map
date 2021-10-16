@@ -16,7 +16,7 @@
 
 .toolbar-close {
     border: none;
-    background: #ff292980;
+    background: #8b1616;
     margin-top: 10px;
     margin-left: 5px;
     padding: 0;
@@ -72,7 +72,7 @@
 
 .toolbar-header {
     color: #272727;
-    text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000a1;
+    text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
     font-size: 45px;
     font-weight: bold;
 }
@@ -94,7 +94,7 @@
 }
 
 .toolbar-submit {
-    background: #009b5a;
+    background: #00502f;
     border: none;
     padding: 0;
     border-bottom-left-radius: 5px;
@@ -120,7 +120,7 @@
   }
 
 .toolbar-clear {
-    background: #ff292980;
+    background: #8b1616;
     border: none;
     padding: 0;
     margin-left: 1px;

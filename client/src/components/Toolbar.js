@@ -14,7 +14,7 @@ class Toolbar extends React.Component {
       overall:[0, 6],
       government:[0, 6],
       industry:[0, 6],
-      scenery:[0, 6],
+      beauty:[0, 6],
       safety:[0, 6],
       social:[0, 6],
       cost:[0, 6],
@@ -64,7 +64,7 @@ class Toolbar extends React.Component {
   getDataFromDb = async (e) => {
     e.preventDefault()
     try {
-      const data = { overall:this.state.overall, government:this.state.government, industry:this.state.industry, beauty:this.state.scenery, safety:this.state.safety, social:this.state.social, cost:this.state.cost, selectedOption:this.state.selectedOption, startDate:this.state.startDate, endDate:this.state.endDate}
+      const data = { overall:this.state.overall, government:this.state.government, industry:this.state.industry, beauty:this.state.beauty, safety:this.state.safety, social:this.state.social, cost:this.state.cost, selectedOption:this.state.selectedOption, startDate:this.state.startDate, endDate:this.state.endDate}
       const response = await fetch('http://localhost:5000/query', {     
         method: 'POST',
         headers: {
@@ -115,7 +115,7 @@ class Toolbar extends React.Component {
       overall,
       government,
       industry,
-      scenery,
+      beauty,
       safety,
       social,
       cost,
@@ -145,7 +145,7 @@ class Toolbar extends React.Component {
                     <div><input type='radio' onChange={this.selectData} value='overall' name='selectedOption' checked={this.state.selectedOption === 'overall' }/>overall</div>
                     <div><input type='radio' onChange={this.selectData} value='government' name='selectedOption' checked={this.state.selectedOption === 'government'}/>government</div>
                     <div><input type='radio' onChange={this.selectData} value='industry' name='selectedOption' checked={this.state.selectedOption === 'industry'}/>industry</div>
-                    <div><input type='radio' onChange={this.selectData} value='beauty' name='selectedOption' checked={this.state.selectedOption === 'beauty'}/>scenery</div>
+                    <div><input type='radio' onChange={this.selectData} value='beauty' name='selectedOption' checked={this.state.selectedOption === 'beauty'}/>beauty</div>
                   </div>
                   <div className='toolbar-subtext'>
                     <div><input type='radio' onChange={this.selectData} value='safety' name='selectedOption' checked={this.state.selectedOption === 'safety'}/>safety</div>
@@ -191,15 +191,15 @@ class Toolbar extends React.Component {
                     valueLabelDisplay='auto'
                     aria-labelledby='range-slider'
                   />
-                  <div className='toolbar-text'>scenery range: <span style={{color: '#00ff95c5'}}>{this.state.scenery[0]} - {this.state.scenery[1]}</span></div>
+                  <div className='toolbar-text'>beauty range: <span style={{color: '#00ff95c5'}}>{this.state.beauty[0]} - {this.state.beauty[1]}</span></div>
                   <Slider
                     style={{width: '70%'}}
-                    value={scenery}
+                    value={beauty}
                     min={0}
                     max={6}
                     step={1}
                     marks
-                    onChange={this.setValue('scenery')}
+                    onChange={this.setValue('beauty')}
                     valueLabelDisplay='auto'
                     aria-labelledby='range-slider'
                   />

@@ -2,8 +2,8 @@ import React from 'react'
 import './Toolbar.css'
 import { BsTools } from 'react-icons/bs'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
-import Slider from '@material-ui/core/Slider'
-import TextField from '@material-ui/core/TextField'
+import { Slider } from '@mui/material'
+import { TextField }  from '@mui/material'
 
 class Toolbar extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Toolbar extends React.Component {
       cost:[0, 6],
       startDate: "",
       endDate: "",
-      selectedOption: "overall_score"
+      selectedOption: "overall"
       }
   
     this.selectData = this.selectData.bind(this)
@@ -64,7 +64,7 @@ class Toolbar extends React.Component {
   getDataFromDb = async (e) => {
     e.preventDefault()
     try {
-      const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, selectedOption:this.state.selectedOption, startDate:this.state.startDate, endDate:this.state.endDate}
+      const data = { overall:this.state.overall, government:this.state.government, industry:this.state.industry, beauty:this.state.scenery, safety:this.state.safety, social:this.state.social, cost:this.state.cost, selectedOption:this.state.selectedOption, startDate:this.state.startDate, endDate:this.state.endDate}
       const response = await fetch('http://localhost:5000/query', {     
         method: 'POST',
         headers: {
@@ -142,15 +142,15 @@ class Toolbar extends React.Component {
                 <div className='toolbar-text'>data visable: <span style={{color: '#ff2929'}}>{this.state.selectedOption}</span></div>
                 <div className='toolbar-select-container'>
                   <div className='toolbar-subtext'>
-                    <div><input type='radio' onChange={this.selectData} value='overall_score' name='selectedOption' checked={this.state.selectedOption === 'overall_score' }/>overall</div>
-                    <div><input type='radio' onChange={this.selectData} value='government_score' name='selectedOption' checked={this.state.selectedOption === 'government_score'}/>government</div>
-                    <div><input type='radio' onChange={this.selectData} value='industry_score' name='selectedOption' checked={this.state.selectedOption === 'industry_score'}/>industry</div>
-                    <div><input type='radio' onChange={this.selectData} value='scenery_score' name='selectedOption' checked={this.state.selectedOption === 'scenery_score'}/>scenery</div>
+                    <div><input type='radio' onChange={this.selectData} value='overall' name='selectedOption' checked={this.state.selectedOption === 'overall' }/>overall</div>
+                    <div><input type='radio' onChange={this.selectData} value='government' name='selectedOption' checked={this.state.selectedOption === 'government'}/>government</div>
+                    <div><input type='radio' onChange={this.selectData} value='industry' name='selectedOption' checked={this.state.selectedOption === 'industry'}/>industry</div>
+                    <div><input type='radio' onChange={this.selectData} value='beauty' name='selectedOption' checked={this.state.selectedOption === 'beauty'}/>scenery</div>
                   </div>
                   <div className='toolbar-subtext'>
-                    <div><input type='radio' onChange={this.selectData} value='safeness_score' name='selectedOption' checked={this.state.selectedOption === 'safeness_score'}/>safety</div>
-                    <div><input type='radio' onChange={this.selectData} value='social_score' name='selectedOption' checked={this.state.selectedOption === 'social_score'}/>social</div>
-                    <div><input type='radio' onChange={this.selectData} value='cost_score' name='selectedOption' checked={this.state.selectedOption === 'cost_score'}/>cost</div>
+                    <div><input type='radio' onChange={this.selectData} value='safety' name='selectedOption' checked={this.state.selectedOption === 'safety'}/>safety</div>
+                    <div><input type='radio' onChange={this.selectData} value='social' name='selectedOption' checked={this.state.selectedOption === 'social'}/>social</div>
+                    <div><input type='radio' onChange={this.selectData} value='cost' name='selectedOption' checked={this.state.selectedOption === 'cost'}/>cost</div>
                   </div>
                 </div>
                 <br/>

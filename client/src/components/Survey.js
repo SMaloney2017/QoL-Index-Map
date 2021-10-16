@@ -39,7 +39,7 @@ class Survey extends React.Component {
   sendDataToDb = async (e) => { 
     e.preventDefault(e)
     try {
-      const data = { overall_score:this.state.overall, government_score:this.state.government, industry_score:this.state.industry, scenery_score:this.state.scenery, safeness_score:this.state.safety, social_score:this.state.social, cost_score:this.state.cost, lat:this.state.COORDS[0].toFixed(1), lon:this.state.COORDS[1].toFixed(1)}
+      const data = { overall:this.state.overall, government:this.state.government, industry:this.state.industry, beauty:this.state.scenery, safety:this.state.safety, social:this.state.social, cost:this.state.cost, lat:this.state.COORDS[0].toFixed(1), lng:this.state.COORDS[1].toFixed(1)}
       const response = await fetch('http://localhost:5000/newdata', {
         method: 'POST',
         headers: {

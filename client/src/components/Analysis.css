@@ -163,9 +163,15 @@ input {
     border: none;
     outline: none;
 }
+
+.value{
+    position: relative;
+    left: -4px;
+}
+
 ::placeholder {
     color: #fff562;
-  }
+}
 
 .radius-button {
     transition-delay: 100ms;
@@ -212,7 +218,7 @@ input {
 
 .stats-button:hover {
     transition: 250ms;
-    color: #00ff2a;
+    color: #fff562;
 }
 
 .graphs-button {
@@ -224,7 +230,7 @@ input {
 
 .graphs-button:hover {
     transition: 250ms;
-    color: #00ff2a;
+    color: #00ffea;
 }
 
 .reset-button {

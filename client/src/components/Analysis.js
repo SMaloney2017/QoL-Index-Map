@@ -11,7 +11,7 @@ class Analysis extends React.Component {
     this.state = {
       view: true,
       inputView: true,
-      cmdLine: 'Position reticle by dragging map...',
+      cmdLine: '.POSITION RETICLE, ENTER RADIUS',
       value: 0,
       center: {lat: 28.56, lng: -80.64}
     };
@@ -28,19 +28,22 @@ class Analysis extends React.Component {
 
   resetAnalysis = () => {
     this.setState(this.default)
+    document.getElementById('radius').onclick = null;
   }
 
   validateInput = () => {
     if(isNaN(+this.state.value)){
-      this.setState({cmdLine: 'Enrty must be an integer...'})
+      this.setState({cmdLine: '.ENTRY MUST BE INTEGER'})
     }else{
       document.getElementById('radius').className = 'radius-flashing';
+      this.setState({cmdLine: '.CLICK FLASHING ICON TO BEGIN'})
       document.getElementById('radius').onclick = this.startAnalysis;
       this.setState({inputView: false})
     }
   }
   
   startAnalysis = () => {
+    this.setState({cmdLine: '.AREA STATISTICS'})
     document.getElementById('radius').className = 'radius-active';
   }
 
@@ -68,8 +71,9 @@ class Analysis extends React.Component {
               <div className={this.state.view ? 'hidden': 'reset-button'}><BiReset onClick={this.resetAnalysis}/></div>
               <span className={this.state.view ? 'hidden': 'analysis-info'}>
                 <div className='info-text' >
-                  {this.state.center.lat.toFixed(2)},{this.state.center.lng.toFixed(2)}<br/>
-                  <input
+                  {this.state.cmdLine}<br/>
+                  .{'{'}{this.state.center.lat.toFixed(2)},{this.state.center.lng.toFixed(2)}{'}'}<br/>
+                  .<input
                     id='inputValue'
                     type='text'
                     value={this.state.value}
@@ -79,7 +83,7 @@ class Analysis extends React.Component {
                     autoComplete='false'
                     placeholder='%d{km}'
                   />
-                  <span className={this.state.inputView ? 'hidden': null}>{this.state.value}[km]</span>
+                  <span className={this.state.inputView ? 'hidden': 'value'}>{this.state.value}[km]r</span>
                 </div>
               </span>
             </span>

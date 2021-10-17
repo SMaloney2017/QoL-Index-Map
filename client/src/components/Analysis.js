@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AiOutlineCloseCircle, AiOutlineCheckCircle, AiFillCalculator } from 'react-icons/ai'
+import { AiOutlineCloseCircle, AiFillCalculator } from 'react-icons/ai'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { RiFolderChartLine, RiLineChartLine } from 'react-icons/ri'
 import './Analysis.css'

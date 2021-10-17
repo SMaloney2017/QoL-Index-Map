@@ -80,7 +80,6 @@ class Survey extends React.Component {
           </div>
           <div className='item-container'>
             <div  className='survey-map'>
-              <div className='reticle'/>
               <Minimap indexval={this.state.COORDS.index} updateCenter={this.updateCenter} />
             </div>
             <form className='survey-form-items' onSubmit={this.sendDataToDb}>

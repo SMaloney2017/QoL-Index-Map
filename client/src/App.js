@@ -7,7 +7,7 @@ import Analysis from './components/Analysis'
 
 function App() {
   const [getData, shareData] = useState([])
-
+  const [getCenter, shareCenter] = useState({lat: 28.56, lng: -80.64})
   function changeColor(color) {
     document.body.style.backgroundColor = color;
   }
@@ -36,8 +36,8 @@ function App() {
           </button>
         </div>
       </div>
-      <Display getData={getData}/>
-      <Analysis/>
+      <Display getData={getData} getCenter={getCenter} shareCenter={shareCenter}/>
+      <Analysis getCenter={getCenter}/>
     </>
   );
 }

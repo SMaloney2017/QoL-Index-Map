@@ -1,0 +1,7 @@
+.analysis-point {
+    position: relative;
+    margin: 50%;
+    vertical-align: middle;
+    color: #1000bb;
+    z-index: 1;
+}

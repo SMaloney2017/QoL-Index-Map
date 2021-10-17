@@ -8,13 +8,12 @@
     z-index: 1;
 }
 
-.reticle {
+.survey-reticle {
     height: 9px;
     width: 9px;
     background-color: #000000bd;
     border-radius: 50%;
     position: absolute;
-    margin-left: 720px;
-    margin-top: 245px;
+    margin: 50%;
     z-index: 2;
 }

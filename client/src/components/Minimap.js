@@ -43,6 +43,7 @@ function Minimap(props){
             onLoad={handleOnLoad}
             onDragEnd={handleCenterChanged}
           >
+            <div className='survey-reticle'/>
             { /* Child components, such as markers, info windows, etc. */ }
             <></>
           </GoogleMap>

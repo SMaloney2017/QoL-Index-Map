@@ -128,14 +128,14 @@
     transition: 50ms;
     padding-left: 10px;
     margin-top: 40px;
-    margin-left: -140px;
+    margin-left: -180px;
     background-color: #002b3b;
     height: 82%;
     width: 95%;
 }
 
 .info-text {
-    text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
+    white-space: normal;
     color: #fff562;
     font-family: monospace;
     text-shadow: 0 0 3px #fff562;
@@ -143,9 +143,29 @@
     font-size: 17px;
 }
 
-.info-hidden {
-    display: none;
+input {
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+  }
+
+.input {
+    width: 100px;
+    white-space:pre-wrap;
+    font-family: monospace;
+    font-size: 17px;
+    letter-spacing: .15em;
+    color: #fff562;
+    text-shadow: 0 0 3px #fff562;
+    font-family: monospace;
+    background: #005f8127;
+    border: none;
+    outline: none;
 }
+::placeholder {
+    color: #fff562;
+  }
 
 .radius-button {
     transition-delay: 100ms;
@@ -155,15 +175,33 @@
     color: #1000bb;
 }
 
+.radius-flashing {
+    transition-delay: 100ms;
+    margin-top: 5px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #1000bb;
+    animation: blinker 1s linear infinite;
+}
+
+.radius-active {
+    transition-delay: 100ms;
+    margin-top: 5px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #00ff2a;
+}
+
+@keyframes blinker {
+    50% {
+        color: #00ff2a;
+    }
+}
+
 .radius-button:hover {
     transition: 250ms;
     color: #00ff2a;
 }
-
-.radius-hidden {
-    visibility: hidden;
-}
-
 
 .stats-button {
     transition-delay: 100ms;
@@ -175,14 +213,6 @@
 .stats-button:hover {
     transition: 250ms;
     color: #00ff2a;
-}
-
-.stats-hidden {
-    visibility: hidden;
-}
-
-.stats-hidden {
-    visibility: hidden;
 }
 
 .graphs-button {
@@ -197,6 +227,19 @@
     color: #00ff2a;
 }
 
-.graphs-hidden {
+.reset-button {
+    transition-delay: 100ms;
+    font-size: 40px;
+    cursor: pointer;
+    color: #1000bb;
+}
+
+.reset-button:hover {
+    transition: 250ms;
+    color: #ff2929;
+}
+
+.hidden {
+    width: 0px;
     visibility: hidden;
 }

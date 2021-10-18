@@ -2,9 +2,9 @@
 	right: 10px;
 	position: absolute;
 	top: 120px;
-}
-
-.analysis-icon {
+  }
+  
+  .analysis-icon {
 	background: #3d3900;
 	border: none;
 	margin-top: 7px;
@@ -14,9 +14,9 @@
 	height: 30px;
 	border-radius: 3px;
 	cursor: pointer;
-}
-
-.analysis-icon-active {
+  }
+  
+  .analysis-icon-active {
 	background: #8b1616;
 	border: none;
 	margin-top: 7px;
@@ -26,9 +26,9 @@
 	height: 30px;
 	border-radius: 3px;
 	cursor: pointer;
-}
-
-.analysis-icon-front {
+  }
+  
+  .analysis-icon-front {
 	transition: 250ms;
 	border: none;
 	border-radius: 3px;
@@ -39,9 +39,9 @@
 	width: 100%;
 	height: 100%;
 	transform: translateY(-2px);
-}
-
-.analysis-icon-front-active {
+  }
+  
+  .analysis-icon-front-active {
 	transition: 250ms;
 	border: none;
 	border-radius: 3px;
@@ -52,22 +52,18 @@
 	width: 100%;
 	height: 100%;
 	transform: translateY(-3px);
-}
-
-.analysis-icon-active:hover .analysis-icon-front-active {
+  }
+  
+  .analysis-icon-active:hover .analysis-icon-front-active {
 	transition: 250ms;
 	transform: translateY(-1px);
-}
-
-.icon-open {
+  }
+  
+  .icon-open {
 	margin-top: -37px;
-}
-
-.hidden {
-	visibility: hidden;
-}
-
-.analysis-button {
+  }
+  
+  .analysis-button {
 	transition: 250ms;
 	border: none;
 	background: #1000bb;
@@ -78,9 +74,9 @@
 	height: 40px;
 	border-radius: 3px;
 	cursor: pointer;
-}
-
-.analysis-button-front {
+  }
+  
+  .analysis-button-front {
 	transition: 250ms;
 	border: none;
 	display: flex;
@@ -90,23 +86,23 @@
 	width: 100%;
 	height: 100%;
 	transform: translateY(-4px);
-}
-
-.analysis-button:hover .analysis-button-front {
+  }
+  
+  .analysis-button:hover .analysis-button-front {
 	transition: 250ms;
 	transform: translateY(-2px);
-}
-
-.analysis-screen {
+  }
+  
+  .analysis-view {
 	transition: 250ms;
 	border: none;
 	background: #1000bb;
-	width: 450px;
-	height: 250px;
+	width: 500px;
+	height: 300px;
 	border-radius: 3px;
-}
-
-.analysis-screen-front {
+  }
+  
+  .analysis-view-front {
 	transition: 250ms;
 	border: none;
 	display: flex;
@@ -117,9 +113,9 @@
 	width: 100%;
 	height: 100%;
 	transform: translateY(-5px);
-}
-
-.analysis-info {
+  }
+  
+  .analysis-info {
 	border-radius: 3px;
 	overflow-y: scroll;
 	transition: 50ms;
@@ -127,117 +123,118 @@
 	margin-top: 40px;
 	margin-left: -180px;
 	background-color: #002b3b;
-	height: 82%;
+	height: 85%;
 	width: 95%;
-}
-
-.info-text {
+  }
+  
+  .info-text {
 	white-space: normal;
 	color: #fff562;
 	font-family: monospace;
 	text-shadow: 0 0 3px #fff562;
-	letter-spacing: .15em;
+	letter-spacing: 0.15em;
 	font-size: 17px;
-}
-
-input {
+  }
+  
+  input {
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;
 	border-bottom-style: none;
-}
-
-.input {
+  }
+  
+  .input {
 	width: 100px;
 	white-space: pre-wrap;
 	font-family: monospace;
 	font-size: 17px;
-	letter-spacing: .15em;
+	letter-spacing: 0.15em;
 	color: #fff562;
 	text-shadow: 0 0 3px #fff562;
 	font-family: monospace;
 	background: #005f8117;
 	border: none;
 	outline: none;
-}
-
-::placeholder {
+  }
+  
+  ::placeholder {
 	color: #fff562;
-}
-
-.radius-button {
+  }
+  
+  .radius-button {
 	transition-delay: 100ms;
 	margin-top: 5px;
 	font-size: 30px;
 	cursor: pointer;
 	color: #1000bb;
-}
-
-.radius-flashing {
+  }
+  
+  .radius-flashing {
 	transition-delay: 100ms;
 	margin-top: 5px;
 	font-size: 30px;
 	cursor: pointer;
 	color: #1000bb;
 	animation: blinker 1s linear infinite;
-}
-
-.radius-active {
+  }
+  
+  .radius-active {
 	transition-delay: 100ms;
 	margin-top: 5px;
 	font-size: 30px;
 	cursor: pointer;
 	color: #00ff2a;
-}
-
-@keyframes blinker {
+  }
+  
+  @keyframes blinker {
 	50% {
-		color: #00ff2a;
+	  color: #00ff2a;
 	}
-}
-
-.radius-button:hover {
+  }
+  
+  .radius-button:hover {
 	transition: 250ms;
 	color: #00ff2a;
-}
-
-.stats-button {
+  }
+  
+  .stats-button {
 	transition-delay: 100ms;
 	font-size: 40px;
 	cursor: pointer;
 	color: #1000bb;
-}
-
-.stats-button:hover {
+  }
+  
+  .stats-button:hover {
 	transition: 250ms;
 	color: #fff562;
-}
-
-.graphs-button {
+  }
+  
+  .graphs-button {
 	transition-delay: 100ms;
 	font-size: 40px;
 	cursor: pointer;
 	color: #1000bb;
-}
-
-.graphs-button:hover {
+  }
+  
+  .graphs-button:hover {
 	transition: 250ms;
 	color: #00ffea;
-}
-
-.reset-button {
+  }
+  
+  .reset-button {
 	transition-delay: 100ms;
 	font-size: 40px;
 	cursor: pointer;
 	color: #1000bb;
-}
-
-.reset-button:hover {
+  }
+  
+  .reset-button:hover {
 	transition: 250ms;
 	color: #ff2929;
-}
-
-.hidden {
+  }
+  
+  .hidden {
 	width: 0px;
 	visibility: hidden;
-}
+  }
+  

@@ -1,23 +1,32 @@
+import React, { useState } from "react";
+import { GoogleMap, LoadScript, Circle } from "@react-google-maps/api";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import "./Display.css";
 
-import React, { useState } from 'react';
-import { GoogleMap, LoadScript, Circle } from '@react-google-maps/api';
-import { FaMapMarkerAlt } from 'react-icons/fa'
-import './Display.css';
-
-function Display(props){
+function Display(props) {
   const [mapref, setMapRef] = useState(null);
-  const colors = ["#fe2323", "#ff5528", "#ff872c", "#ffeb35", "#c7ef39", "#72f43f", "#1cf945"]
-  var ID = 0
+  const colors = [
+    "#fe2323",
+    "#ff5528",
+    "#ff872c",
+    "#ffeb35",
+    "#c7ef39",
+    "#72f43f",
+    "#1cf945",
+  ];
+  var ID = 0;
+
   const containerStyle = {
-    width: '100vw',
-    height: '93.5vh'
+    width: "100vw",
+    height: "93.5vh",
   };
+
   var center = {
     lat: 28.56,
-    lng: -80.64
+    lng: -80.64,
   };
 
-  const handleOnLoad = map => {
+  const handleOnLoad = (map) => {
     setMapRef(map);
   };
 
@@ -26,42 +35,47 @@ function Display(props){
       const newCenter = mapref.getCenter();
       center.lat = newCenter.lat();
       center.lng = newCenter.lng();
-      console.log(center)
-      props.shareCenter(center)
+      console.log(center);
+      props.shareCenter(center);
     }
   };
 
   const formatData = (queriedData) => {
-    var displayData = [{}]
-    for(var i in queriedData){
-      if (queriedData.hasOwnProperty(i)){
-        var gData = new window.google.maps.LatLng(parseFloat(queriedData[i].lat), parseFloat(queriedData[i].lng))
-        var obj = queriedData[i]
+    var displayData = [{}];
+    for (var i in queriedData) {
+      if (queriedData.hasOwnProperty(i)) {
+        var gData = new window.google.maps.LatLng(
+          parseFloat(queriedData[i].lat),
+          parseFloat(queriedData[i].lng)
+        );
+        var obj = queriedData[i];
         var selectedOption = Object.keys(obj)[0];
         var weight = obj[selectedOption];
       }
-        displayData[i] = {COORDS:gData, w: weight}
-      }
-      return displayData
-  }
-  const displayData = formatData(props.getData)
+      displayData[i] = { COORDS: gData, w: weight };
+    }
+    return displayData;
+  };
+
+  var displayData = formatData(props.getData);
+  var newCenter = props.getCenter;
+  var newRange = props.getRange;
+
   return (
     <>
       <div>
-        <LoadScript
-          googleMapsApiKey='AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s'
-        >
+        <LoadScript googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s">
           <GoogleMap
-            id='display'
+            id="display"
             mapContainerStyle={containerStyle}
-            center={props.getCenter}
+            center={newCenter}
             zoom={5}
             onLoad={handleOnLoad}
             onDragEnd={handleCenterChanged}
           >
-            {displayData.map(({COORDS, w }) => (
+            {displayData.map(({ COORDS, w }) => (
               <Circle
-              key={ID++}
+                key={ID++}
                 center={COORDS}
                 options={{
                   strokeColor: colors[w],
@@ -74,16 +88,32 @@ function Display(props){
                   editable: false,
                   visible: true,
                   radius: 20000,
-                  zIndex: 1
+                  zIndex: 1,
                 }}
-              >
-              </Circle>
+              />
             ))}
-            <div className='ret'><FaMapMarkerAlt/></div>
+            <Circle
+              center={newCenter}
+              options={{
+                strokeColor: "#3f00ff",
+                strokeOpacity: 0,
+                fillColor: "#3f00ff",
+                fillOpacity: 0.5,
+                clickable: false,
+                draggable: false,
+                editable: false,
+                visible: true,
+                radius: newRange,
+                zIndex: 1,
+              }}
+            />
+            <div className="ret">
+              <FaMapMarkerAlt />
+            </div>
           </GoogleMap>
         </LoadScript>
       </div>
     </>
-  )
+  );
 }
-export default Display
+export default Display;

@@ -6,12 +6,13 @@
     margin-top: 0px;
     padding-right: 50px;
     z-index: 1;
-}
-
-.survey-ret {
+  }
+  
+  .survey-ret {
     position: relative;
     text-align: center;
     top: calc(50%);
     color: #1000bb;
     z-index: 2;
-}
+  }
+  

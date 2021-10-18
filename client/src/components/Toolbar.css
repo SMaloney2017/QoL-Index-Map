@@ -7,14 +7,14 @@
 	padding-right: 10px;
 	margin-top: 3px;
 	cursor: pointer;
-}
-
-.toolbar-icon:hover {
+  }
+  
+  .toolbar-icon:hover {
 	color: #00ff95;
 	transition: 250ms;
-}
-
-.toolbar-close {
+  }
+  
+  .toolbar-close {
 	border: none;
 	background: #8b1616;
 	margin-top: 10px;
@@ -24,9 +24,9 @@
 	height: 30px;
 	border-radius: 50%;
 	cursor: pointer;
-}
-
-.toolbar-close-front {
+  }
+  
+  .toolbar-close-front {
 	transition: 500ms;
 	border: none;
 	border-radius: 50%;
@@ -37,14 +37,14 @@
 	width: 30px;
 	height: 30px;
 	transform: translateY(-5px);
-}
-
-.toolbar-close:hover .toolbar-close-front {
+  }
+  
+  .toolbar-close:hover .toolbar-close-front {
 	transition: 50ms;
 	transform: translateY(-2px);
-}
-
-.toolbar-menu {
+  }
+  
+  .toolbar-menu {
 	position: absolute;
 	background-color: #272727;
 	width: 500px;
@@ -53,57 +53,57 @@
 	left: -500px;
 	transition: 350ms;
 	z-index: 2;
-}
-
-.toolbar-menu.active {
+  }
+  
+  .toolbar-menu.active {
 	left: 0;
 	transition: 350ms;
 	overflow-y: auto;
-}
-
-.toolbar-query {
+  }
+  
+  .toolbar-query {
 	background-color: #1b1b1b;
 	width: 460px;
 	padding: 5px 20px 20px 20px;
-}
-
-.toolbar-text {
+  }
+  
+  .toolbar-text {
 	color: #ffffff;
 	font-size: 20px;
-}
-
-.toolbar-header {
+  }
+  
+  .toolbar-header {
 	color: #272727;
 	text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
 	font-size: 45px;
 	font-weight: bold;
-}
-
-.toolbar-select-container {
+  }
+  
+  .toolbar-select-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-}
-
-.toolbar-range-container {
+  }
+  
+  .toolbar-range-container {
 	display: grid;
 	width: inherit;
 	padding-left: 30px;
-}
-
-.toolbar-subtext {
+  }
+  
+  .toolbar-subtext {
 	color: #00ff95;
 	font-size: 20px;
-}
-
-.toolbar-submit {
+  }
+  
+  .toolbar-submit {
 	background: #00502f;
 	border: none;
 	padding: 0;
 	border-bottom-left-radius: 5px;
 	border-top-left-radius: 5px;
-}
-
-.toolbar-submit-front {
+  }
+  
+  .toolbar-submit-front {
 	transition: 500ms;
 	border: none;
 	display: block;
@@ -116,23 +116,23 @@
 	color: #111111;
 	transform: translateY(-5px);
 	cursor: pointer;
-}
-
-.toolbar-submit:hover .toolbar-submit-front {
+  }
+  
+  .toolbar-submit:hover .toolbar-submit-front {
 	transition: 50ms;
 	transform: translateY(-2px);
-}
-
-.toolbar-clear {
+  }
+  
+  .toolbar-clear {
 	background: #8b1616;
 	border: none;
 	padding: 0;
 	margin-left: 1px;
 	border-bottom-right-radius: 5px;
 	border-top-right-radius: 5px;
-}
-
-.toolbar-clear-front {
+  }
+  
+  .toolbar-clear-front {
 	transition: 500ms;
 	border: none;
 	display: block;
@@ -145,21 +145,22 @@
 	color: #111111;
 	transform: translateY(-5px);
 	cursor: pointer;
-}
-
-.toolbar-clear:hover .toolbar-clear-front {
+  }
+  
+  .toolbar-clear:hover .toolbar-clear-front {
 	transition: 50ms;
 	transform: translateY(-2px);
-}
-
-.toolbar-datepicker-container {
+  }
+  
+  .toolbar-datepicker-container {
 	width: auto;
 	padding: 10px;
 	background-color: white;
 	border-radius: 3px;
 	display: inline-block;
-}
-
-.datepicker {
+  }
+  
+  .datepicker {
 	display: inline-block;
-}
+  }
+  

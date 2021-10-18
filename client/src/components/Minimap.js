@@ -1,26 +1,26 @@
-import React from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api'
-import { FaMapMarkerAlt } from 'react-icons/fa'
-import './Minimap.css'
+import React from "react";
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import "./Minimap.css";
 
 const containerStyle = {
-  width: '100%',
-  height: '100%'
+  width: "100%",
+  height: "100%",
 };
 
 const defaultCenter = {
   lat: 28.56,
-  lng: -80.64
+  lng: -80.64,
 };
 
-function Minimap(props){
+function Minimap(props) {
   const [mapref, setMapRef] = React.useState(null);
 
   const state = {
-    center: [0, 0]
+    center: [0, 0],
   };
 
-  const handleOnLoad = map => {
+  const handleOnLoad = (map) => {
     setMapRef(map);
   };
 
@@ -29,13 +29,13 @@ function Minimap(props){
       const newCenter = mapref.getCenter();
       state.center[0] = newCenter.lat();
       state.center[1] = newCenter.lng();
-      props.updateCenter(state.center)
+      props.updateCenter(state.center);
     }
   };
 
   return (
     <>
-      <div className='minimap-container'>
+      <div className="minimap-container">
         <LoadScript googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s">
           <GoogleMap
             mapContainerStyle={containerStyle}
@@ -44,14 +44,16 @@ function Minimap(props){
             onLoad={handleOnLoad}
             onDragEnd={handleCenterChanged}
           >
-            <div className='survey-ret'><FaMapMarkerAlt/></div>
-            { /* Child components, such as markers, info windows, etc. */ }
+            <div className="survey-ret">
+              <FaMapMarkerAlt />
+            </div>
+            {/* Child components, such as markers, info windows, etc. */}
             <></>
           </GoogleMap>
         </LoadScript>
       </div>
     </>
-  )
+  );
 }
 
-export default Minimap
+export default Minimap;

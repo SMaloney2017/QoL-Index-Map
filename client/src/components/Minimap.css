@@ -11,7 +11,7 @@
 .survey-ret {
     position: relative;
     text-align: center;
-    top: calc(50% - 50px);
+    top: calc(50%);
     color: #1000bb;
     z-index: 2;
 }

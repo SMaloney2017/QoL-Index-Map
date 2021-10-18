@@ -102,10 +102,10 @@ class Analysis extends React.Component {
                     className={this.state.inputView ? 'input': 'hidden'}
                     onChange={event => {this.setState({value: event.target.value})}}
                     onKeyPress={event => {if (event.key === 'Enter') {this.validateInput()}}}
-                    autoComplete='false'
+                    autoComplete='off'
                     placeholder='%d{km}'
                   />
-                  <span className={this.state.inputView ? 'hidden': 'value'}>{this.state.value}[km]r</span>
+                  <span className={this.state.inputView ? 'hidden': null}>{this.state.value}[km]r</span>
                 </div>
               </span>
             </span>

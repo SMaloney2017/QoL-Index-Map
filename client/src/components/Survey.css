@@ -1,57 +1,52 @@
-.survey {
-  display: fixed;
-}
-  
 .survey-icon {
-  transition: 250ms;
-  color: #ffffff;
-  font-size: 35px; 
-  padding-right: 10px;
-  padding-left: 5px;
-  cursor: pointer;
+	transition: 250ms;
+	color: #ffffff;
+	font-size: 35px;
+	padding-right: 10px;
+	padding-left: 5px;
+	cursor: pointer;
 }
 
 .survey-icon:hover {
-  color: #00ff95;
-  transition: 250ms;
+	color: #00ff95;
+	transition: 250ms;
 }
 
 .survey-close {
-  border: none;
-  float: left;
-  background: #8b1616;
-  padding: 0;
-  width: 30px;
-  height: 30px;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 20px;
-  border-radius: 50%;
-  cursor: pointer;
+	border: none;
+	float: left;
+	background: #8b1616;
+	padding: 0;
+	width: 30px;
+	height: 30px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: 20px;
+	border-radius: 50%;
+	cursor: pointer;
 }
 
 .survey-close-front {
-  transition: 500ms;
-  border: none;
-  border-radius: 50%;
-  display: block;
-  background: #ff2929;
-  color: #ffff80;
-  font-size: 30px;
-  width: 100%;
-  height: 100%;
-  transform: translateY(-5px);
+	transition: 500ms;
+	border: none;
+	border-radius: 50%;
+	display: block;
+	background: #ff2929;
+	color: #ffff80;
+	font-size: 30px;
+	width: 100%;
+	height: 100%;
+	transform: translateY(-5px);
 }
 
 .survey-close:hover .survey-close-front {
-  transition: 50ms;
-  transform: translateY(-2px);
+	transition: 50ms;
+	transform: translateY(-2px);
 }
 
-
 .survey-form {
-  background-color: #3800d1;
-  background-image: linear-gradient(
+	background-color: #3800d1;
+	background-image: linear-gradient(
     to bottom,
     #3800d1,
     #3800d1,
@@ -59,149 +54,139 @@
     #3800d100,
     #3800d100
  ), url('images/cityscape.jpg');
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  min-width: 1800px;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  margin-top: 50px;
-  left: 100vw;
-  transition: 350ms;
-  z-index: 2;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	min-width: 1800px;
+	min-height: 1080px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	margin-top: 50px;
+	left: 100%;
+	transition: 350ms;
+	z-index: 2;
 }
 
 .survey-form.active {
-  transition: 350ms;
-  left: 0;
-  overflow-x: auto;
+	transition: 350ms;
+	left: 0;
+	overflow-x: auto;
 }
 
 .survey-category {
-  display: flex;
+	display: flex;
 }
 
 .survey-text {
-  text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 45px;
+	text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 45px;
 }
 
 .survey-header {
-  color: #552fff;
-  text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
-  font-weight: bold;
-  padding-top: 7px;
-  font-size: 45px;
+	color: #552fff;
+	text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
+	font-weight: bold;
+	padding-top: 7px;
+	font-size: 45px;
 }
 
 .survey-subtext {
-  text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
-  width: 600px;
-  color: #ffffff;
-  font-size: 15px;
-  padding-bottom: 15px;
+	text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
+	width: 600px;
+	color: #ffffff;
+	font-size: 15px;
+	padding-bottom: 15px;
 }
 
 .survey-button-container {
-  position: absolute;
-  margin-left: 400px;
+	position: absolute;
+	margin-left: 400px;
 }
 
 .survey-buttons {
-  border: none;
-  padding: 0;
-  margin-left: 5px;
-  margin-top: 10px;
-  border-radius: 3px;
+	border: none;
+	padding: 0;
+	margin-left: 5px;
+	margin-top: 10px;
+	border-radius: 3px;
 }
 
 .survey-buttons-front {
-  transition: 500ms;
-  border: none;
-  font-size: 30px;
-  font-weight: bold;
-  align-items: center;
-  text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
-  color: #ffffff;
-  border-radius: 3px;
-  display: block;
-  padding: 0px 25px;
-  transform: translateY(-5px);
-  cursor: pointer;
+	transition: 500ms;
+	border: none;
+	font-size: 30px;
+	font-weight: bold;
+	align-items: center;
+	text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
+	color: #ffffff;
+	border-radius: 3px;
+	display: block;
+	padding: 0px 25px;
+	transform: translateY(-5px);
+	cursor: pointer;
 }
 
 .survey-buttons:hover .survey-buttons-front {
-  transition: 50ms;
-  transform: translateY(-2px);
+	transition: 50ms;
+	transform: translateY(-2px);
 }
 
 .survey-submit {
-  background-color: #00502f;
-  border: none;
-  border-radius: 5px;
-  padding: 0;
+	background-color: #00502f;
+	border: none;
+	border-radius: 5px;
+	padding: 0;
 }
 
 .survey-submit-front {
-  transition: 500ms;
-  text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
-  background: #00ff95;
-  border: none;
-  color: #ffffff;;
+	transition: 500ms;
+	text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
+	background: #00ff95;
+	border: none;
+	color: #ffffff;
   font-size: 30px;
-  font-weight: bold;
-  border-radius: 5px;
-  padding: 10px 25px;
-  display: block;
-  transform: translateY(-5px);
-  cursor: pointer;
+	font-weight: bold;
+	border-radius: 5px;
+	padding: 10px 25px;
+	display: block;
+	transform: translateY(-5px);
+	cursor: pointer;
 }
 
 .survey-submit:hover .survey-submit-front {
-  transition: 50ms;
-  transform: translateY(-2px);
-}
-
-.survey-help {
-  position: absolute;
-  left: 1200px;
-  top: 20px;
-  width: 600px;
-  height: 600px;
-  background-image: url('images/computer.png');
-  background-size: cover;
-  background-position: center center;
+	transition: 50ms;
+	transform: translateY(-2px);
 }
 
 .item-container {
-  position: relative;
-  margin-left: 50px;
-  overflow-x: auto;
-  width: 90vw;
+	position: relative;
+	margin-left: 50px;
+	overflow-x: auto;
+	width: 90vw;
 }
 
 .survey-map {
-  position: absolute;
-  left: 500px;
+	position: absolute;
+	left: 500px;
 }
 
 .survey-form-items {
-  position: relative;
+	position: relative;
 }
 
 .image-link {
-  position: relative;
-  left: 50px;
+	position: relative;
+	left: 50px;
 }
 
 a {
-  text-decoration: none;
-  font-size: 10px;
+	text-decoration: none;
+	font-size: 10px;
 }
 
 a:link, a:visited {
-  color: #111111;
+	color: #111111;
 }

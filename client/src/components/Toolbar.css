@@ -1,167 +1,165 @@
-
 .toolbar-icon {
-    transition: 250ms;
-    background: none;
-    color: #ffffff;
-    font-size: 29px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 3px;
-    cursor: pointer;
+	transition: 250ms;
+	background: none;
+	color: #ffffff;
+	font-size: 29px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 3px;
+	cursor: pointer;
 }
 
 .toolbar-icon:hover {
-    color: #00ff95;
-    transition: 250ms;
+	color: #00ff95;
+	transition: 250ms;
 }
 
 .toolbar-close {
-    border: none;
-    background: #8b1616;
-    margin-top: 10px;
-    margin-left: 5px;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
+	border: none;
+	background: #8b1616;
+	margin-top: 10px;
+	margin-left: 5px;
+	padding: 0;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	cursor: pointer;
 }
 
 .toolbar-close-front {
-    transition: 500ms;
-    border: none;
-    border-radius: 50%;
-    display: block;
-    background: #ff2929;
-    color: #ffff80;
-    font-size: 30px;
-    width: 30px;
-    height: 30px;
-    transform: translateY(-5px);
+	transition: 500ms;
+	border: none;
+	border-radius: 50%;
+	display: block;
+	background: #ff2929;
+	color: #ffff80;
+	font-size: 30px;
+	width: 30px;
+	height: 30px;
+	transform: translateY(-5px);
 }
 
 .toolbar-close:hover .toolbar-close-front {
-    transition: 50ms;
-    transform: translateY(-2px);
+	transition: 50ms;
+	transform: translateY(-2px);
 }
 
 .toolbar-menu {
-    position: absolute;
-    background-color: #272727;
-    width: 500px;
-    height: 100%;
-    top: 60px;
-    left: -500px;
-    transition: 350ms;
-    z-index: 2;
+	position: absolute;
+	background-color: #272727;
+	width: 500px;
+	height: 100%;
+	top: 60px;
+	left: -500px;
+	transition: 350ms;
+	z-index: 2;
 }
 
 .toolbar-menu.active {
-    left: 0;
-    transition: 350ms;
-    overflow-y:auto
+	left: 0;
+	transition: 350ms;
+	overflow-y: auto;
 }
 
 .toolbar-query {
-    background-color: #1b1b1b;
-    width: 460px;
-    padding: 5px 20px 20px 20px;
+	background-color: #1b1b1b;
+	width: 460px;
+	padding: 5px 20px 20px 20px;
 }
-  
+
 .toolbar-text {
-    color: #ffffff;
-    font-size: 20px;
+	color: #ffffff;
+	font-size: 20px;
 }
 
 .toolbar-header {
-    color: #272727;
-    text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
-    font-size: 45px;
-    font-weight: bold;
+	color: #272727;
+	text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
+	font-size: 45px;
+	font-weight: bold;
 }
 
 .toolbar-select-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
 .toolbar-range-container {
-    display: grid;
-    width: inherit;
-    padding-left: 30px;
+	display: grid;
+	width: inherit;
+	padding-left: 30px;
 }
 
 .toolbar-subtext {
-    color:#00ff95;
-    font-size: 20px;
+	color: #00ff95;
+	font-size: 20px;
 }
 
 .toolbar-submit {
-    background: #00502f;
-    border: none;
-    padding: 0;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
+	background: #00502f;
+	border: none;
+	padding: 0;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
 }
 
 .toolbar-submit-front {
-    transition: 500ms;
-    border: none;
-    display: block;
-    padding: 10px 25px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    font-size: 15px;
-    font-weight: bold;
-    background: #00ff95;
-    color: #111111;
-    transform: translateY(-5px);
-    cursor: pointer;
+	transition: 500ms;
+	border: none;
+	display: block;
+	padding: 10px 25px;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	font-size: 15px;
+	font-weight: bold;
+	background: #00ff95;
+	color: #111111;
+	transform: translateY(-5px);
+	cursor: pointer;
 }
 
 .toolbar-submit:hover .toolbar-submit-front {
-    transition:  50ms;
-    transform: translateY(-2px);
-  }
+	transition: 50ms;
+	transform: translateY(-2px);
+}
 
 .toolbar-clear {
-    background: #8b1616;
-    border: none;
-    padding: 0;
-    margin-left: 1px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
+	background: #8b1616;
+	border: none;
+	padding: 0;
+	margin-left: 1px;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 .toolbar-clear-front {
-    transition: 500ms;
-    border: none;
-    display: block;
-    padding: 10px 15px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    font-size: 15px;
-    font-weight: bold;
-    background: #ff2929;
-    color: #111111;
-    transform: translateY(-5px);
-    cursor: pointer;
+	transition: 500ms;
+	border: none;
+	display: block;
+	padding: 10px 15px;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	font-size: 15px;
+	font-weight: bold;
+	background: #ff2929;
+	color: #111111;
+	transform: translateY(-5px);
+	cursor: pointer;
 }
 
 .toolbar-clear:hover .toolbar-clear-front {
-    transition: 50ms;
-    transform: translateY(-2px);
+	transition: 50ms;
+	transform: translateY(-2px);
 }
 
 .toolbar-datepicker-container {
-    display: grid;
-    width: auto;
-    padding: 10px;
-    background-color: white;
-    border-radius: 3px;
-    display: inline-block;
+	width: auto;
+	padding: 10px;
+	background-color: white;
+	border-radius: 3px;
+	display: inline-block;
 }
 
 .datepicker {
-    display: inline-block;
+	display: inline-block;
 }

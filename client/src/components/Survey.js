@@ -63,7 +63,7 @@ class Survey extends React.Component {
   render() {
     return (
       <>
-        <div className='survey'>
+        <div>
           <div className='survey-icon'>
             <AiOutlineForm onClick={this.toggleView} />
           </div>

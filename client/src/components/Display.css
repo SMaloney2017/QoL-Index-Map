@@ -1,7 +1,7 @@
 .ret {
-    position: relative;
-    text-align: center;
-    top: calc(50% - 50px);
-    color: #1000bb;
-    z-index: 1;
+	position: relative;
+	text-align: center;
+	top: calc(50% - 50px);
+	color: #1000bb;
+	z-index: 1;
 }

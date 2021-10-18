@@ -8,12 +8,10 @@
     z-index: 1;
 }
 
-.survey-reticle {
-    height: 9px;
-    width: 9px;
-    background-color: #000000bd;
-    border-radius: 50%;
-    position: absolute;
-    margin: 50%;
+.survey-ret {
+    position: relative;
+    text-align: center;
+    top: calc(50% - 50px);
+    color: #1000bb;
     z-index: 2;
 }

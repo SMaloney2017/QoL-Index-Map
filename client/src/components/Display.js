@@ -4,26 +4,10 @@ import { GoogleMap, LoadScript, Circle } from '@react-google-maps/api';
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import './Display.css';
 
-function formatData(queriedData) {
-  var displayData = [{}]
-  for(var i in queriedData){
-    if (queriedData.hasOwnProperty(i)){
-      var gData = new window.google.maps.LatLng(parseFloat(queriedData[i].lat), parseFloat(queriedData[i].lng))
-      var obj = queriedData[i]
-      var selectedOption = Object.keys(obj)[0];
-      var weight = obj[selectedOption];
-    }
-      displayData[i] = {COORDS:gData, w: weight}
-    }
-    console.log(displayData)
-    return displayData
-}
-
 function Display(props){
   const [mapref, setMapRef] = useState(null);
   const colors = ["#fe2323", "#ff5528", "#ff872c", "#ffeb35", "#c7ef39", "#72f43f", "#1cf945"]
   var ID = 0
-  const displayData = formatData(props.getData)
   const containerStyle = {
     width: '100vw',
     height: '93.5vh'
@@ -37,7 +21,6 @@ function Display(props){
     setMapRef(map);
   };
 
-
   const handleCenterChanged = () => {
     if (mapref) {
       const newCenter = mapref.getCenter();
@@ -48,6 +31,20 @@ function Display(props){
     }
   };
 
+  const formatData = (queriedData) => {
+    var displayData = [{}]
+    for(var i in queriedData){
+      if (queriedData.hasOwnProperty(i)){
+        var gData = new window.google.maps.LatLng(parseFloat(queriedData[i].lat), parseFloat(queriedData[i].lng))
+        var obj = queriedData[i]
+        var selectedOption = Object.keys(obj)[0];
+        var weight = obj[selectedOption];
+      }
+        displayData[i] = {COORDS:gData, w: weight}
+      }
+      return displayData
+  }
+  const displayData = formatData(props.getData)
   return (
     <>
       <div>
@@ -82,7 +79,7 @@ function Display(props){
               >
               </Circle>
             ))}
-            <div className='analysis-point'><FaMapMarkerAlt/></div>
+            <div className='ret'><FaMapMarkerAlt/></div>
           </GoogleMap>
         </LoadScript>
       </div>

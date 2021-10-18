@@ -28,7 +28,9 @@ class Analysis extends React.Component {
 
   resetAnalysis = () => {
     this.setState(this.default)
+    this.setState({view:false})
     document.getElementById('radius').onclick = null;
+    document.getElementById('radius').className = 'radius-button';
   }
 
   validateInput = () => {
@@ -42,16 +44,36 @@ class Analysis extends React.Component {
     }
   }
   
-  startAnalysis = () => {
+  startAnalysis = (e) => {
     this.setState({cmdLine: '.AREA STATISTICS'})
     document.getElementById('radius').className = 'radius-active';
+    this.getDataForAnalysis(e)
+  }
+
+  getDataForAnalysis = async (e) => {
+    e.preventDefault()
+    try {
+      const data = {distance:this.state.value, COORDS: this.state.center}
+      const response = await fetch('http://localhost:5000/analysis', {     
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+      body: JSON.stringify(data)
+      })
+      const receivedData = await response.json()
+      console.log(receivedData)
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 
   componentDidUpdate(prevProps) {
     if(this.props.getCenter !== prevProps.getCenter){
        this.setState({ center: this.props.getCenter});
     }
- }
+  }
 
   render() {
     return (

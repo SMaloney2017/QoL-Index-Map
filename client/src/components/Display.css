@@ -1,7 +1,7 @@
-.analysis-point {
+.ret {
     position: relative;
-    margin: 50%;
-    vertical-align: middle;
+    text-align: center;
+    top: calc(50% - 50px);
     color: #1000bb;
     z-index: 1;
 }

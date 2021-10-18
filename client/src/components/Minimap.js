@@ -1,5 +1,6 @@
 import React from 'react'
 import { GoogleMap, LoadScript } from '@react-google-maps/api'
+import { FaMapMarkerAlt } from 'react-icons/fa'
 import './Minimap.css'
 
 const containerStyle = {
@@ -43,7 +44,7 @@ function Minimap(props){
             onLoad={handleOnLoad}
             onDragEnd={handleCenterChanged}
           >
-            <div className='survey-reticle'/>
+            <div className='survey-ret'><FaMapMarkerAlt/></div>
             { /* Child components, such as markers, info windows, etc. */ }
             <></>
           </GoogleMap>

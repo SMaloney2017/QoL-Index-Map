@@ -16,19 +16,7 @@
 	border-radius: 3px;
 	cursor: pointer;
   }
-  
-  .analysis-icon-active {
-	background: #8b1616;
-	border: none;
-	margin-top: 7px;
-	margin-left: 5px;
-	padding: 0;
-	width: 30px;
-	height: 30px;
-	border-radius: 3px;
-	cursor: pointer;
-  }
-  
+
   .analysis-icon-front {
 	transition: 250ms;
 	border: none;
@@ -42,6 +30,18 @@
 	transform: translateY(-2px);
   }
   
+  .analysis-icon-active {
+	background: #8b1616;
+	border: none;
+	margin-top: 7px;
+	margin-left: 5px;
+	padding: 0;
+	width: 30px;
+	height: 30px;
+	border-radius: 3px;
+	cursor: pointer;
+  }  
+
   .analysis-icon-front-active {
 	transition: 250ms;
 	border: none;
@@ -119,6 +119,7 @@
   .analysis-info {
 	border-radius: 3px;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	transition: 50ms;
 	padding-left: 10px;
 	margin-top: 40px;
@@ -137,14 +138,11 @@
 	font-size: 17px;
   }
   
-  input {
+  .input {
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;
 	border-bottom-style: none;
-  }
-  
-  .input {
 	width: 100px;
 	white-space: pre-wrap;
 	font-family: monospace;
@@ -162,6 +160,11 @@
 	color: #fff562;
   }
   
+  .coords-chosen {
+	  position: absolute;
+	  left: 15px;
+  }
+
   .radius-button {
 	transition-delay: 100ms;
 	margin-top: 5px;
@@ -185,12 +188,6 @@
 	font-size: 30px;
 	cursor: pointer;
 	color: #00ff2a;
-  }
-  
-  @keyframes blinker {
-	50% {
-	  color: #00ff2a;
-	}
   }
   
   .radius-button:hover {
@@ -237,5 +234,11 @@
   .hidden {
 	width: 0px;
 	visibility: hidden;
+  }
+
+  @keyframes blinker {
+	50% {
+	  color: #00ff2a;
+	}
   }
   

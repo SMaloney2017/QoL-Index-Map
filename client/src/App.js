@@ -8,6 +8,7 @@ import Analysis from "./components/Analysis";
 function App() {
   const [getData, shareData] = useState([]);
   const [getCenter, shareCenter] = useState({ lat: 28.56, lng: -80.64 });
+  const [getSelectedCenter, shareSelectedCenter] = useState({ lat: 28.56, lng: -80.64 });
   const [getRange, shareRange] = useState({ r: 0 });
   function changeColor(color) {
     document.body.style.backgroundColor = color;
@@ -72,8 +73,9 @@ function App() {
         getCenter={getCenter}
         getRange={getRange}
         shareCenter={shareCenter}
+        getSelectedCenter={getSelectedCenter}
       />
-      <Analysis getCenter={getCenter} shareRange={shareRange} />
+      <Analysis getCenter={getCenter} shareRange={shareRange} shareSelectedCenter={shareSelectedCenter} />
     </>
   );
 }

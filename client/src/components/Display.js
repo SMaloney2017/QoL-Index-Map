@@ -60,6 +60,7 @@ function Display(props) {
   var displayData = formatData(props.getData);
   var newCenter = props.getCenter;
   var newRange = props.getRange;
+  var selectedCenter = props.getSelectedCenter;
 
   return (
     <>
@@ -93,7 +94,7 @@ function Display(props) {
               />
             ))}
             <Circle
-              center={newCenter}
+              center={selectedCenter}
               options={{
                 strokeColor: "#3f00ff",
                 strokeOpacity: 0,

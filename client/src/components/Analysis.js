@@ -3,8 +3,14 @@ import { AiOutlineCloseCircle, AiFillCalculator } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { RiFolderChartLine, RiLineChartLine } from "react-icons/ri";
 import { BiReset } from "react-icons/bi";
-import { mean, mode, sampleSkewness, standardDeviation, sampleCorrelation } from 'simple-statistics'
-import { bar } from 'react-chartjs-2';
+import {
+  mean,
+  mode,
+  sampleSkewness,
+  standardDeviation,
+  sampleCorrelation,
+} from "simple-statistics";
+import { bar } from "react-chartjs-2";
 import "./Analysis.css";
 
 class Analysis extends React.Component {
@@ -13,17 +19,19 @@ class Analysis extends React.Component {
     this.state = {
       view: true,
       inputView: true,
-      cmdLine: ".POSITION RETICLE, ENTER RADIUS",
+      cmdLine: ".ENTER AREA RADIUS",
       r: 0,
       center: { lat: 28.56, lng: -80.64 },
+      selectedCenter: { lat: 28.56, lng: -80.64 },
+      coordsChosen: false,
       simpleStats: {
-        overall: {mean: 0, mode: 0, skew: 0, deviation: 0},
-        government: {mean: 0, mode: 0, skew: 0, deviation: 0},
-        industry: {mean: 0, mode: 0, skew: 0, deviation: 0},
-        beauty: {mean: 0, mode: 0, skew: 0, deviation: 0},
-        safety: {mean: 0, mode: 0, skew: 0, deviation: 0},
-        social: {mean: 0, mode: 0, skew: 0, deviation: 0}, 
-        cost: {mean: 0, mode: 0, skew: 0, deviation: 0},
+        overall: { mean: 0, mode: 0, skew: 0, deviation: 0 },
+        government: { mean: 0, mode: 0, skew: 0, deviation: 0 },
+        industry: { mean: 0, mode: 0, skew: 0, deviation: 0 },
+        beauty: { mean: 0, mode: 0, skew: 0, deviation: 0 },
+        safety: { mean: 0, mode: 0, skew: 0, deviation: 0 },
+        social: { mean: 0, mode: 0, skew: 0, deviation: 0 },
+        cost: { mean: 0, mode: 0, skew: 0, deviation: 0 },
       },
       dataSets: {
         overall: [],
@@ -32,9 +40,9 @@ class Analysis extends React.Component {
         beauty: [],
         safety: [],
         social: [],
-        cost: []
+        cost: [],
       },
-      activeTab: 'analysis-info'
+      activeTab: "analysis-start",
     };
     this.default = this.state;
     this.validateInput = this.validateInput.bind(this);
@@ -44,16 +52,20 @@ class Analysis extends React.Component {
     this.getDataSets = this.getDataSets.bind(this);
   }
 
-
   toggleView = () => {
     this.setState({ view: !this.state.view });
+  };
+
+  toggleTab = (tabView) => {
+    this.setState({ activeTab: tabView });
   };
 
   resetAnalysis = () => {
     this.setState(this.default);
     this.setState({ view: false });
-    document.getElementById("radius").onclick = null;
+    this.setState({dataSets:{overall: [], government: [], industry: [], beauty: [], safety: [], social: [], cost: []}});
     document.getElementById("radius").className = "radius-button";
+    document.getElementById("radius").onClick = null;
     this.props.shareRange(0);
   };
 
@@ -64,7 +76,7 @@ class Analysis extends React.Component {
       this.setState({ cmdLine: ".ENTRY MUST BE > 0 && < 2000" });
     } else {
       document.getElementById("radius").className = "radius-flashing";
-      this.setState({ cmdLine: ".CLICK MARKER ICON TO BEGIN" });
+      this.setState({ cmdLine: ".DRAG MAP TO DESIRED AREA THEN CLICK MARKER ICON" });
       document.getElementById("radius").onclick = this.startAnalysis;
       this.setState({ inputView: false });
     }
@@ -75,7 +87,7 @@ class Analysis extends React.Component {
     try {
       const data = {
         distance: this.state.r,
-        COORDS: this.state.center
+        COORDS: this.state.center,
       };
       const response = await fetch("http://localhost:5000/analysis", {
         method: "POST",
@@ -95,22 +107,27 @@ class Analysis extends React.Component {
   getDataSets = (queriedData) => {
     for (var i in queriedData) {
       if (queriedData.hasOwnProperty(i)) {
-        this.state.dataSets.overall.push(queriedData[i].overall)
-        this.state.dataSets.government.push(queriedData[i].government)
-        this.state.dataSets.industry.push(queriedData[i].overindustryall)
-        this.state.dataSets.beauty.push(queriedData[i].overbeautyall)
-        this.state.dataSets.safety.push(queriedData[i].safety)
-        this.state.dataSets.social.push(queriedData[i].social)
-        this.state.dataSets.cost.push(queriedData[i].cost)
+        this.state.dataSets.overall.push(queriedData[i].overall);
+        this.state.dataSets.government.push(queriedData[i].government);
+        this.state.dataSets.industry.push(queriedData[i].industry);
+        this.state.dataSets.beauty.push(queriedData[i].beauty);
+        this.state.dataSets.safety.push(queriedData[i].safety);
+        this.state.dataSets.social.push(queriedData[i].social);
+        this.state.dataSets.cost.push(queriedData[i].cost);
       }
     }
-    console.log(this.state.dataSets)
-  }
+    console.log(this.state.dataSets);
+  };
 
   startAnalysis = (e) => {
-    this.props.shareRange(this.state.r * 1000);
-    this.setState({ cmdLine: ".AREA STATISTICS" });
+    this.setState({selectedCenter: this.state.center});
+    this.setState({coordsChosen: true});
     document.getElementById("radius").className = "radius-active";
+    document.getElementById("radius").onclick =
+      this.toggleTab("analysis-start");
+    this.props.shareRange(this.state.r * 1000);
+    this.props.shareSelectedCenter(this.state.selectedCenter);
+    this.setState({ cmdLine: ".AREA SELECTED, CLICK STATS/ GRAPHS ICON TO VIEW" });
     this.getDataForAnalysis(e);
   };
 
@@ -118,7 +135,7 @@ class Analysis extends React.Component {
     if (this.props.getCenter !== prevProps.getCenter) {
       this.setState({ center: this.props.getCenter });
     }
-  };
+  }
 
   render() {
     return (
@@ -159,24 +176,44 @@ class Analysis extends React.Component {
                 id="radius"
                 className={this.state.view ? "hidden" : "radius-button"}
               >
-                <FaMapMarkerAlt onClick={null} />
+                <FaMapMarkerAlt
+                  value="analysis-start"
+                  onClick={(e) => this.toggleTab("analysis-start")}
+                />
               </div>
-              <div className={this.state.view ? "hidden" : "stats-button"}>
-                <RiFolderChartLine />
+              <div
+                id="stats"
+                className={this.state.view ? "hidden" : "stats-button"}
+              >
+                <RiFolderChartLine
+                  value="analysis-stats"
+                  onClick={(e) => this.toggleTab("analysis-stats")}
+                />
               </div>
-              <div className={this.state.view ? "hidden" : "graphs-button"}>
-                <RiLineChartLine />
+              <div
+                id="graphs"
+                className={this.state.view ? "hidden" : "graphs-button"}
+              >
+                <RiLineChartLine
+                  value="analysis-graphs"
+                  onClick={(e) => this.toggleTab("analysis-graphs")}
+                />
               </div>
               <div className={this.state.view ? "hidden" : "reset-button"}>
                 <BiReset onClick={this.resetAnalysis} />
               </div>
-              <span className={this.state.view ? "hidden" : this.state.activeTab}>
-                <div className={this.state.activeTab === 'analysis-info' ? "info-text" : 'hidden'}>
+              <span className={this.state.view ? "hidden" : "analysis-info"}>
+                <div
+                  className={
+                    this.state.activeTab === "analysis-start"
+                      ? "info-text"
+                      : "hidden"
+                  }
+                >
                   {this.state.cmdLine}
-                  <br />.{"{"}
-                  {this.state.center.lat.toFixed(2)},
-                  {this.state.center.lng.toFixed(2)}
-                  {"}"}
+                  <br />
+                  <span className={this.state.coordsChosen ? "hidden" : null}>.{"{"}{this.state.center.lat.toFixed(2)},{this.state.center.lng.toFixed(2)}{"}"}</span>
+                  <span className={this.state.coordsChosen ? "coords-chosen" : "hidden"}>.{"{"}{this.state.selectedCenter.lat.toFixed(2)},{this.state.selectedCenter.lng.toFixed(2)}{"}"}</span>
                   <br />
                   .
                   <input
@@ -199,6 +236,20 @@ class Analysis extends React.Component {
                     {this.state.r}[km]r
                   </span>
                 </div>
+                <div
+                  className={
+                    this.state.activeTab === "analysis-stats"
+                      ? "info-stats"
+                      : "hidden"
+                  }
+                ></div>
+                <div
+                  className={
+                    this.state.activeTab === "analysis-graphs"
+                      ? "info-graphs"
+                      : "hidden"
+                  }
+                ></div>
               </span>
             </span>
           </div>

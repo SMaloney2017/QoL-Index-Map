@@ -2,6 +2,7 @@
 	right: 10px;
 	position: absolute;
 	top: 120px;
+	z-index: 1;
   }
   
   .analysis-icon {
@@ -97,8 +98,8 @@
 	transition: 250ms;
 	border: none;
 	background: #1000bb;
-	width: 500px;
-	height: 300px;
+	width: 600px;
+	height: 350px;
 	border-radius: 3px;
   }
   

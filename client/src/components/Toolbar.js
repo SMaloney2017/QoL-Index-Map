@@ -2,8 +2,7 @@ import React from "react";
 import "./Toolbar.css";
 import { BsTools } from "react-icons/bs";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { Slider } from "@mui/material";
-import { TextField } from "@mui/material";
+import { Slider, TextField } from "@mui/material";
 
 class Toolbar extends React.Component {
   constructor(props) {

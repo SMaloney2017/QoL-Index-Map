@@ -98,8 +98,8 @@
 	transition: 250ms;
 	border: none;
 	background: #1000bb;
-	width: 600px;
-	height: 360px;
+	width: 625px;
+	height: 375px;
 	border-radius: 3px;
   }
   
@@ -279,13 +279,15 @@
   }
 
   .dropbutton {
+	margin-top: 5px;
 	background: #002b3b;
 	font-family: monospace;
 	color: #00ffea;
 	letter-spacing: 0.15em;
 	font-size: 17px;
 	text-shadow: 0 0 3px #00ffea;
-	border: none;
+	border: 1px solid #fff562;
+	box-shadow: 0 0 3px #fff562;
 	cursor: pointer;
   }
   

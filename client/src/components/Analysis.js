@@ -31,7 +31,7 @@ class Analysis extends React.Component {
         beauty: { mean: 0, mode: 0, skew: 0, deviation: 0 },
         safety: { mean: 0, mode: 0, skew: 0, deviation: 0 },
         social: { mean: 0, mode: 0, skew: 0, deviation: 0 },
-        cost: { mean: 0, mode: 0, skew: 0, deviation: 0 },
+        cost: { mean: 0, mode: 0, skew: 0, deviation: 0 }
       },
       dataSets: {
         overall: [],
@@ -40,10 +40,19 @@ class Analysis extends React.Component {
         beauty: [],
         safety: [],
         social: [],
-        cost: [],
+        cost: []
+      },
+      occurenceCount: {
+        overall: [],
+        government: [],
+        industry: [],
+        beauty: [],
+        safety: [],
+        social: [],
+        cost: []
       },
       activeTab: "analysis-start",
-      coorelation: ['overall', 'overall']
+      coorelation: ["overall", "overall"],
     };
     this.default = this.state;
     this.validateInput = this.validateInput.bind(this);
@@ -52,6 +61,7 @@ class Analysis extends React.Component {
     this.resetAnalysis = this.resetAnalysis.bind(this);
     this.getDataSets = this.getDataSets.bind(this);
     this.setComparison = this.setComparison.bind(this);
+    this.countOccurences = this.countOccurences.bind(this);
   }
 
   toggleView = () => {
@@ -83,19 +93,22 @@ class Analysis extends React.Component {
   };
 
   setComparison = (index, i) => {
-    const newCoorelation = this.state.coorelation.slice()
-    newCoorelation[i] = index
+    const newCoorelation = this.state.coorelation.slice();
+    newCoorelation[i] = index;
     this.setState({ coorelation: newCoorelation });
-  }
+  };
 
   checkLength = (index1, index2) => {
-    if(this.state.dataSets[index1].length > 0){
-      if(this.state.dataSets[index1].length === this.state.dataSets[index2].length){
-        return true
+    if (this.state.dataSets[index1].length > 0) {
+      if (
+        this.state.dataSets[index1].length ===
+        this.state.dataSets[index2].length
+      ) {
+        return true;
       }
     }
-    return false
-  }
+    return false;
+  };
 
   validateInput = () => {
     if (isNaN(+this.state.r)) {
@@ -146,8 +159,28 @@ class Analysis extends React.Component {
         this.state.dataSets.cost.push(queriedData[i].cost);
       }
     }
+    this.countOccurences()
     console.log(this.state.dataSets);
+    console.log(this.state.occurenceCount)
   };
+
+  countOccurences = () => {
+    var newOccurences = {
+      overall: [0, 0, 0, 0, 0, 0, 0],
+      government: [0, 0, 0, 0, 0, 0, 0],
+      industry: [0, 0, 0, 0, 0, 0, 0],
+      beauty: [0, 0, 0, 0, 0, 0, 0],
+      safety: [0, 0, 0, 0, 0, 0, 0],
+      social: [0, 0, 0, 0, 0, 0, 0],
+      cost: [0, 0, 0, 0, 0, 0, 0]
+    }
+    for(var i in this.state.dataSets){
+      for(var j in this.state.dataSets[i]){
+        newOccurences[i][this.state.dataSets[i][j]]++
+      }
+      this.setState({ occurenceCount: newOccurences});
+    }
+  }
 
   startAnalysis = (e) => {
     this.setState({ selectedCenter: this.state.center });
@@ -245,7 +278,7 @@ class Analysis extends React.Component {
                   {this.state.cmdLine}
                   <br />
                   <span className={this.state.coordsChosen ? "hidden" : null}>
-                    .{"{"}
+                    {"{"}
                     {this.state.center.lat.toFixed(2)},
                     {this.state.center.lng.toFixed(2)}
                     {"}"}
@@ -255,13 +288,12 @@ class Analysis extends React.Component {
                       this.state.coordsChosen ? "coords-chosen" : "hidden"
                     }
                   >
-                    .{"{"}
+                    {"{"}
                     {this.state.selectedCenter.lat.toFixed(2)},
                     {this.state.selectedCenter.lng.toFixed(2)}
                     {"}"}
                   </span>
                   <br />
-                  .
                   <input
                     id="inputr"
                     type="text"
@@ -488,37 +520,119 @@ class Analysis extends React.Component {
                       </td>
                     </tr>
                   </table>
-                  CORRELATION OF{'\t'}
+                  CORRELATION OF{"\t"}
                   <div className="dropdown">
-                    <button className="dropbutton">{this.state.coorelation[0]}</button>
+                    <button className="dropbutton">
+                      {this.state.coorelation[0]}
+                    </button>
                     <div className="dropdown-content">
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('overall', 0)}>OVERALL</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('government', 0)}>GOVERNMENT</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('industry', 0)}>INDUSTRY</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('beauty', 0)}>BEAUTY</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('safety', 0)}>SAFETY</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('social', 0)}>SOCIAL</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('cost', 0)}>COST</div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("overall", 0)}
+                      >
+                        OVERALL
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("government", 0)}
+                      >
+                        GOVERNMENT
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("industry", 0)}
+                      >
+                        INDUSTRY
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("beauty", 0)}
+                      >
+                        BEAUTY
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("safety", 0)}
+                      >
+                        SAFETY
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("social", 0)}
+                      >
+                        SOCIAL
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("cost", 0)}
+                      >
+                        COST
+                      </div>
                     </div>
-                  </div>{'\t'}
-                  AND{'\t'}
+                  </div>
+                  {"\t"}
+                  AND{"\t"}
                   <div className="dropdown">
-                    <button className="dropbutton">{this.state.coorelation[1]}</button>
+                    <button className="dropbutton">
+                      {this.state.coorelation[1]}
+                    </button>
                     <div className="dropdown-content">
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('overall', 1)}>OVERALL</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('government', 1)}>GOVERNMENT</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('industry', 1)}>INDUSTRY</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('beauty', 1)}>BEAUTY</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('safety', 1)}>SAFETY</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('social', 1)}>SOCIAL</div>
-                      <div className="dropdown-item" onMouseDown={() => this.setComparison('cost', 1)}>COST</div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("overall", 1)}
+                      >
+                        OVERALL
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("government", 1)}
+                      >
+                        GOVERNMENT
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("industry", 1)}
+                      >
+                        INDUSTRY
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("beauty", 1)}
+                      >
+                        BEAUTY
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("safety", 1)}
+                      >
+                        SAFETY
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("social", 1)}
+                      >
+                        SOCIAL
+                      </div>
+                      <div
+                        className="dropdown-item"
+                        onMouseDown={() => this.setComparison("cost", 1)}
+                      >
+                        COST
+                      </div>
                     </div>
-                  </div>{'\t'}<br/>
-                  :{'\t'}
+                  </div>
+                  {"\t"}
+                  <br />:{"\t"}
                   <span className="coorelation-result">
-                    {this.checkLength(this.state.coorelation[0], this.state.coorelation[1])
-                      ? sampleCorrelation(this.state.dataSets[this.state.coorelation[0]], this.state.dataSets[this.state.coorelation[1]]).toFixed(2)
-                      : 'N/A'}
+                    {this.checkLength(
+                      this.state.coorelation[0],
+                      this.state.coorelation[1]
+                    )
+                      ? sampleCorrelation(
+                          this.state.dataSets[this.state.coorelation[0]],
+                          this.state.dataSets[this.state.coorelation[1]]
+                        ).toFixed(2)
+                      : "N/A"}
                   </span>
                 </div>
                 <div
@@ -530,7 +644,6 @@ class Analysis extends React.Component {
                   }
                 >
                   .GRAPHS
-                  <br />
                 </div>
               </span>
             </span>

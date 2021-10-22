@@ -105,7 +105,7 @@ function Display(props) {
                 editable: false,
                 visible: true,
                 radius: newRange,
-                zIndex: 1,
+                zIndex: 0,
               }}
             />
             <div className="ret">

@@ -117,6 +117,7 @@
   }
   
   .analysis-info {
+	text-shadow: 0 0 2px #fff562;
 	border-radius: 3px;
 	overflow-y: scroll;
 	overflow-x: hidden;
@@ -133,12 +134,12 @@
 	white-space: normal;
 	color: #fff562;
 	font-family: monospace;
-	text-shadow: 0 0 3px #fff562;
 	letter-spacing: 0.15em;
 	font-size: 17px;
   }
   
   .input {
+	text-shadow: 0 0 2px #fff562;
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;
@@ -149,7 +150,6 @@
 	font-size: 17px;
 	letter-spacing: 0.15em;
 	color: #fff562;
-	text-shadow: 0 0 3px #fff562;
 	font-family: monospace;
 	background: #005f8117;
 	border: none;
@@ -201,6 +201,17 @@
 	cursor: pointer;
 	color: #1000bb;
   }
+
+  .info-stats {
+	width: 90%;
+	position: absolute;
+	top: 40px;
+	white-space: normal;
+	color: #fff562;
+	font-family: monospace;;
+	letter-spacing: 0.15em;
+	font-size: 17px;
+  }
   
   .stats-button:hover {
 	transition: 250ms;
@@ -212,6 +223,17 @@
 	font-size: 40px;
 	cursor: pointer;
 	color: #1000bb;
+  }
+
+  .info-graphs {
+	width: 90%;
+	position: absolute;
+	top: 40px;
+	white-space: normal;
+	color: #fff562;
+	font-family: monospace;
+	letter-spacing: 0.15em;
+	font-size: 17px; 
   }
   
   .graphs-button:hover {
@@ -230,10 +252,20 @@
 	transition: 250ms;
 	color: #ff2929;
   }
-  
+
   .hidden {
 	width: 0px;
 	visibility: hidden;
+  }
+
+  table, th, td {
+	border: 1px solid #fff562;
+	text-align: left;
+  }
+
+  th, td {
+	  padding-right: 20px;
+	  padding-left: 5px;
   }
 
   @keyframes blinker {

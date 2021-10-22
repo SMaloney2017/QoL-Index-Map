@@ -34,13 +34,13 @@ class Analysis extends React.Component {
         cost: { mean: 0, mode: 0, skew: 0, deviation: 0 },
       },
       dataSets: {
-        overall: [0, 0, 0],
-        government: [0, 0, 0],
-        industry: [0, 0, 0],
-        beauty: [0, 0, 0],
-        safety: [0, 0, 0],
-        social: [0, 0, 0],
-        cost: [0, 0, 0],
+        overall: [],
+        government: [],
+        industry: [],
+        beauty: [],
+        safety: [],
+        social: [],
+        cost: [],
       },
       activeTab: "analysis-start",
     };
@@ -63,8 +63,18 @@ class Analysis extends React.Component {
   resetAnalysis = () => {
     this.setState(this.default);
     this.setState({ view: false });
-    this.setState({ center: this.props.getCenter});
-    this.setState({dataSets:{overall: [0, 0, 0], government: [0, 0, 0], industry: [0, 0, 0], beauty: [0, 0, 0], safety: [0, 0, 0], social: [0, 0, 0], cost: [0, 0, 0]}});
+    this.setState({ center: this.props.getCenter });
+    this.setState({
+      dataSets: {
+        overall: [],
+        government: [],
+        industry: [],
+        beauty: [],
+        safety: [],
+        social: [],
+        cost: [],
+      },
+    });
     document.getElementById("radius").className = "radius-button";
     document.getElementById("radius").onClick = null;
     this.props.shareRange(0);
@@ -77,7 +87,9 @@ class Analysis extends React.Component {
       this.setState({ cmdLine: ".ENTRY MUST BE > 0 && < 2000" });
     } else {
       document.getElementById("radius").className = "radius-flashing";
-      this.setState({ cmdLine: ".DRAG MAP TO DESIRED AREA THEN CLICK MARKER ICON" });
+      this.setState({
+        cmdLine: ".DRAG MAP TO DESIRED AREA THEN CLICK MARKER ICON",
+      });
       document.getElementById("radius").onclick = this.startAnalysis;
       this.setState({ inputView: false });
     }
@@ -117,25 +129,20 @@ class Analysis extends React.Component {
         this.state.dataSets.cost.push(queriedData[i].cost);
       }
     }
-    this.state.dataSets.overall.splice(0, 3)
-    this.state.dataSets.government.splice(0, 3)
-    this.state.dataSets.industry.splice(0, 3)
-    this.state.dataSets.beauty.splice(0, 3)
-    this.state.dataSets.safety.splice(0, 3)
-    this.state.dataSets.social.splice(0, 3)
-    this.state.dataSets.cost.splice(0, 3)
     console.log(this.state.dataSets);
   };
 
   startAnalysis = (e) => {
-    this.setState({selectedCenter: this.state.center});
-    this.setState({coordsChosen: true});
+    this.setState({ selectedCenter: this.state.center });
+    this.setState({ coordsChosen: true });
     document.getElementById("radius").className = "radius-active";
     document.getElementById("radius").onclick =
       this.toggleTab("analysis-start");
     this.props.shareRange(this.state.r * 1000);
     this.props.shareSelectedCenter(this.state.selectedCenter);
-    this.setState({ cmdLine: ".AREA SELECTED, CLICK STATS/ GRAPHS ICON TO VIEW" });
+    this.setState({
+      cmdLine: ".AREA SELECTED, CLICK STATS/ GRAPHS ICON TO VIEW",
+    });
     this.getDataForAnalysis(e);
   };
 
@@ -218,9 +225,24 @@ class Analysis extends React.Component {
                       : "hidden"
                   }
                 >
-                  {this.state.cmdLine}<br />
-                  <span className={this.state.coordsChosen ? "hidden" : null}>.{"{"}{this.state.center.lat.toFixed(2)},{this.state.center.lng.toFixed(2)}{"}"}</span>
-                  <span className={this.state.coordsChosen ? "coords-chosen" : "hidden"}>.{"{"}{this.state.selectedCenter.lat.toFixed(2)},{this.state.selectedCenter.lng.toFixed(2)}{"}"}</span>
+                  {this.state.cmdLine}
+                  <br />
+                  <span className={this.state.coordsChosen ? "hidden" : null}>
+                    .{"{"}
+                    {this.state.center.lat.toFixed(2)},
+                    {this.state.center.lng.toFixed(2)}
+                    {"}"}
+                  </span>
+                  <span
+                    className={
+                      this.state.coordsChosen ? "coords-chosen" : "hidden"
+                    }
+                  >
+                    .{"{"}
+                    {this.state.selectedCenter.lat.toFixed(2)},
+                    {this.state.selectedCenter.lng.toFixed(2)}
+                    {"}"}
+                  </span>
                   <br />
                   .
                   <input
@@ -245,12 +267,14 @@ class Analysis extends React.Component {
                 </div>
                 <div
                   className={
-                    this.state.activeTab === "analysis-stats" && this.state.coordsChosen
+                    this.state.activeTab === "analysis-stats" &&
+                    this.state.coordsChosen
                       ? "info-stats"
                       : "hidden"
                   }
                 >
-                  .STATISTICS<br />
+                  .STATISTICS
+                  <br />
                   <table>
                     <tr>
                       <th>INDEX</th>
@@ -261,63 +285,203 @@ class Analysis extends React.Component {
                     </tr>
                     <tr>
                       <td>OVERALL</td>
-                      <td>{mean(this.state.dataSets.overall).toFixed(2)}</td>
-                      <td>{mode(this.state.dataSets.overall).toFixed(2)}</td>
-                      <td>{standardDeviation(this.state.dataSets.overall).toFixed(2)}</td>
-                      <td>{sampleSkewness(this.state.dataSets.overall).toFixed(2)}</td>
+                      <td>
+                        {this.state.dataSets.overall.length > 0
+                          ? mean(this.state.dataSets.overall).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.overall.length > 0
+                          ? mode(this.state.dataSets.overall).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.overall.length > 0
+                          ? standardDeviation(
+                              this.state.dataSets.overall
+                            ).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.overall.length > 3
+                          ? sampleSkewness(this.state.dataSets.overall).toFixed(
+                              2
+                            )
+                          : "N/A"}
+                      </td>
                     </tr>
                     <tr>
                       <td>GOVERNMENT</td>
-                      <td>{mean(this.state.dataSets.government).toFixed(2)}</td>
-                      <td>{mode(this.state.dataSets.government).toFixed(2)}</td>
-                      <td>{standardDeviation(this.state.dataSets.government).toFixed(2)}</td>
-                      <td>{sampleSkewness(this.state.dataSets.government).toFixed(2)}</td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mean(this.state.dataSets.government).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mode(this.state.dataSets.government).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? standardDeviation(
+                              this.state.dataSets.government
+                            ).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 3
+                          ? sampleSkewness(
+                              this.state.dataSets.government
+                            ).toFixed(2)
+                          : "N/A"}
+                      </td>
                     </tr>
                     <tr>
                       <td>INDUSTRY</td>
-                      <td>{mean(this.state.dataSets.industry).toFixed(2)}</td>
-                      <td>{mode(this.state.dataSets.industry).toFixed(2)}</td>
-                      <td>{standardDeviation(this.state.dataSets.industry).toFixed(2)}</td>
-                      <td>{sampleSkewness(this.state.dataSets.industry).toFixed(2)}</td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mean(this.state.dataSets.industry).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mode(this.state.dataSets.industry).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? standardDeviation(
+                              this.state.dataSets.industry
+                            ).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 3
+                          ? sampleSkewness(
+                              this.state.dataSets.industry
+                            ).toFixed(2)
+                          : "N/A"}
+                      </td>
                     </tr>
                     <tr>
                       <td>BEAUTY</td>
-                      <td>{mean(this.state.dataSets.beauty).toFixed(2)}</td>
-                      <td>{mode(this.state.dataSets.beauty).toFixed(2)}</td>
-                      <td>{standardDeviation(this.state.dataSets.beauty).toFixed(2)}</td>
-                      <td>{sampleSkewness(this.state.dataSets.beauty).toFixed(2)}</td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mean(this.state.dataSets.beauty).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mode(this.state.dataSets.beauty).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? standardDeviation(
+                              this.state.dataSets.beauty
+                            ).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 3
+                          ? sampleSkewness(this.state.dataSets.beauty).toFixed(
+                              2
+                            )
+                          : "N/A"}
+                      </td>
                     </tr>
                     <tr>
                       <td>SAFETY</td>
-                      <td>{mean(this.state.dataSets.safety).toFixed(2)}</td>
-                      <td>{mode(this.state.dataSets.safety).toFixed(2)}</td>
-                      <td>{standardDeviation(this.state.dataSets.safety).toFixed(2)}</td>
-                      <td>{sampleSkewness(this.state.dataSets.safety).toFixed(2)}</td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mean(this.state.dataSets.safety).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mode(this.state.dataSets.safety).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? standardDeviation(
+                              this.state.dataSets.safety
+                            ).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 3
+                          ? sampleSkewness(this.state.dataSets.safety).toFixed(
+                              2
+                            )
+                          : "N/A"}
+                      </td>
                     </tr>
                     <tr>
                       <td>SOCIAL</td>
-                      <td>{mean(this.state.dataSets.social).toFixed(2)}</td>
-                      <td>{mode(this.state.dataSets.social).toFixed(2)}</td>
-                      <td>{standardDeviation(this.state.dataSets.social).toFixed(2)}</td>
-                      <td>{sampleSkewness(this.state.dataSets.social).toFixed(2)}</td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mean(this.state.dataSets.social).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mode(this.state.dataSets.social).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? standardDeviation(
+                              this.state.dataSets.social
+                            ).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 3
+                          ? sampleSkewness(this.state.dataSets.social).toFixed(
+                              2
+                            )
+                          : "N/A"}
+                      </td>
                     </tr>
                     <tr>
                       <td>COST</td>
-                      <td>{mean(this.state.dataSets.cost).toFixed(2)}</td>
-                      <td>{mode(this.state.dataSets.cost).toFixed(2)}</td>
-                      <td>{standardDeviation(this.state.dataSets.cost).toFixed(2)}</td>
-                      <td>{sampleSkewness(this.state.dataSets.cost).toFixed(2)}</td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mean(this.state.dataSets.cost).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? mode(this.state.dataSets.cost).toFixed(2)
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 0
+                          ? standardDeviation(this.state.dataSets.cost).toFixed(
+                              2
+                            )
+                          : "N/A"}
+                      </td>
+                      <td>
+                        {this.state.dataSets.government.length > 3
+                          ? sampleSkewness(this.state.dataSets.cost).toFixed(2)
+                          : "N/A"}
+                      </td>
                     </tr>
                   </table>
                 </div>
                 <div
                   className={
-                    this.state.activeTab === "analysis-graphs" && this.state.coordsChosen
+                    this.state.activeTab === "analysis-graphs" &&
+                    this.state.coordsChosen
                       ? "info-graphs"
                       : "hidden"
                   }
                 >
-                  .GRAPHS<br />
+                  .GRAPHS
+                  <br />
                 </div>
               </span>
             </span>

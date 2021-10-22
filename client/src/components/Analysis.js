@@ -43,6 +43,7 @@ class Analysis extends React.Component {
         cost: [],
       },
       activeTab: "analysis-start",
+      coorelation: ['overall', 'overall']
     };
     this.default = this.state;
     this.validateInput = this.validateInput.bind(this);
@@ -50,6 +51,7 @@ class Analysis extends React.Component {
     this.toggleView = this.toggleView.bind(this);
     this.resetAnalysis = this.resetAnalysis.bind(this);
     this.getDataSets = this.getDataSets.bind(this);
+    this.setComparison = this.setComparison.bind(this);
   }
 
   toggleView = () => {
@@ -79,6 +81,21 @@ class Analysis extends React.Component {
     document.getElementById("radius").onClick = null;
     this.props.shareRange(0);
   };
+
+  setComparison = (index, i) => {
+    const newCoorelation = this.state.coorelation.slice()
+    newCoorelation[i] = index
+    this.setState({ coorelation: newCoorelation });
+  }
+
+  checkLength = (index1, index2) => {
+    if(this.state.dataSets[index1].length > 0){
+      if(this.state.dataSets[index1].length === this.state.dataSets[index2].length){
+        return true
+      }
+    }
+    return false
+  }
 
   validateInput = () => {
     if (isNaN(+this.state.r)) {
@@ -471,6 +488,38 @@ class Analysis extends React.Component {
                       </td>
                     </tr>
                   </table>
+                  CORRELATION OF{'\t'}
+                  <div className="dropdown">
+                    <button className="dropbutton">{this.state.coorelation[0]}</button>
+                    <div className="dropdown-content">
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('overall', 0)}>OVERALL</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('government', 0)}>GOVERNMENT</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('industry', 0)}>INDUSTRY</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('beauty', 0)}>BEAUTY</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('safety', 0)}>SAFETY</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('social', 0)}>SOCIAL</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('cost', 0)}>COST</div>
+                    </div>
+                  </div>{'\t'}
+                  AND{'\t'}
+                  <div className="dropdown">
+                    <button className="dropbutton">{this.state.coorelation[1]}</button>
+                    <div className="dropdown-content">
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('overall', 1)}>OVERALL</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('government', 1)}>GOVERNMENT</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('industry', 1)}>INDUSTRY</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('beauty', 1)}>BEAUTY</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('safety', 1)}>SAFETY</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('social', 1)}>SOCIAL</div>
+                      <div className="dropdown-item" onMouseDown={() => this.setComparison('cost', 1)}>COST</div>
+                    </div>
+                  </div>{'\t'}<br/>
+                  :{'\t'}
+                  <span className="coorelation-result">
+                    {this.checkLength(this.state.coorelation[0], this.state.coorelation[1])
+                      ? sampleCorrelation(this.state.dataSets[this.state.coorelation[0]], this.state.dataSets[this.state.coorelation[1]]).toFixed(2)
+                      : 'N/A'}
+                  </span>
                 </div>
                 <div
                   className={

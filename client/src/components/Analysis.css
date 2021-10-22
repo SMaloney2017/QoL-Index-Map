@@ -27,7 +27,7 @@
 	font-size: 30px;
 	width: 100%;
 	height: 100%;
-	transform: translateY(-2px);
+	transform: translateY(-3px);
   }
   
   .analysis-icon-active {
@@ -91,7 +91,7 @@
   
   .analysis-button:hover .analysis-button-front {
 	transition: 250ms;
-	transform: translateY(-2px);
+	transform: translateY(-3px);
   }
   
   .analysis-view {
@@ -99,7 +99,7 @@
 	border: none;
 	background: #1000bb;
 	width: 600px;
-	height: 350px;
+	height: 360px;
 	border-radius: 3px;
   }
   
@@ -117,16 +117,16 @@
   }
   
   .analysis-info {
-	text-shadow: 0 0 2px #fff562;
+	text-shadow: 0 0 3px #fff562;
 	border-radius: 3px;
-	overflow-y: scroll;
+	overflow-y: auto;
 	overflow-x: hidden;
 	transition: 50ms;
 	padding-left: 10px;
 	margin-top: 40px;
 	margin-left: -180px;
 	background-color: #002b3b;
-	height: 85%;
+	height: 87.5%;
 	width: 95%;
   }
   
@@ -139,7 +139,7 @@
   }
   
   .input {
-	text-shadow: 0 0 2px #fff562;
+	text-shadow: 0 0 3px #fff562;
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;
@@ -266,6 +266,61 @@
   th, td {
 	  padding-right: 20px;
 	  padding-left: 5px;
+  }
+
+  th {
+	color: #ff0000;
+	text-shadow: 0 0 3px #ff0000;
+  }
+
+  td {
+	color: #00ffea;
+	text-shadow: 0 0 3px #00ffea;;
+  }
+
+  .dropbutton {
+	background: #002b3b;
+	font-family: monospace;
+	color: #00ffea;
+	letter-spacing: 0.15em;
+	font-size: 17px;
+	text-shadow: 0 0 3px #00ffea;
+	border: none;
+	cursor: pointer;
+  }
+  
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdown-content {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 60px;
+	color: #00ffea;
+	text-shadow: 0 0 3px #00ffea;
+	display: none;
+	position: absolute;
+  }
+  
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }
+
+  .dropdown-item {
+	cursor: pointer;
+  }
+
+  .dropdown-item:hover {
+	transition: 250ms;
+	color: #00ff2a;
+	text-shadow: 0 0 3px #00ff2a;
+  }
+
+  .coorelation-result {
+	color: #00ff2a;
+	text-shadow: 0 0 3px #00ff2a;
   }
 
   @keyframes blinker {

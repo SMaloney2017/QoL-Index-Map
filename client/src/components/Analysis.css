@@ -98,8 +98,8 @@
 	transition: 250ms;
 	border: none;
 	background: #1000bb;
-	width: 625px;
-	height: 375px;
+	width: 600px;
+	height: 370px;
 	border-radius: 3px;
   }
   
@@ -127,7 +127,7 @@
 	margin-left: -180px;
 	background-color: #002b3b;
 	height: 87.5%;
-	width: 95%;
+	width: 96.5%;
   }
   
   .info-text {
@@ -203,7 +203,6 @@
   }
 
   .info-stats {
-	width: 90%;
 	position: absolute;
 	top: 40px;
 	white-space: normal;
@@ -226,16 +225,19 @@
   }
 
   .info-graphs {
-	width: 90%;
-	position: absolute;
-	top: 40px;
-	white-space: normal;
+	position: relative;
+	top: -682px;
 	color: #fff562;
 	font-family: monospace;
 	letter-spacing: 0.15em;
 	font-size: 17px; 
   }
   
+  .graphs-visual {
+	margin-left: 10%;
+	width: 75%;
+  }
+
   .graphs-button:hover {
 	transition: 250ms;
 	color: #00ffea;

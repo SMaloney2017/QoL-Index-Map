@@ -10,7 +10,7 @@ import {
   standardDeviation,
   sampleCorrelation,
 } from "simple-statistics";
-import { bar } from "react-chartjs-2";
+import { Bar, Radar } from "react-chartjs-2";
 import "./Analysis.css";
 
 class Analysis extends React.Component {
@@ -99,7 +99,7 @@ class Analysis extends React.Component {
   };
 
   checkLength = (index1, index2) => {
-    if (this.state.dataSets[index1].length > 0) {
+    if (this.state.dataSets[index1].length > 2) {
       if (
         this.state.dataSets[index1].length ===
         this.state.dataSets[index2].length
@@ -203,6 +203,77 @@ class Analysis extends React.Component {
   }
 
   render() {
+    const data = {
+      labels: ['Awful (0)', 'Bad (1)', 'Poor (2)', 'Okay (3)', 'Better (4)', 'Agreeable (5)', 'Excellent (6)'],
+      datasets: [
+        {
+          label: 'Overall',
+          data: this.state.occurenceCount.overall,
+          backgroundColor: '#f94144b0',
+          borderColor: '#f94144',
+        },
+        {
+          label: 'Government',
+          data: this.state.occurenceCount.government,
+          backgroundColor: '#f3722cb0',
+          borderColor: '#f3722c',
+        },
+        {
+          label: 'Industry',
+          data: this.state.occurenceCount.industry,
+          backgroundColor: '#f8961eb0',
+          borderColor: '#f8961e',
+        },
+        {
+          label: 'Beauty',
+          data: this.state.occurenceCount.beauty,
+          backgroundColor: '#f9c74fb0',
+          borderColor: '#f9c74f',
+        },
+        {
+          label: 'Safety',
+          data: this.state.occurenceCount.safety,
+          backgroundColor: '#90be6db0',
+          borderColor: '#90be6d',
+        },
+        {
+          label: 'Social',
+          data: this.state.occurenceCount.social,
+          backgroundColor: '#43aa8bb0',
+          borderColor: '#43aa8b',
+        },
+        {
+          label: 'Cost',
+          data: this.state.occurenceCount.cost,
+          backgroundColor: '#577590b0',
+          borderColor: '#577590',
+        },
+      ],
+    };
+
+    const options = {
+      scales: {
+        r: {
+          ticks: {
+            showLabelBackdrop: false,
+            stepSize: 2,
+            z: 1
+          },
+          angleLines: {
+            lineWidth: 3
+          },
+          grid: {
+            drawTicks: false,
+            circular: true,
+            lineWidth: 3
+          },
+          pointLabels: {
+            color: '#fff562'
+          }
+        }
+      }
+    };
+
     return (
       <>
         <div className="analysis-container">
@@ -325,200 +396,202 @@ class Analysis extends React.Component {
                   .STATISTICS
                   <br />
                   <table>
-                    <tr>
-                      <th>INDEX</th>
-                      <th>MEAN</th>
-                      <th>MODE</th>
-                      <th>STDEV</th>
-                      <th>SKEW</th>
-                    </tr>
-                    <tr>
-                      <td>OVERALL</td>
-                      <td>
-                        {this.state.dataSets.overall.length > 0
-                          ? mean(this.state.dataSets.overall).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.overall.length > 0
-                          ? mode(this.state.dataSets.overall).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.overall.length > 0
-                          ? standardDeviation(
-                              this.state.dataSets.overall
-                            ).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.overall.length > 3
-                          ? sampleSkewness(this.state.dataSets.overall).toFixed(
-                              2
-                            )
-                          : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>GOVERNMENT</td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mean(this.state.dataSets.government).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mode(this.state.dataSets.government).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? standardDeviation(
-                              this.state.dataSets.government
-                            ).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 3
-                          ? sampleSkewness(
-                              this.state.dataSets.government
-                            ).toFixed(2)
-                          : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>INDUSTRY</td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mean(this.state.dataSets.industry).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mode(this.state.dataSets.industry).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? standardDeviation(
-                              this.state.dataSets.industry
-                            ).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 3
-                          ? sampleSkewness(
-                              this.state.dataSets.industry
-                            ).toFixed(2)
-                          : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>BEAUTY</td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mean(this.state.dataSets.beauty).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mode(this.state.dataSets.beauty).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? standardDeviation(
-                              this.state.dataSets.beauty
-                            ).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 3
-                          ? sampleSkewness(this.state.dataSets.beauty).toFixed(
-                              2
-                            )
-                          : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>SAFETY</td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mean(this.state.dataSets.safety).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mode(this.state.dataSets.safety).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? standardDeviation(
-                              this.state.dataSets.safety
-                            ).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 3
-                          ? sampleSkewness(this.state.dataSets.safety).toFixed(
-                              2
-                            )
-                          : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>SOCIAL</td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mean(this.state.dataSets.social).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mode(this.state.dataSets.social).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? standardDeviation(
-                              this.state.dataSets.social
-                            ).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 3
-                          ? sampleSkewness(this.state.dataSets.social).toFixed(
-                              2
-                            )
-                          : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>COST</td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mean(this.state.dataSets.cost).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? mode(this.state.dataSets.cost).toFixed(2)
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 0
-                          ? standardDeviation(this.state.dataSets.cost).toFixed(
-                              2
-                            )
-                          : "N/A"}
-                      </td>
-                      <td>
-                        {this.state.dataSets.government.length > 3
-                          ? sampleSkewness(this.state.dataSets.cost).toFixed(2)
-                          : "N/A"}
-                      </td>
-                    </tr>
+                    <tbody>
+                      <tr>
+                        <th>INDEX</th>
+                        <th>MEAN</th>
+                        <th>MODE</th>
+                        <th>STDEV</th>
+                        <th>SKEW</th>
+                      </tr>
+                      <tr>
+                        <td>OVERALL</td>
+                        <td>
+                          {this.state.dataSets.overall.length > 0
+                            ? mean(this.state.dataSets.overall).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.overall.length > 0
+                            ? mode(this.state.dataSets.overall).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.overall.length > 0
+                            ? standardDeviation(
+                                this.state.dataSets.overall
+                              ).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.overall.length > 3
+                            ? sampleSkewness(this.state.dataSets.overall).toFixed(
+                                2
+                              )
+                            : "N/A"}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>GOVERNMENT</td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mean(this.state.dataSets.government).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mode(this.state.dataSets.government).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? standardDeviation(
+                                this.state.dataSets.government
+                              ).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 3
+                            ? sampleSkewness(
+                                this.state.dataSets.government
+                              ).toFixed(2)
+                            : "N/A"}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>INDUSTRY</td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mean(this.state.dataSets.industry).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mode(this.state.dataSets.industry).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? standardDeviation(
+                                this.state.dataSets.industry
+                              ).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 3
+                            ? sampleSkewness(
+                                this.state.dataSets.industry
+                              ).toFixed(2)
+                            : "N/A"}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>BEAUTY</td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mean(this.state.dataSets.beauty).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mode(this.state.dataSets.beauty).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? standardDeviation(
+                                this.state.dataSets.beauty
+                              ).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 3
+                            ? sampleSkewness(this.state.dataSets.beauty).toFixed(
+                                2
+                              )
+                            : "N/A"}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>SAFETY</td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mean(this.state.dataSets.safety).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mode(this.state.dataSets.safety).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? standardDeviation(
+                                this.state.dataSets.safety
+                              ).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 3
+                            ? sampleSkewness(this.state.dataSets.safety).toFixed(
+                                2
+                              )
+                            : "N/A"}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>SOCIAL</td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mean(this.state.dataSets.social).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mode(this.state.dataSets.social).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? standardDeviation(
+                                this.state.dataSets.social
+                              ).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 3
+                            ? sampleSkewness(this.state.dataSets.social).toFixed(
+                                2
+                              )
+                            : "N/A"}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>COST</td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mean(this.state.dataSets.cost).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? mode(this.state.dataSets.cost).toFixed(2)
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 0
+                            ? standardDeviation(this.state.dataSets.cost).toFixed(
+                                2
+                              )
+                            : "N/A"}
+                        </td>
+                        <td>
+                          {this.state.dataSets.government.length > 3
+                            ? sampleSkewness(this.state.dataSets.cost).toFixed(2)
+                            : "N/A"}
+                        </td>
+                      </tr>
+                    </tbody>
                   </table>
                   CORRELATION OF{"\t"}
                   <div className="dropdown">
@@ -644,6 +717,9 @@ class Analysis extends React.Component {
                   }
                 >
                   .GRAPHS
+                  <div className='graphs-visual'>
+                    <Radar data={data} options={options}/>
+                  </div>
                 </div>
               </span>
             </span>

@@ -694,8 +694,7 @@ class Analysis extends React.Component {
                       </div>
                     </div>
                   </div>
-                  {"\t"}
-                  <br />:{"\t"}
+                  {"\t"}:{"\t"}
                   <span className="coorelation-result">
                     {this.checkLength(
                       this.state.coorelation[0],

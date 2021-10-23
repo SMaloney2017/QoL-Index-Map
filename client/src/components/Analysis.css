@@ -202,8 +202,10 @@
   }
 
   .info-stats {
-	position: absolute;
-	top: 40px;
+	position: relative;
+	overflow-y: scroll;
+	height: 100%;
+	top: -135px;
 	white-space: normal;
 	color: #fff562;
 	font-family: monospace;
@@ -226,7 +228,7 @@
   .info-graphs {
 	position: relative;
 	overflow-y: scroll;
-	top: -680px;
+	top: -722px;
 	color: #fff562;
 	font-family: monospace;
 	letter-spacing: 0.15em;
@@ -234,7 +236,7 @@
   }
   
   .graphs-visual {
-	height: 300px;
+	height: 305px;
 	width: 75%;
 	margin-left: auto;
 	margin-right: auto;
@@ -283,6 +285,7 @@
   }
 
   .dropbutton {
+	position: relative;
 	margin-top: 5px;
 	background: #002b3b;
 	font-family: monospace;
@@ -296,14 +299,14 @@
   }
   
   .dropdown {
+	height: 130px;
 	position: relative;
 	display: inline-block;
   }
   
   .dropdown-content {
 	overflow-y: scroll;
-	overflow-x: hidden;
-	height: 60px;
+	height: 100px;
 	color: #00ffea;
 	text-shadow: 0 0 3px #00ffea;
 	display: none;

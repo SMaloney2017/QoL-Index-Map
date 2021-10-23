@@ -117,17 +117,16 @@
   }
   
   .analysis-info {
+	transition: 250ms;
 	text-shadow: 0 0 3px #fff562;
 	border-radius: 3px;
-	overflow-y: auto;
-	overflow-x: hidden;
 	transition: 50ms;
 	padding-left: 10px;
 	margin-top: 40px;
 	margin-left: -180px;
 	background-color: #002b3b;
-	height: 87.5%;
-	width: 96.5%;
+	height: 325px;
+	width: 580px;
   }
   
   .info-text {
@@ -207,7 +206,7 @@
 	top: 40px;
 	white-space: normal;
 	color: #fff562;
-	font-family: monospace;;
+	font-family: monospace;
 	letter-spacing: 0.15em;
 	font-size: 17px;
   }
@@ -226,7 +225,8 @@
 
   .info-graphs {
 	position: relative;
-	top: -682px;
+	overflow-y: scroll;
+	top: -680px;
 	color: #fff562;
 	font-family: monospace;
 	letter-spacing: 0.15em;
@@ -234,8 +234,10 @@
   }
   
   .graphs-visual {
-	margin-left: 10%;
+	height: 300px;
 	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
   }
 
   .graphs-button:hover {

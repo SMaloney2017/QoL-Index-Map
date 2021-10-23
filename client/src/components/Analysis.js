@@ -191,7 +191,7 @@ class Analysis extends React.Component {
     this.props.shareRange(this.state.r * 1000);
     this.props.shareSelectedCenter(this.state.selectedCenter);
     this.setState({
-      cmdLine: ".AREA SELECTED, CLICK STATS/ GRAPHS ICON TO VIEW",
+      cmdLine: ".AREA SELECTED, STATS + GRAPHS ICONS ACTIVE",
     });
     this.getDataForAnalysis(e);
   };

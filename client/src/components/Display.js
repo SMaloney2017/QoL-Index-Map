@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GoogleMap, LoadScript, Circle } from "@react-google-maps/api";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import "./Display.css";
+import "./css/Display.css";
 
 function Display(props) {
   const [mapref, setMapRef] = useState(null);

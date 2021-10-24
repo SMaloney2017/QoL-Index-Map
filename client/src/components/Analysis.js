@@ -11,7 +11,7 @@ import {
   sampleCorrelation,
 } from "simple-statistics";
 import { Bar, Radar } from "react-chartjs-2";
-import "./Analysis.css";
+import "./css/Analysis.css";
 
 class Analysis extends React.Component {
   constructor(props) {
@@ -191,7 +191,7 @@ class Analysis extends React.Component {
     this.props.shareRange(this.state.r * 1000);
     this.props.shareSelectedCenter(this.state.selectedCenter);
     this.setState({
-      cmdLine: ".AREA SELECTED, STATS + GRAPHS ICONS ACTIVE",
+      cmdLine: ".AREA SELECTED: STATS & GRAPHS ICONS ACTIVE",
     });
     this.getDataForAnalysis(e);
   };

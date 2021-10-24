@@ -1,5 +1,5 @@
 import React from "react";
-import "./Toolbar.css";
+import "./css/Toolbar.css";
 import { BsTools } from "react-icons/bs";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Slider, TextField } from "@mui/material";

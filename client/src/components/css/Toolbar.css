@@ -1,4 +1,4 @@
-.toolbar-icon {
+  .toolbar-icon {
 	transition: 250ms;
 	background: none;
 	color: #ffffff;
@@ -14,7 +14,7 @@
 	transition: 250ms;
   }
   
-  .toolbar-close {
+  .toolbar-exit-shadow {
 	border: none;
 	background: #8b1616;
 	margin-top: 10px;
@@ -26,7 +26,7 @@
 	cursor: pointer;
   }
   
-  .toolbar-close-front {
+  .toolbar-exit {
 	transition: 500ms;
 	border: none;
 	border-radius: 50%;
@@ -39,11 +39,18 @@
 	transform: translateY(-5px);
   }
   
-  .toolbar-close:hover .toolbar-close-front {
+  .toolbar-exit-shadow:hover .toolbar-exit {
 	transition: 50ms;
 	transform: translateY(-2px);
   }
   
+  .toolbar-header {
+	color: #272727;
+	text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
+	font-size: 45px;
+	font-weight: bold;
+  }
+
   .toolbar-menu {
 	position: absolute;
 	background-color: #272727;
@@ -61,41 +68,18 @@
 	overflow-y: auto;
   }
   
-  .toolbar-query {
+  .query-container {
 	background-color: #1b1b1b;
 	width: 460px;
 	padding: 5px 20px 20px 20px;
   }
   
-  .toolbar-text {
+  .query-text {
 	color: #ffffff;
 	font-size: 20px;
   }
-  
-  .toolbar-header {
-	color: #272727;
-	text-shadow: 0px 1px 0px #ffffff05, 0px -1px 0px #000000;
-	font-size: 45px;
-	font-weight: bold;
-  }
-  
-  .toolbar-select-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-  }
-  
-  .toolbar-range-container {
-	display: grid;
-	width: inherit;
-	padding-left: 30px;
-  }
-  
-  .toolbar-subtext {
-	color: #00ff95;
-	font-size: 20px;
-  }
-  
-  .toolbar-submit {
+
+  .query-submit-shadow {
 	background: #00502f;
 	border: none;
 	padding: 0;
@@ -103,7 +87,7 @@
 	border-top-left-radius: 5px;
   }
   
-  .toolbar-submit-front {
+  .query-submit {
 	transition: 500ms;
 	border: none;
 	display: block;
@@ -118,12 +102,12 @@
 	cursor: pointer;
   }
   
-  .toolbar-submit:hover .toolbar-submit-front {
+  .query-submit-shadow:hover .query-submit {
 	transition: 50ms;
 	transform: translateY(-2px);
   }
   
-  .toolbar-clear {
+  .query-clear-shadow {
 	background: #8b1616;
 	border: none;
 	padding: 0;
@@ -132,7 +116,7 @@
 	border-top-right-radius: 5px;
   }
   
-  .toolbar-clear-front {
+  .query-clear {
 	transition: 500ms;
 	border: none;
 	display: block;
@@ -147,12 +131,28 @@
 	cursor: pointer;
   }
   
-  .toolbar-clear:hover .toolbar-clear-front {
+  .query-clear-shadow:hover .query-clear {
 	transition: 50ms;
 	transform: translateY(-2px);
   }
   
-  .toolbar-datepicker-container {
+  .selection-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+  }
+  
+  .selection-subtext {
+	color: #00ff95;
+	font-size: 20px;
+  }
+
+  .range-container {
+	display: grid;
+	width: inherit;
+	padding-left: 30px;
+  }
+  
+  .datepicker-container {
 	width: auto;
 	padding: 10px;
 	background-color: white;

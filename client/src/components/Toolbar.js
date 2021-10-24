@@ -141,24 +141,24 @@ class Toolbar extends React.Component {
         <div
           className={this.state.active ? "toolbar-menu active" : "toolbar-menu"}
         >
-          <div>
-            <button className="toolbar-close">
-              <span className="toolbar-close-front">
+          <>
+            <button className="toolbar-exit-shadow">
+              <span className="toolbar-exit">
                 <AiOutlineCloseCircle onClick={this.toggleView} />
               </span>
             </button>
             <form onSubmit={this.handleSubmit}>
-              <div className="toolbar-query">
+              <div className="query-container">
                 <div className="toolbar-header">Query</div>
                 <hr size="1" width="90%" color="#272727" />
-                <div className="toolbar-text">
+                <div className="query-text">
                   data visable:{" "}
                   <span style={{ color: "#ff2929" }}>
                     {this.state.selectedOption}
                   </span>
                 </div>
-                <div className="toolbar-select-container">
-                  <div className="toolbar-subtext">
+                <div className="selection-container">
+                  <div className="selection-subtext">
                     <div>
                       <input
                         type="radio"
@@ -200,7 +200,7 @@ class Toolbar extends React.Component {
                       beauty
                     </div>
                   </div>
-                  <div className="toolbar-subtext">
+                  <div className="selection-subtext">
                     <div>
                       <input
                         type="radio"
@@ -234,8 +234,8 @@ class Toolbar extends React.Component {
                   </div>
                 </div>
                 <br />
-                <div className="toolbar-range-container">
-                  <div className="toolbar-text">
+                <div className="range-container">
+                  <div className="query-text">
                     overall range:{" "}
                     <span style={{ color: "#00ff95c5" }}>
                       {this.state.overall[0]} - {this.state.overall[1]}
@@ -252,7 +252,7 @@ class Toolbar extends React.Component {
                     valueLabelDisplay="auto"
                     aria-labelledby="range-slider"
                   />
-                  <div className="toolbar-text">
+                  <div className="query-text">
                     government range:{" "}
                     <span style={{ color: "#00ff95c5" }}>
                       {this.state.government[0]} - {this.state.government[1]}
@@ -269,7 +269,7 @@ class Toolbar extends React.Component {
                     valueLabelDisplay="auto"
                     aria-labelledby="range-slider"
                   />
-                  <div className="toolbar-text">
+                  <div className="query-text">
                     industry range:{" "}
                     <span style={{ color: "#00ff95c5" }}>
                       {this.state.industry[0]} - {this.state.industry[1]}
@@ -286,7 +286,7 @@ class Toolbar extends React.Component {
                     valueLabelDisplay="auto"
                     aria-labelledby="range-slider"
                   />
-                  <div className="toolbar-text">
+                  <div className="query-text">
                     beauty range:{" "}
                     <span style={{ color: "#00ff95c5" }}>
                       {this.state.beauty[0]} - {this.state.beauty[1]}
@@ -303,7 +303,7 @@ class Toolbar extends React.Component {
                     valueLabelDisplay="auto"
                     aria-labelledby="range-slider"
                   />
-                  <div className="toolbar-text">
+                  <div className="query-text">
                     safety range:{" "}
                     <span style={{ color: "#00ff95c5" }}>
                       {this.state.safety[0]} - {this.state.safety[1]}
@@ -320,7 +320,7 @@ class Toolbar extends React.Component {
                     valueLabelDisplay="auto"
                     aria-labelledby="range-slider"
                   />
-                  <div className="toolbar-text">
+                  <div className="query-text">
                     social range:{" "}
                     <span style={{ color: "#00ff95c5" }}>
                       {this.state.social[0]} - {this.state.social[1]}
@@ -337,7 +337,7 @@ class Toolbar extends React.Component {
                     valueLabelDisplay="auto"
                     aria-labelledby="range-slider"
                   />
-                  <div className="toolbar-text">
+                  <div className="query-text">
                     cost range:{" "}
                     <span style={{ color: "#00ff95c5" }}>
                       {this.state.cost[0]} - {this.state.cost[1]}
@@ -356,7 +356,7 @@ class Toolbar extends React.Component {
                   />
                 </div>
                 <br />
-                <div className="toolbar-datepicker-container">
+                <div className="datepicker-container">
                   <div className="datepicker">
                     <TextField
                       id="startDate"
@@ -385,25 +385,25 @@ class Toolbar extends React.Component {
                 <br />
                 <br />
                 <button
-                  className="toolbar-submit"
+                  className="query-submit-shadow"
                   type="submit"
                   onClick={this.toggleView}
                 >
-                  <span className="toolbar-submit-front">Submit</span>
+                  <span className="query-submit">Submit</span>
                 </button>
                 <button
-                  className="toolbar-clear"
+                  className="query-clear-shadow"
                   type="reset"
                   onClick={this.clearData}
                 >
-                  <span className="toolbar-clear-front">Clear</span>
+                  <span className="query-clear">Clear</span>
                 </button>
                 <br />
                 <br />
               </div>
               <br />
             </form>
-          </div>
+          </>
         </div>
       </>
     );

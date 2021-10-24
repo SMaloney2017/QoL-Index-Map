@@ -8,7 +8,7 @@
     z-index: 1;
   }
   
-  .survey-ret {
+  .minimap-ret {
     position: relative;
     text-align: center;
     top: calc(50%);

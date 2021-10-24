@@ -64,56 +64,54 @@ function Display(props) {
 
   return (
     <>
-      <div>
-        <LoadScript googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s">
-          <GoogleMap
-            id="display"
-            mapContainerStyle={containerStyle}
-            center={newCenter}
-            zoom={5}
-            onLoad={handleOnLoad}
-            onDragEnd={handleCenterChanged}
-          >
-            {displayData.map(({ COORDS, w }) => (
-              <Circle
-                key={ID++}
-                center={COORDS}
-                options={{
-                  strokeColor: colors[w],
-                  strokeOpacity: 1,
-                  strokeWeight: 2,
-                  fillColor: colors[w],
-                  fillOpacity: 0.7,
-                  clickable: false,
-                  draggable: false,
-                  editable: false,
-                  visible: true,
-                  radius: 20000,
-                  zIndex: 1,
-                }}
-              />
-            ))}
+      <LoadScript googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s">
+        <GoogleMap
+          id="display"
+          mapContainerStyle={containerStyle}
+          center={newCenter}
+          zoom={5}
+          onLoad={handleOnLoad}
+          onDragEnd={handleCenterChanged}
+        >
+          {displayData.map(({ COORDS, w }) => (
             <Circle
-              center={selectedCenter}
+              key={ID++}
+              center={COORDS}
               options={{
-                strokeColor: "#3f00ff",
-                strokeOpacity: 0,
-                fillColor: "#3f00ff",
-                fillOpacity: 0.5,
+                strokeColor: colors[w],
+                strokeOpacity: 1,
+                strokeWeight: 2,
+                fillColor: colors[w],
+                fillOpacity: 0.7,
                 clickable: false,
                 draggable: false,
                 editable: false,
                 visible: true,
-                radius: newRange,
-                zIndex: 0,
+                radius: 20000,
+                zIndex: 1,
               }}
             />
-            <div className="ret">
-              <FaMapMarkerAlt />
-            </div>
-          </GoogleMap>
-        </LoadScript>
-      </div>
+          ))}
+          <Circle
+            center={selectedCenter}
+            options={{
+              strokeColor: "#3f00ff",
+              strokeOpacity: 0,
+              fillColor: "#3f00ff",
+              fillOpacity: 0.5,
+              clickable: false,
+              draggable: false,
+              editable: false,
+              visible: true,
+              radius: newRange,
+              zIndex: 0,
+            }}
+          />
+          <div className="display-ret">
+            <FaMapMarkerAlt />
+          </div>
+        </GoogleMap>
+      </LoadScript>
     </>
   );
 }

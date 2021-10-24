@@ -44,7 +44,7 @@ function Minimap(props) {
             onLoad={handleOnLoad}
             onDragEnd={handleCenterChanged}
           >
-            <div className="survey-ret">
+            <div className="minimap-ret">
               <FaMapMarkerAlt />
             </div>
             {/* Child components, such as markers, info windows, etc. */}

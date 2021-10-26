@@ -8,13 +8,13 @@ class Survey extends React.Component {
     super(props);
     this.state = {
       active: false,
-      overall: 3,
-      government: 3,
-      industry: 3,
-      beauty: 3,
-      safety: 3,
-      social: 3,
-      cost: 3,
+      overall: 0,
+      government: 0,
+      industry: 0,
+      beauty: 0,
+      safety: 0,
+      social: 0,
+      cost: 0,
       COORDS: [26.8, -80.4],
     };
     this.sendDataToDb = this.sendDataToDb.bind(this);
@@ -29,10 +29,10 @@ class Survey extends React.Component {
     });
   };
 
-  setValue = (e) => {
+  setValue = (e, name, value) => {
     e.preventDefault();
-    this.setState({ [e.target.name]: parseInt(e.target.value) }, () => {
-      console.log("Survey.js (setValue) - ", e.target.name, e.target.value);
+    this.setState({ [name]: parseInt(value) }, () => {
+      console.log("Survey.js (setValue) - ", name, value);
     });
   };
 
@@ -105,100 +105,86 @@ class Survey extends React.Component {
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5c0c0c" }}
+                      onClick={(e) => this.setValue(e, 'overall', 0)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#fe2323" }}
-                        name="overall"
-                        value="0"
-                        onClick={this.setValue}
                       >
                         0
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5e1f0e" }}
+                      onClick={(e) => this.setValue(e, 'overall', 1)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff5528" }}
-                        name="overall"
-                        value="1"
-                        onClick={this.setValue}
                       >
                         1
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#61310d" }}
+                      onClick={(e) => this.setValue(e, 'overall', 2)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff872c" }}
-                        name="overall"
-                        value="2"
-                        onClick={this.setValue}
                       >
                         2
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#696014" }}
+                      onClick={(e) => this.setValue(e, 'overall', 3)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ffeb35" }}
-                        name="overall"
-                        value="3"
-                        onClick={this.setValue}
                       >
                         3
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#4a5914" }}
+                      onClick={(e) => this.setValue(e, 'overall', 4)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#c7ef39" }}
-                        name="overall"
-                        value="4"
-                        onClick={this.setValue}
                       >
                         4
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#295916" }}
+                      onClick={(e) => this.setValue(e, 'overall', 5)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#72f43f" }}
-                        name="overall"
-                        value="5"
-                        onClick={this.setValue}
                       >
                         5
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#074a13" }}
+                      onClick={(e) => this.setValue(e, 'overall', 6)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#1cf945" }}
-                        name="overall"
-                        value="6"
-                        onClick={this.setValue}
                       >
                         6
-                      </button>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -211,100 +197,86 @@ class Survey extends React.Component {
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5c0c0c" }}
+                      onClick={(e) => this.setValue(e, 'government', 0)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#fe2323" }}
-                        name="government"
-                        value="0"
-                        onClick={this.setValue}
                       >
                         0
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5e1f0e" }}
+                      onClick={(e) => this.setValue(e, 'government', 1)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff5528" }}
-                        name="government"
-                        value="1"
-                        onClick={this.setValue}
                       >
                         1
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#61310d" }}
+                      onClick={(e) => this.setValue(e, 'government', 2)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff872c" }}
-                        name="government"
-                        value="2"
-                        onClick={this.setValue}
                       >
                         2
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#696014" }}
+                      onClick={(e) => this.setValue(e, 'government', 3)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ffeb35" }}
-                        name="government"
-                        value="3"
-                        onClick={this.setValue}
                       >
                         3
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#4a5914" }}
+                      onClick={(e) => this.setValue(e, 'government', 4)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#c7ef39" }}
-                        name="government"
-                        value="4"
-                        onClick={this.setValue}
                       >
                         4
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#295916" }}
+                      onClick={(e) => this.setValue(e, 'government', 5)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#72f43f" }}
-                        name="government"
-                        value="5"
-                        onClick={this.setValue}
                       >
                         5
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#074a13" }}
+                      onClick={(e) => this.setValue(e, 'government', 6)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#1cf945" }}
-                        name="government"
-                        value="6"
-                        onClick={this.setValue}
                       >
                         6
-                      </button>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -317,100 +289,86 @@ class Survey extends React.Component {
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5c0c0c" }}
+                      onClick={(e) => this.setValue(e, 'industry', 0)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#fe2323" }}
-                        name="industry"
-                        value="0"
-                        onClick={this.setValue}
                       >
                         0
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5e1f0e" }}
+                      onClick={(e) => this.setValue(e, 'industry', 1)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff5528" }}
-                        name="industry"
-                        value="1"
-                        onClick={this.setValue}
                       >
                         1
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#61310d" }}
+                      onClick={(e) => this.setValue(e, 'industry', 2)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff872c" }}
-                        name="industry"
-                        value="2"
-                        onClick={this.setValue}
                       >
                         2
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#696014" }}
+                      onClick={(e) => this.setValue(e, 'industry', 3)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ffeb35" }}
-                        name="industry"
-                        value="3"
-                        onClick={this.setValue}
                       >
                         3
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#4a5914" }}
+                      onClick={(e) => this.setValue(e, 'industry', 4)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#c7ef39" }}
-                        name="industry"
-                        value="4"
-                        onClick={this.setValue}
                       >
                         4
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#295916" }}
+                      onClick={(e) => this.setValue(e, 'industry', 5)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#72f43f" }}
-                        name="industry"
-                        value="5"
-                        onClick={this.setValue}
                       >
                         5
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#074a13" }}
+                      onClick={(e) => this.setValue(e, 'industry', 6)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#1cf945" }}
-                        name="industry"
-                        value="6"
-                        onClick={this.setValue}
                       >
                         6
-                      </button>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -421,100 +379,86 @@ class Survey extends React.Component {
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5c0c0c" }}
+                      onClick={(e) => this.setValue(e, 'beauty', 0)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#fe2323" }}
-                        name="beauty"
-                        value="0"
-                        onClick={this.setValue}
                       >
                         0
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5e1f0e" }}
+                      onClick={(e) => this.setValue(e, 'beauty', 1)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff5528" }}
-                        name="beauty"
-                        value="1"
-                        onClick={this.setValue}
                       >
                         1
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#61310d" }}
+                      onClick={(e) => this.setValue(e, 'beauty', 2)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff872c" }}
-                        name="beauty"
-                        value="2"
-                        onClick={this.setValue}
                       >
                         2
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#696014" }}
+                      onClick={(e) => this.setValue(e, 'beauty', 3)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ffeb35" }}
-                        name="beauty"
-                        value="3"
-                        onClick={this.setValue}
                       >
                         3
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#4a5914" }}
+                      onClick={(e) => this.setValue(e, 'beauty', 4)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#c7ef39" }}
-                        name="beauty"
-                        value="4"
-                        onClick={this.setValue}
                       >
                         4
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#295916" }}
+                      onClick={(e) => this.setValue(e, 'beauty', 5)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#72f43f" }}
-                        name="beauty"
-                        value="5"
-                        onClick={this.setValue}
                       >
                         5
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#074a13" }}
+                      onClick={(e) => this.setValue(e, 'beauty', 6)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#1cf945" }}
-                        name="beauty"
-                        value="6"
-                        onClick={this.setValue}
                       >
                         6
-                      </button>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -525,100 +469,86 @@ class Survey extends React.Component {
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5c0c0c" }}
+                      onClick={(e) => this.setValue(e, 'safety', 0)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#fe2323" }}
-                        name="safety"
-                        value="0"
-                        onClick={this.setValue}
                       >
                         0
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5e1f0e" }}
+                      onClick={(e) => this.setValue(e, 'safety', 1)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff5528" }}
-                        name="safety"
-                        value="1"
-                        onClick={this.setValue}
                       >
                         1
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#61310d" }}
+                      onClick={(e) => this.setValue(e, 'safety', 2)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff872c" }}
-                        name="safety"
-                        value="2"
-                        onClick={this.setValue}
                       >
                         2
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#696014" }}
+                      onClick={(e) => this.setValue(e, 'safety', 3)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ffeb35" }}
-                        name="safety"
-                        value="3"
-                        onClick={this.setValue}
                       >
                         3
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#4a5914" }}
+                      onClick={(e) => this.setValue(e, 'safety', 4)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#c7ef39" }}
-                        name="safety"
-                        value="4"
-                        onClick={this.setValue}
                       >
                         4
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#295916" }}
+                      onClick={(e) => this.setValue(e, 'safety', 5)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#72f43f" }}
-                        name="safety"
-                        value="5"
-                        onClick={this.setValue}
                       >
                         5
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#074a13" }}
+                      onClick={(e) => this.setValue(e, 'safety', 6)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#1cf945" }}
-                        name="safety"
-                        value="6"
-                        onClick={this.setValue}
                       >
                         6
-                      </button>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -629,100 +559,86 @@ class Survey extends React.Component {
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5c0c0c" }}
+                      onClick={(e) => this.setValue(e, 'social', 0)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#fe2323" }}
-                        name="social"
-                        value="0"
-                        onClick={this.setValue}
                       >
                         0
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5e1f0e" }}
+                      onClick={(e) => this.setValue(e, 'social', 1)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff5528" }}
-                        name="social"
-                        value="1"
-                        onClick={this.setValue}
                       >
                         1
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#61310d" }}
+                      onClick={(e) => this.setValue(e, 'social', 2)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff872c" }}
-                        name="social"
-                        value="2"
-                        onClick={this.setValue}
                       >
                         2
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#696014" }}
+                      onClick={(e) => this.setValue(e, 'social', 3)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ffeb35" }}
-                        name="social"
-                        value="3"
-                        onClick={this.setValue}
                       >
                         3
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#4a5914" }}
+                      onClick={(e) => this.setValue(e, 'social', 4)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#c7ef39" }}
-                        name="social"
-                        value="4"
-                        onClick={this.setValue}
                       >
                         4
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#295916" }}
+                      onClick={(e) => this.setValue(e, 'social', 5)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#72f43f" }}
-                        name="social"
-                        value="5"
-                        onClick={this.setValue}
                       >
                         5
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#074a13" }}
+                      onClick={(e) => this.setValue(e, 'social', 6)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#1cf945" }}
-                        name="social"
-                        value="6"
-                        onClick={this.setValue}
                       >
                         6
-                      </button>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -735,100 +651,86 @@ class Survey extends React.Component {
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5c0c0c" }}
+                      onClick={(e) => this.setValue(e, 'cost', 0)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#fe2323" }}
-                        name="cost"
-                        value="0"
-                        onClick={this.setValue}
                       >
                         0
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#5e1f0e" }}
+                      onClick={(e) => this.setValue(e, 'cost', 1)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff5528" }}
-                        name="cost"
-                        value="1"
-                        onClick={this.setValue}
                       >
                         1
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#61310d" }}
+                      onClick={(e) => this.setValue(e, 'cost', 2)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ff872c" }}
-                        name="cost"
-                        value="2"
-                        onClick={this.setValue}
                       >
                         2
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#696014" }}
+                      onClick={(e) => this.setValue(e, 'cost', 3)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#ffeb35" }}
-                        name="cost"
-                        value="3"
-                        onClick={this.setValue}
                       >
                         3
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#4a5914" }}
+                      onClick={(e) => this.setValue(e, 'cost', 4)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#c7ef39" }}
-                        name="cost"
-                        value="4"
-                        onClick={this.setValue}
                       >
                         4
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#295916" }}
+                      onClick={(e) => this.setValue(e, 'cost', 5)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#72f43f" }}
-                        name="cost"
-                        value="5"
-                        onClick={this.setValue}
                       >
                         5
-                      </button>
+                      </span>
                     </button>
                     <button
                       className="form-button-shadow"
                       style={{ background: "#074a13" }}
+                      onClick={(e) => this.setValue(e, 'cost', 6)}
                     >
-                      <button
+                      <span
                         className="form-button"
                         style={{ background: "#1cf945" }}
-                        name="cost"
-                        value="6"
-                        onClick={this.setValue}
                       >
                         6
-                      </button>
+                      </span>
                     </button>
                   </div>
                 </div>

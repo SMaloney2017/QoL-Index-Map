@@ -9,7 +9,6 @@ body {
 
 body {
   background-color: #6085ff;
-  /* #6085ff, #ff6060, #00ff95 */
 }
 
 .app-header{
@@ -30,43 +29,4 @@ body {
   color: #e2e2e2;
   font-size: 10px;
   padding: 10px;
-}
-
-.header-button-container {
-  position: relative;
-}
-
-.header-button-shadow {
-  padding: 0;
-  margin-top: 10px;
-  border: none;
-  margin-right: 5px;
-  cursor: pointer;
-}
-
-.header-button {
-  transition: 50ms;
-  border: none;
-  display: block;
-  padding: 7px;
-  transform: translateY(-5px);
-}
-
-.header-button-bw {
-  transition: 50ms;
-  border: none;
-  display: block;
-  padding: 7px;
-  background: linear-gradient(to right, #ffffff 50%, #575757 50%);
-  transform: translateY(-5px);
-}
-
-.header-button-shadow:hover .header-button {
-  transition: 250ms;
-  transform: translateY(-2px);
-}
-
-.header-button-shadow:hover .header-button-bw {
-  transition: 250ms;
-  transform: translateY(-2px);
 }

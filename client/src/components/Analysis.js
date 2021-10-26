@@ -308,36 +308,38 @@ class Analysis extends React.Component {
                   </div>
                 </div>
               </div>
-              <div
-                id="radius"
-                className={this.state.view ? "hidden" : "radius-button"}
-              >
-                <FaMapMarkerAlt
-                  value="analysis-start"
-                  onClick={(e) => this.toggleTab("analysis-start")}
-                />
-              </div>
-              <div
-                id="stats"
-                className={this.state.view ? "hidden" : "stats-button"}
-              >
-                <RiFolderChartLine
-                  value="analysis-stats"
-                  onClick={(e) => this.toggleTab("analysis-stats")}
-                />
-              </div>
-              <div
-                id="graphs"
-                className={this.state.view ? "hidden" : "graphs-button"}
-              >
-                <RiLineChartLine
-                  value="analysis-graphs"
-                  onClick={(e) => this.toggleTab("analysis-graphs")}
-                />
-              </div>
-              <div className={this.state.view ? "hidden" : "reset-button"}>
-                <BiReset onClick={this.resetAnalysis} />
-              </div>
+              <>
+                <div
+                  id="radius"
+                  className={this.state.view ? "hidden" : "radius-button"}
+                >
+                  <FaMapMarkerAlt
+                    value="analysis-start"
+                    onClick={(e) => this.toggleTab("analysis-start")}
+                  />
+                </div>
+                <div
+                  id="stats"
+                  className={this.state.view ? "hidden" : "stats-button"}
+                >
+                  <RiFolderChartLine
+                    value="analysis-stats"
+                    onClick={(e) => this.toggleTab("analysis-stats")}
+                  />
+                </div>
+                <div
+                  id="graphs"
+                  className={this.state.view ? "hidden" : "graphs-button"}
+                >
+                  <RiLineChartLine
+                    value="analysis-graphs"
+                    onClick={(e) => this.toggleTab("analysis-graphs")}
+                  />
+                </div>
+                <div className={this.state.view ? "hidden" : "reset-button"}>
+                  <BiReset onClick={this.resetAnalysis} />
+                </div>
+              </>
               <span className={this.state.view ? "hidden" : "analysis-screen"}>
                 <div
                   className={

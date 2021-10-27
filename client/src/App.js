@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import Survey from "./components/Survey";
+import Survey from "./components/Survey/Survey";
 import Toolbar from "./components/Toolbar";
 import Display from "./components/Display";
 import Analysis from "./components/Analysis";
@@ -8,7 +8,10 @@ import Analysis from "./components/Analysis";
 function App() {
   const [getData, shareData] = useState([]);
   const [getCenter, shareCenter] = useState({ lat: 28.56, lng: -80.64 });
-  const [getSelectedCenter, shareSelectedCenter] = useState({ lat: 28.56, lng: -80.64 });
+  const [getSelectedCenter, shareSelectedCenter] = useState({
+    lat: 28.56,
+    lng: -80.64,
+  });
   const [getRange, shareRange] = useState(0);
 
   return (
@@ -23,16 +26,18 @@ function App() {
           Built with React.js, Node.js, PostgreSQL, and Google Maps.
         </div>
       </div>
-      <>
-        <Display
-          getData={getData}
-          getCenter={getCenter}
-          getRange={getRange}
-          shareCenter={shareCenter}
-          getSelectedCenter={getSelectedCenter}
-        />
-        <Analysis getCenter={getCenter} shareRange={shareRange} shareSelectedCenter={shareSelectedCenter} />
-      </>
+      <Display
+        getData={getData}
+        getCenter={getCenter}
+        getRange={getRange}
+        shareCenter={shareCenter}
+        getSelectedCenter={getSelectedCenter}
+      />
+      <Analysis
+        getCenter={getCenter}
+        shareRange={shareRange}
+        shareSelectedCenter={shareSelectedCenter}
+      />
     </>
   );
 }

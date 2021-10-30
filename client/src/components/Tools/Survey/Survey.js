@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineCloseCircle, AiOutlineForm } from "react-icons/ai";
-import "../css/Survey.css";
-import Minimap from "../Minimap";
+import "../../css/Survey.css";
+import Minimap from "../../Maps/Minimap";
 import Buttons from "./Buttons";
 
 class Survey extends React.Component {

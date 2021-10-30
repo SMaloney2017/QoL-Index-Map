@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Buttons.css";
+import "../../css/Survey.css";
 
 function Buttons(props) {
   return (

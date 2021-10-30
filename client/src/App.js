@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import Survey from "./components/Survey/Survey";
-import Toolbar from "./components/Toolbar";
-import Display from "./components/Display";
-import Analysis from "./components/Analysis";
+import Survey from "./components/Tools/Survey/Survey";
+import Toolbar from "./components/Tools/Toolbar";
+import Display from "./components/Maps/Display";
+import Analysis from "./components/Analysis/Analysis";
 
 function App() {
   const [getData, shareData] = useState([]);

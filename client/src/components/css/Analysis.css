@@ -6,7 +6,7 @@
   }
 
   .analysis-button-shadow {
-	transition: 250ms;
+	transition: 150ms;
 	border: none;
 	background: #1000bb;
 	margin-top: 10px;
@@ -19,7 +19,7 @@
   }
   
   .analysis-button {
-	transition: 250ms;
+	transition: 150ms;
 	border: none;
 	display: flex;
 	border-radius: 3px;
@@ -31,7 +31,7 @@
   }
   
   .analysis-button-shadow:hover .analysis-button {
-	transition: 250ms;
+	transition: 150ms;
 	transform: translateY(-2px);
   }
   
@@ -48,7 +48,7 @@
   }
 
   .analysis-icon {
-	transition: 250ms;
+	transition: 150ms;
 	border: none;
 	border-radius: 3px;
 	display: block;
@@ -73,7 +73,7 @@
   }  
 
   .analysis-icon.active {
-	transition: 250ms;
+	transition: 150ms;
 	border: none;
 	border-radius: 3px;
 	display: block;
@@ -86,12 +86,12 @@
   }
   
   .analysis-icon-shadow:hover .analysis-icon {
-	transition: 250ms;
+	transition: 150ms;
 	transform: translateY(-1px);
   }
 
   .analysis-icon-shadow.active:hover .analysis-icon.active {
-	transition: 250ms;
+	transition: 150ms;
 	transform: translateY(-1px);
   }
 
@@ -100,7 +100,7 @@
   }
   
   .analysis-view-shadow {
-	transition: 250ms;
+	transition: 150ms;
 	border: none;
 	background: #1000bb;
 	width: 645px;
@@ -109,7 +109,7 @@
   }
   
   .analysis-view {
-	transition: 250ms;
+	transition: 150ms;
 	border: none;
 	display: flex;
 	border-radius: 3px;
@@ -147,7 +147,7 @@
   }
   
   .radius-button:hover {
-	transition: 250ms;
+	transition: 150ms;
 	color: #00ff2a;
   }
 
@@ -159,7 +159,7 @@
   }
   
   .stats-button:hover {
-	transition: 250ms;
+	transition: 150ms;
 	color: #fff562;
   }
 
@@ -183,7 +183,7 @@
   }
 
   .graphs-button:hover {
-	transition: 250ms;
+	transition: 150ms;
 	color: #00ffea;
   }
 
@@ -212,7 +212,7 @@
   }
   
   .reset-button:hover {
-	transition: 250ms;
+	transition: 150ms;
 	color: #ff2929;
   }
   
@@ -326,7 +326,7 @@
   }
 
   .correlation-dropdown-item:hover {
-	transition: 250ms;
+	transition: 150ms;
 	color: #00ff2a;
 	text-shadow: 0 0 3px #00ff2a;
   }

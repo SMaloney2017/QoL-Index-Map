@@ -56,7 +56,6 @@ function Graphs(props) {
       r: {
         ticks: {
           showLabelBackdrop: false,
-          stepSize: 2,
           z: 1
         },
         angleLines: {

@@ -30,3 +30,14 @@ body {
   font-size: 10px;
   padding: 10px;
 }
+
+  ::-webkit-scrollbar {
+    height: 17px;
+    width: 15px;
+    background: black;
+    background-color: #272727;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #00ff95;
+  }

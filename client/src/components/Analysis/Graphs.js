@@ -52,11 +52,29 @@ function Graphs(props) {
   };
 
   const options = {
+    plugins: {
+      legend: {
+        labels: {
+          font: {
+            size: 15,
+            family: 'monospace'
+          },
+          color: '#fff562'
+        }
+      }
+    },
     scales: {
       r: {
         ticks: {
+          color: '#fff562',
           showLabelBackdrop: false,
-          z: 1
+          z: 1,
+          callback:
+            function(value){
+              if(value % 1 === 0){
+                return value;
+              }
+            }
         },
         angleLines: {
           lineWidth: 3
@@ -67,7 +85,11 @@ function Graphs(props) {
           lineWidth: 3
         },
         pointLabels: {
-          color: '#fff562'
+          color: '#fff562',
+          font: {
+            size: 13,
+            family: 'monospace'
+          }
         }
       }
     }
@@ -83,7 +105,7 @@ function Graphs(props) {
             : "hidden"
         }
       >
-        .GRAPHS
+        GRAPHS
         <div className='graphs-visual'>
           <Radar data={data} options={options}/>
         </div>

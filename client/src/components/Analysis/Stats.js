@@ -18,7 +18,7 @@ function Stats(props) {
             : "hidden"
         }
       >
-        .STATISTICS
+        STATISTICS
         <br />
         <table>
           <tbody>

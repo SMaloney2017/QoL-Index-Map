@@ -103,8 +103,8 @@
 	transition: 150ms;
 	border: none;
 	background: #1000bb;
-	width: 645px;
-	height: 370px;
+	width:600px;
+	height: 400px;
 	border-radius: 3px;
   }
   
@@ -198,10 +198,10 @@
   }
 
   .graphs-visual {
-	height: 306px;
-	width: 90%;
-	margin-left: auto;
+	height: 332px;
+	width: 95%;
 	margin-right: auto;
+	margin-left: auto;
   }
 
   .reset-button {

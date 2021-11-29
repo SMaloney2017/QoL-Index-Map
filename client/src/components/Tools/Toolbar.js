@@ -75,7 +75,10 @@ class Toolbar extends React.Component {
         startDate: this.state.startDate,
         endDate: this.state.endDate,
       };
-      const response = await fetch("http://localhost:5000/query", {
+
+      
+
+      const response = await fetch("/query", {
         method: "POST",
         headers: {
           Accept: "application/json",

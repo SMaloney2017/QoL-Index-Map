@@ -51,7 +51,7 @@ class Survey extends React.Component {
         lat: this.state.COORDS[0].toFixed(2),
         lng: this.state.COORDS[1].toFixed(2),
       };
-      const response = await fetch("http://localhost:5000/newdata", {
+      const response = await fetch("/newdata", {
         method: "POST",
         headers: {
           Accept: "application/json",

@@ -3,6 +3,8 @@ import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import "../css/Minimap.css";
 
+require("dotenv").config()
+
 const containerStyle = {
   width: "100%",
   height: "100%",
@@ -33,10 +35,11 @@ function Minimap(props) {
     }
   };
 
+  var key = process.env.MAP_KEY
   return (
     <>
       <div className="minimap-container">
-        <LoadScript googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s">
+        <LoadScript googleMapsApiKey={key}>
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={defaultCenter}

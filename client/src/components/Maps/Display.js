@@ -3,6 +3,8 @@ import { GoogleMap, LoadScript, Circle } from "@react-google-maps/api";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import "../css/Display.css";
 
+require("dotenv").config()
+
 function Display(props) {
   const [mapref, setMapRef] = useState(null);
   const colors = [
@@ -61,10 +63,10 @@ function Display(props) {
   var newCenter = props.getCenter;
   var newRange = props.getRange;
   var selectedCenter = props.getSelectedCenter;
-
+  var key = process.env.MAP_KEY;
   return (
     <>
-      <LoadScript googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s">
+      <LoadScript googleMapsApiKey={key}>
         <GoogleMap
           id="display"
           mapContainerStyle={containerStyle}

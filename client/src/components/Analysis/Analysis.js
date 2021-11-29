@@ -130,7 +130,7 @@ class Analysis extends React.Component {
         distance: this.state.r,
         COORDS: this.state.center,
       };
-      const response = await fetch("http://localhost:5000/analysis", {
+      const response = await fetch("/analysis", {
         method: "POST",
         headers: {
           Accept: "application/json",

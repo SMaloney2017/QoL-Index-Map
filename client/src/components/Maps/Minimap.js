@@ -35,11 +35,10 @@ function Minimap(props) {
     }
   };
 
-  var key = process.env.MAP_KEY
   return (
     <>
       <div className="minimap-container">
-        <LoadScript googleMapsApiKey={key}>
+        <LoadScript googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s">
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={defaultCenter}

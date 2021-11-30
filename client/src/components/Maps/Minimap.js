@@ -36,7 +36,7 @@ function Minimap(props) {
   };
 
   var key = process.env.GOOGLE_API_KEY
-
+  console.log(key)
   return (
     <>
       <div className="minimap-container">

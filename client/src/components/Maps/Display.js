@@ -63,10 +63,10 @@ function Display(props) {
   var newCenter = props.getCenter;
   var newRange = props.getRange;
   var selectedCenter = props.getSelectedCenter;
-
+  var key = process.env.GOOGLE_API_KEY
   return (
     <>
-      <LoadScript googleMapsApiKey={process.env.GOOGLE_API_KEY}>
+      <LoadScript googleMapsApiKey={key}>
         <GoogleMap
           id="display"
           mapContainerStyle={containerStyle}

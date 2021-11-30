@@ -66,7 +66,7 @@ function Display(props) {
 
   return (
     <>
-      <LoadScript googleMapsApiKey={`${process.env.GOOGLE_API_KEY}`}>
+      <LoadScript googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s">
         <GoogleMap
           id="display"
           mapContainerStyle={containerStyle}

@@ -14,7 +14,7 @@ class Analysis extends React.Component {
     this.state = {
       view: true,
       inputView: true,
-      cmdLine: ".ENTER AREA RADIUS",
+      cmdLine: "ENTER AREA RADIUS",
       r: 0,
       center: { lat: 28.56, lng: -80.64 },
       selectedCenter: { lat: 28.56, lng: -80.64 },
@@ -110,13 +110,13 @@ class Analysis extends React.Component {
 
   validateInput = () => {
     if (isNaN(+this.state.r)) {
-      this.setState({ cmdLine: ".ENTRY MUST BE INTEGER" });
+      this.setState({ cmdLine: "ENTRY MUST BE INTEGER" });
     } else if (this.state.r <= 0 || this.state.r > 2000) {
-      this.setState({ cmdLine: ".ENTRY MUST BE > 0 && < 2000" });
+      this.setState({ cmdLine: "ENTRY MUST BE > 0 && < 2000" });
     } else {
       document.getElementById("radius").className = "radius-flashing";
       this.setState({
-        cmdLine: ".DRAG MAP TO DESIRED AREA THEN CLICK MARKER ICON",
+        cmdLine: "DRAG MAP TO DESIRED AREA THEN CLICK MARKER ICON",
       });
       document.getElementById("radius").onclick = this.startAnalysis;
       this.setState({ inputView: false });
@@ -130,7 +130,7 @@ class Analysis extends React.Component {
         distance: this.state.r,
         COORDS: this.state.center,
       };
-      const response = await fetch("http://localhost:5000/analysis", {
+      const response = await fetch("/analysis", {
         method: "POST",
         headers: {
           Accept: "application/json",

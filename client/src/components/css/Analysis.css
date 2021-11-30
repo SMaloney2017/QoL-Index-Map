@@ -103,8 +103,8 @@
 	transition: 150ms;
 	border: none;
 	background: #1000bb;
-	width: 645px;
-	height: 370px;
+	width:600px;
+	height: 400px;
 	border-radius: 3px;
   }
   
@@ -190,7 +190,7 @@
   .graphs-view {
 	position: relative;
 	overflow-y: scroll;
-	top: -722px;
+	top: -751px;
 	color: #fff562;
 	font-family: monospace;
 	letter-spacing: 0.15em;
@@ -198,10 +198,10 @@
   }
 
   .graphs-visual {
-	height: 305px;
-	width: 75%;
-	margin-left: auto;
+	height: 332px;
+	width: 95%;
 	margin-right: auto;
+	margin-left: auto;
   }
 
   .reset-button {
@@ -217,15 +217,14 @@
   }
   
   .analysis-screen {
-	text-shadow: 0 0 3px #fff562;
 	border-radius: 3px;
 	transition: 50ms;
 	padding-left: 10px;
 	margin-top: 40px;
 	margin-left: -180px;
-	background-color: #002b3b;
-	height: 325px;
-	width: 625px;
+	background-color: #04003bd2;
+	height: 88%;
+	width: 97%;
   }
   
   .screen-text {
@@ -237,7 +236,6 @@
   }
   
   .input {
-	text-shadow: 0 0 3px #fff562;
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;
@@ -249,8 +247,7 @@
 	letter-spacing: 0.15em;
 	color: #fff562;
 	font-family: monospace;
-	background: #005f8117;
-	border: none;
+	background: #1000bbad;
 	outline: none;
   }
   
@@ -269,7 +266,7 @@
   }
 
   table, th, td {
-	border: 1px solid #fff562;
+	border: 2px solid #fff562;
 	text-align: left;
   }
 
@@ -280,25 +277,28 @@
 
   th {
 	color: #ff0000;
-	text-shadow: 0 0 3px #ff0000;
+	font-weight: 900;
   }
 
   td {
 	color: #00ffea;
-	text-shadow: 0 0 3px #00ffea;;
+  }
+
+  td:hover {
+	color: #00ff2a;
+	font-weight: 900;
   }
 
   .correlation-dropdown-button {
 	position: relative;
 	margin-top: 5px;
-	background: #002b3b;
+	background: #00000000;
 	font-family: monospace;
 	color: #00ffea;
 	letter-spacing: 0.15em;
 	font-size: 17px;
-	text-shadow: 0 0 3px #00ffea;
-	border: 1px solid #fff562;
-	box-shadow: 0 0 3px #fff562;
+	text-transform: uppercase;
+	border: 2px solid #fff562;
 	cursor: pointer;
   }
   
@@ -312,7 +312,6 @@
 	overflow-y: scroll;
 	height: 100px;
 	color: #00ffea;
-	text-shadow: 0 0 3px #00ffea;
 	display: none;
 	position: absolute;
   }
@@ -328,12 +327,10 @@
   .correlation-dropdown-item:hover {
 	transition: 150ms;
 	color: #00ff2a;
-	text-shadow: 0 0 3px #00ff2a;
   }
 
   .coorelation-result {
 	color: #00ff2a;
-	text-shadow: 0 0 3px #00ff2a;
   }
 
   @keyframes blinker {

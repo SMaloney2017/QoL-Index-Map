@@ -66,7 +66,7 @@ function Display(props) {
 
   return (
     <>
-      <LoadScript googleMapsApiKey="AIzaSyCkXkSH1iYfTYeHDtIdSM4zGJGVvd9f-9s">
+      <LoadScript googleMapsApiKey="">
         <GoogleMap
           id="display"
           mapContainerStyle={containerStyle}
